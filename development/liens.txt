@@ -1,0 +1,5 @@
+https://codes-sources.commentcamarche.net/forum/affich-220487-langage-c-scanf-et-touche-f1-f12
+
+http://www.asciitable.com/ascii3.html
+
+https://stackoverflow.com/questions/34209854/how-to-detect-the-esc-key-in-c
