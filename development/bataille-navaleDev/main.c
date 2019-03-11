@@ -57,7 +57,7 @@ void afficher_aide()
                    "                                         _____ _____  ______ \n"
                    "                                   /\\   |_   _|  __ \\|  ____|\n"
                    "                                  /  \\    | | | |  | | |__   \n"
-                   "                                / /\\ \\   | | | |  | |  __|  \n"
+                   "                                 / /\\ \\   | | | |  | |  __|  \n"
                    "                                / ____ \\ _| |_| |__| | |____ \n"
                    "                               /_/    \\_\\_____|_____/|______|\n"
                    "                                                            \n"
@@ -81,30 +81,36 @@ int main()
     int ch;
     system("color f1");
     int touche = -1;
+    int c;
 
     do {
-       // system("cls");
+        system("cls");
         menu();
         touche = _getch();
-        if(touche != 27)
+        if (touche != 27)
         {
+
+
+
             switch (touche)
             {
                 case 59 :
                     system("cls");
+                    printf("\nAIDE\n");
                     afficher_aide();
                     break;
                 case 13:
                     system("cls");
+                    printf("\nGRILLE FIXE\n");
                     grille_fixe();
                     break;
-
                 default: main();
-                    main();
             }
-            printf("a\n");
+            printf("\nESCAPE\n");
         }
 
+
     } while (touche != 27);
+    printf("\nSORTI\n");
     return 0;
 }
