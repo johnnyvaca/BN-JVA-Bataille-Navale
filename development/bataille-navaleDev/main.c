@@ -80,17 +80,12 @@ int main()
 
     int ch;
     system("color f1");
-    int touche = -1;
-    int c;
+    int touche;
 
     do {
         system("cls");
         menu();
         touche = _getch();
-        if (touche != 27)
-        {
-
-
 
             switch (touche)
             {
@@ -106,11 +101,10 @@ int main()
                     break;
                 default: main();
             }
+
             printf("\nESCAPE\n");
-        }
 
 
     } while (touche != 27);
-    printf("\nSORTI\n");
-    return 0;
+
 }
