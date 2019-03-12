@@ -101,8 +101,8 @@ int main()
                     break;
                 default: main();
             }
-
-            printf("\nESCAPE\n");
+            if(touche == 27)
+            printf("\n\n27\n\n");
 
 
     } while (touche != 27);
