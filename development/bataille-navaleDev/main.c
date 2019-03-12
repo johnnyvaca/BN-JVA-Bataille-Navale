@@ -110,7 +110,7 @@ menu();
             default: main();
         }
 //         printf("%d\n\n", touche);
-
+printf("hello");
 
 
     } while (touche != 27);
