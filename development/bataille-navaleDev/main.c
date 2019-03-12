@@ -3,8 +3,8 @@
 #include <windows.h>
 void logo()
 {
-    printf("              ____        _        _ _ _        _   _                  _      \n"
-           "             |  _ \\      | |      (_) | |      | \\ | |                | |     \n"
+    printf("              ____        _        _ _ _        _    _                  _      \n"
+           "             |  _ \\     | |      (_) | |      | \\ | |                | |     \n"
            "             | |_) | __ _| |_ __ _ _| | | ___  |  \\| | __ ___   ____ _| | ___ \n"
            "             |  _ < / _` | __/ _` | | | |/ _ \\ | . ` |/ _` \\ \\ / / _` | |/ _ \\\n"
            "             | |_) | (_| | || (_| | | | |  __/ | |\\  | (_| |\\ V / (_| | |  __/\n"
@@ -32,7 +32,8 @@ void menu()
     printf("F1 AIDE");
     printf("\n");
 }
-void grille_fixe()
+
+void grilles()
         {
     int ch;
     logo();
@@ -47,6 +48,7 @@ void grille_fixe()
                 ch = _getch();
 
             } while (ch != 27);
+            printf("\n\nFIN grille\n\n");
         }
 void afficher_aide()
         {
@@ -54,12 +56,12 @@ void afficher_aide()
       logo();
 
             printf("\n"
-                   "                                         _____ _____  ______ \n"
-                   "                                   /\\   |_   _|  __ \\|  ____|\n"
+                   "                                          _____ _____  ______ \n"
+                   "                                   /\\   |_   _|  _ \\| ____|\n"
                    "                                  /  \\    | | | |  | | |__   \n"
-                   "                                 / /\\ \\   | | | |  | |  __|  \n"
+                   "                                 / /\\\\   | | | |  | |  __|  \n"
                    "                                / ____ \\ _| |_| |__| | |____ \n"
-                   "                               /_/    \\_\\_____|_____/|______|\n"
+                   "                               /_/   \\_\\_____|_____/|______|\n"
                    "                                                            \n"
                    "                                                             ");
             printf("\n\n\n\n\n");
@@ -72,6 +74,7 @@ void afficher_aide()
                 ch = _getch();
 
             } while (ch != 27);
+            printf("\n\nFIN AIDE\n\n");
 
         }
 int main()
@@ -81,28 +84,33 @@ int main()
     int ch;
     system("color f1");
     int touche;
+menu();
+     do {
 
-    do {
-        system("cls");
-        menu();
-        touche = _getch();
+    //printf("\n\nTOUCHE = %d\n\n",touche);
+    system("cls");
+    menu();
+    touche = _getch();
+       switch (touche)
+        {
+            case 59 :
+                system("cls");
+                printf("\nAIDE\n");
+                afficher_aide();
+                break;
+            case 13:
+                system("cls");
+                printf("\nGRILLE FIXE\n");
+                grilles();
+                break;
+            case 27:
+                break;
+            case 0:
+                break;
+            default: main();
+        }
+//         printf("%d\n\n", touche);
 
-            switch (touche)
-            {
-                case 59 :
-                    system("cls");
-                    printf("\nAIDE\n");
-                    afficher_aide();
-                    break;
-                case 13:
-                    system("cls");
-                    printf("\nGRILLE FIXE\n");
-                    grille_fixe();
-                    break;
-                default: main();
-            }
-            if(touche == 27)
-            printf("\n\n27\n\n");
 
 
     } while (touche != 27);
