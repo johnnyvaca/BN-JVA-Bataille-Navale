@@ -20,7 +20,7 @@ Le type d’application C demandé doit offrir les fonctionnalités minimales su
     • Jouer à la bataille navale alors que la position des bateaux est codée dans leprogramme
     • Afficher l’aide du jeu
 
-### Version 1.0
+### Version 1.0:
 
       • S’authentifier en tant que joueur
       • Logger les faits importants durant toute la durée de fonctionnement de l’application
@@ -38,7 +38,7 @@ Le type d’application C demandé doit offrir les fonctionnalités minimales su
 ## 3 Génération
 (Cette section explique comment faire pour générer le programme exécutable à partir des fichiers source contenus dans le repo)
 Vous aurez besoin de:
-###
+
 - Windows 7 révolu
 - un IDE pour c (conseil: Clion)
 - Une Invite de Commande
