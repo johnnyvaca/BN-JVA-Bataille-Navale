@@ -38,7 +38,7 @@ Le type d’application C demandé doit offrir les fonctionnalités minimales su
 ## 3 Génération
 (Cette section explique comment faire pour générer le programme exécutable à partir des fichiers source contenus dans le repo)
 Vous aurez besoin de:
-
+###
 - Windows 7 révolu
 - un IDE pour c (conseil: Clion)
 - Une Invite de Commande
