@@ -3,7 +3,7 @@ Procédure de qualification : 88600/1/2/3 Informaticien/ne CFC (Ordonnance 2014)
 
 # DESCRIPTIF DU PROJET
 
-## 6.1 Généralités
+## 1 Généralités
 
 Il s’agit d’un jeu implémentant les règles de la bataille navale. Ce projet a pour objectifs de:
 
@@ -11,7 +11,7 @@ Il s’agit d’un jeu implémentant les règles de la bataille navale. Ce proje
     ● Offrir un aperçu aux apprenants du travail certificatif du CFC (TPI)
     ● Réaliser de A-Z un programme en C.
 
-## 6.2 Fonctionnalités minimales
+## 2 Fonctionnalités minimales
 
 Le type d’application C demandé doit offrir les fonctionnalités minimales suivantes :
 
