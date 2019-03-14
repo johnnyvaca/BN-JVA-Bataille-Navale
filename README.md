@@ -20,7 +20,7 @@ Le type d’application C demandé doit offrir les fonctionnalités minimales su
     • Jouer à la bataille navale alors que la position des bateaux est codée dans leprogramme
     • Afficher l’aide du jeu
 
-### Version 1.0:
+### Version 1.0
 
       • S’authentifier en tant que joueur
       • Logger les faits importants durant toute la durée de fonctionnement de l’application
@@ -34,32 +34,3 @@ Le type d’application C demandé doit offrir les fonctionnalités minimales su
       • Une extension pourra être envisagée pour ceux qui auraient terminé toutes les
     fonctionnalités avant la fin du temps imparti. Elle sera à discuter entre l’élève et le
     mandant du projet.
-    
-## 3 Génération
-(Cette section explique comment faire pour générer le programme exécutable à partir des fichiers source contenus dans le repo)
-Vous aurez besoin de:
-
-- Windows 7 révolu
-- un IDE pour c (conseil: Clion)
-- Une Invite de Commande
-
-
-Pour générer l'exécutable, vous devez:
-
-1. cloner
-1. ouvrir avec Clion
-1. Lancer le programme
-1. Build
-
-
-
-
-## 4 Exécution
-(Cette section explique comment exécuter le programme)
-Pour exécuter le programme, vous devez:
-
-1. Copy executable way
-1. open the cmd
-1. paste
-1. execute
-
