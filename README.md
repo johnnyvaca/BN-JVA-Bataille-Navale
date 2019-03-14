@@ -35,7 +35,7 @@ Le type d’application C demandé doit offrir les fonctionnalités minimales su
     fonctionnalités avant la fin du temps imparti. Elle sera à discuter entre l’élève et le
     mandant du projet.
     
-## Génération
+## 3 Génération
 (Cette section explique comment faire pour générer le programme exécutable à partir des fichiers source contenus dans le repo)
 Vous aurez besoin de:
 
@@ -54,7 +54,7 @@ Pour générer l'exécutable, vous devez:
 
 
 
-## Exécution
+## 4 Exécution
 (Cette section explique comment exécuter le programme)
 Pour exécuter le programme, vous devez:
 
