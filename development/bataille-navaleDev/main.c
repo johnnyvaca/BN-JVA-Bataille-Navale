@@ -95,7 +95,7 @@ void menuGrilles() {
 
         logo();
         printf("                              CHOISISSEZ VOTRE MER...");
-        printf("\n\n\n");
+        printf("\n\n\n      ");
         printf("                                   1. MER FIXE\n");
         printf("                                   2. AFFICHAGE GRILLE");
         printf("\n\n\n\n");
