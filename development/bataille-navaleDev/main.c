@@ -55,6 +55,7 @@ void menu() {
     printf("\n\n\n\n\n\n\n");
     printf("APPUYER SUR ENTER POUR JOUER");
     printf("                                                                    ");
+    printf("                 ESCAPE:   POUR RETOURNER EN ARRIERE                          ");
     printf("F1 AIDE");
     printf("\n");
 }
@@ -115,6 +116,7 @@ printf("\n\ngrille fixe");
         }
         printf("\n\n\n\n");
         printf("APPUYER SUR LE NUMERO CORRESPONDANT POUR CONTINUER :   ");
+        printf("                                                                                            ESCAPE:   POUR RETOURNER EN ARRIERE");
         ch = _getch();
 
     } while (ch != 27);
@@ -123,6 +125,8 @@ printf("\n\ngrille fixe");
 
 
 void afficher_aide() {
+#pragma execution_caracter_set("UTF-8")
+    SetConsoleOutputCP(CP_UTF8); // For accented characters
     int ch;
     logo();
 
@@ -141,6 +145,8 @@ void afficher_aide() {
            "Au début du jeu, chaque joueur place ses bateaux sur sa grille. Celle-ci est toujours numérotée de A à J verticalement et de 1 à 10 horizontalement. Un à un, les joueurs vont \"tirer\" sur une case de l'adversaire : par exemple, B.3 ou encore H.8. Le but est donc de couler les bateaux adverses. Au fur et à mesure, il faut mettre les pions sur sa propre grille afin de se souvenir de ses tirs passés.[réf. nécessaire]\n"
            "\n"
            "Un fonctionnement plus sophistiqué mettant en œuvre de la stratégie est de tirer une salve (trois coups par exemple) et de donner le résultat global de la salve.");
+    printf("\n\n\n\n");
+    printf("                                                                                                                                       ESCAPE:   POUR RETOURNER EN ARRIERE");
     do {
         ch = _getch();
 
