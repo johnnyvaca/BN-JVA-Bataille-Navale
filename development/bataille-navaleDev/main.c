@@ -2,7 +2,22 @@
 #include <conio.h>
 #include <windows.h>
 
-int position = 0;
+
+void full_screen()
+{
+    keybd_event(VK_F11,0,0,0); //Appuie sur ALT
+  //   keybd_event(VK_F11,0,KEYEVENTF_KEYUP,0); // Relache ENTREE
+    //keybd_event(VK_MENU,0x38,0,0); //Appuie sur ALT
+    //keybd_event(VK_RETURN,0x1c,0,0); //Appuie ENTREE
+
+    //keybd_event(VK_MENU,0x38,KEYEVENTF_KEYUP,0); //Relache ALT
+ //   keybd_event(VK_F11,0x79,0,0); //Appuie sur ALT
+//keybd_event(VK_RETURN,0x1c,0,0); //Appuie ENTREE
+//keybd_event(VK_RETURN,0x1c,KEYEVENTF_KEYUP,0); // Relache ENTREE
+   // keybd_event(VK_F11,0x79,KEYEVENTF_KEYUP,0); //Relache ALT
+//Suite du code...
+}
+int position = -2;
 void raccourcis(){
 
 #define STLC 218 // ┌, Single Top Left Corner
@@ -154,15 +169,18 @@ void afficher_aide() {
 }
 
 int main() {
-
 #pragma execution_caracter_set("UTF-8")
     SetConsoleOutputCP(CP_UTF8); // For accented characters
-
-    int ch;
+    keybd_event(VK_F11,0,0,0); //Appuie sur ALT
+    keybd_event(VK_F11,0,KEYEVENTF_KEYUP,0); // Relache ENTREE
     system("color f1");
+    int ch;
+    int coucou = bioskey();
+
     int touche;
     menu();
     do {
+       //
         system("cls");
         menu();
         touche = _getch();
@@ -187,5 +205,4 @@ int main() {
 
     } while (touche != 27);
     system("cls");
-  //  system("C:\\Users\\Johnny.VACA-JARAMILL\\Documents\\projets\\BN-JVA-Bataille-Navale\\development\\bataille-navaleDev\\cmake-build-debug\\bataille_navaleDev.exe");
 }
