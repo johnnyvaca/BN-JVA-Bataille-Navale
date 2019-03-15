@@ -3,3 +3,7 @@ https://codes-sources.commentcamarche.net/forum/affich-220487-langage-c-scanf-et
 http://www.asciitable.com/ascii3.html
 
 https://stackoverflow.com/questions/34209854/how-to-detect-the-esc-key-in-c
+
+color and size of text :   https://www.geeksforgeeks.org/print-colored-message-different-font-size-c/
+
+Position of text :   https://www.youtube.com/watch?v=nz9eOk5XOtI&ab_channel=KevinKorduner
