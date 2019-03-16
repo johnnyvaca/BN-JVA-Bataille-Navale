@@ -17,30 +17,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="02bb74ad-b6ed-4ed1-8ffd-7ac31a19be91" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/development/bataille-navaleDev/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/development/bataille-navaleDev/cmake-build-debug/CMakeCache.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/development/bataille-navaleDev/cmake-build-debug/CMakeFiles/3.13.2/CMakeCCompiler.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/development/bataille-navaleDev/cmake-build-debug/CMakeFiles/3.13.2/CMakeCCompiler.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/development/bataille-navaleDev/cmake-build-debug/CMakeFiles/3.13.2/CMakeDetermineCompilerABI_C.bin" beforeDir="false" afterPath="$PROJECT_DIR$/development/bataille-navaleDev/cmake-build-debug/CMakeFiles/3.13.2/CMakeDetermineCompilerABI_C.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/development/bataille-navaleDev/cmake-build-debug/CMakeFiles/3.13.2/CMakeSystem.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/development/bataille-navaleDev/cmake-build-debug/CMakeFiles/3.13.2/CMakeSystem.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/development/bataille-navaleDev/cmake-build-debug/CMakeFiles/3.13.2/CompilerIdC/a.exe" beforeDir="false" afterPath="$PROJECT_DIR$/development/bataille-navaleDev/cmake-build-debug/CMakeFiles/3.13.2/CompilerIdC/a.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/development/bataille-navaleDev/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/development/bataille-navaleDev/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/development/bataille-navaleDev/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/development/bataille-navaleDev/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/development/bataille-navaleDev/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/development/bataille-navaleDev/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/development/bataille-navaleDev/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/development/bataille-navaleDev/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/development/bataille-navaleDev/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/development/bataille-navaleDev/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/development/bataille-navaleDev/cmake-build-debug/CMakeFiles/bataille_navaleDev.dir/C.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/development/bataille-navaleDev/cmake-build-debug/CMakeFiles/bataille_navaleDev.dir/C.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/development/bataille-navaleDev/cmake-build-debug/CMakeFiles/bataille_navaleDev.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/development/bataille-navaleDev/cmake-build-debug/CMakeFiles/bataille_navaleDev.dir/DependInfo.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/development/bataille-navaleDev/cmake-build-debug/CMakeFiles/bataille_navaleDev.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/development/bataille-navaleDev/cmake-build-debug/CMakeFiles/bataille_navaleDev.dir/build.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/development/bataille-navaleDev/cmake-build-debug/CMakeFiles/bataille_navaleDev.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/development/bataille-navaleDev/cmake-build-debug/CMakeFiles/bataille_navaleDev.dir/depend.internal" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/development/bataille-navaleDev/cmake-build-debug/CMakeFiles/bataille_navaleDev.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/development/bataille-navaleDev/cmake-build-debug/CMakeFiles/bataille_navaleDev.dir/link.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/development/bataille-navaleDev/cmake-build-debug/CMakeFiles/bataille_navaleDev.dir/main.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/development/bataille-navaleDev/cmake-build-debug/CMakeFiles/bataille_navaleDev.dir/main.c.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/development/bataille-navaleDev/cmake-build-debug/CMakeFiles/bataille_navaleDev.dir/objects.a" beforeDir="false" afterPath="$PROJECT_DIR$/development/bataille-navaleDev/cmake-build-debug/CMakeFiles/bataille_navaleDev.dir/objects.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/development/bataille-navaleDev/cmake-build-debug/CMakeFiles/clion-environment.txt" beforeDir="false" afterPath="$PROJECT_DIR$/development/bataille-navaleDev/cmake-build-debug/CMakeFiles/clion-environment.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/development/bataille-navaleDev/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/development/bataille-navaleDev/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/development/bataille-navaleDev/cmake-build-debug/CMakeFiles/feature_tests.bin" beforeDir="false" afterPath="$PROJECT_DIR$/development/bataille-navaleDev/cmake-build-debug/CMakeFiles/feature_tests.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/development/bataille-navaleDev/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/development/bataille-navaleDev/cmake-build-debug/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/development/bataille-navaleDev/cmake-build-debug/bataille_navaleDev.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/development/bataille-navaleDev/cmake-build-debug/bataille_navaleDev.cbp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/development/bataille-navaleDev/cmake-build-debug/bataille_navaleDev.exe" beforeDir="false" afterPath="$PROJECT_DIR$/development/bataille-navaleDev/cmake-build-debug/bataille_navaleDev.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/development/bataille-navaleDev/cmake-build-debug/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/development/bataille-navaleDev/cmake-build-debug/cmake_install.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/development/test/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/development/test/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/development/bataille-navaleDev/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -55,12 +32,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/development/bataille-navaleDev/main.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="589">
-              <caret line="197" column="20" lean-forward="true" selection-start-line="197" selection-start-column="20" selection-end-line="197" selection-end-column="20" />
+            <state relative-caret-position="163">
+              <caret line="208" column="23" lean-forward="true" selection-start-line="208" selection-start-column="23" selection-end-line="208" selection-end-column="23" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
-                <element signature="e#78#1193#0" />
-                <element signature="e#1195#1816#0" />
               </folding>
             </state>
           </provider>
@@ -114,6 +89,13 @@
               <item name="development" type="462c0819:PsiDirectoryNode" />
               <item name="bataille-navaleDev" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="bataille_navaleDev" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BN-JVA-Bataille-Navale" type="462c0819:PsiDirectoryNode" />
+              <item name="development" type="462c0819:PsiDirectoryNode" />
+              <item name="bataille-navaleDev" type="462c0819:PsiDirectoryNode" />
+              <item name="cmake-build-debug" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -163,17 +145,18 @@
       <workItem from="1552646385579" duration="1643000" />
       <workItem from="1552659833629" duration="382000" />
       <workItem from="1552660753168" duration="3559000" />
+      <workItem from="1552695734694" duration="209000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12462000" />
+    <option name="totallyTimeSpent" value="12671000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26865673" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2720049" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -184,7 +167,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Database Changes" order="7" />
-      <window_info anchor="bottom" id="Messages" order="8" weight="0.17551462" />
+      <window_info active="true" anchor="bottom" id="Messages" order="8" visible="true" weight="0.5386338" />
       <window_info anchor="bottom" id="Terminal" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="11" />
@@ -199,21 +182,20 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/main2.c">
+    <entry file="file://$PROJECT_DIR$/main2.c" />
+    <entry file="file://$PROJECT_DIR$/development/bataille-navaleDev/cmake-build-debug/CMakeCache.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="314">
-          <caret line="86" column="1" selection-start-line="86" selection-start-column="1" selection-end-line="86" selection-end-column="1" />
+        <state relative-caret-position="204">
+          <caret line="257" column="46" lean-forward="true" selection-start-line="257" selection-start-column="46" selection-end-line="257" selection-end-column="46" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/development/bataille-navaleDev/main.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="589">
-          <caret line="197" column="20" lean-forward="true" selection-start-line="197" selection-start-column="20" selection-end-line="197" selection-end-column="20" />
+        <state relative-caret-position="163">
+          <caret line="208" column="23" lean-forward="true" selection-start-line="208" selection-start-column="23" selection-end-line="208" selection-end-column="23" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
-            <element signature="e#78#1193#0" />
-            <element signature="e#1195#1816#0" />
           </folding>
         </state>
       </provider>
