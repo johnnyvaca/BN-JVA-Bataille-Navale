@@ -136,9 +136,6 @@ printf("\n\ngrille fixe");
 
     } while (ch != 27);
 }
-
-
-
 void afficher_aide() {
 #pragma execution_caracter_set("UTF-8")
     SetConsoleOutputCP(CP_UTF8); // For accented characters
@@ -168,27 +165,15 @@ void afficher_aide() {
     } while (ch != 27);
 }
 
-int main() {
-#pragma execution_caracter_set("UTF-8")
-    SetConsoleOutputCP(CP_UTF8); // For accented characters
-    int ch;
+int principal(){
+    int touche;
 
-    int touche = 0;
-    int base = 0;
-    if(touche == 0 || touche == 59 || touche == 13 || touche == 27)
-    {
-        keybd_event(VK_F11,0,0,0); //Appuie sur ALT
-        keybd_event(VK_F11,0,KEYEVENTF_KEYUP,0); // Relache ENTREE
-    }
-
-    system("color f1");
-    base++;
-    menu();
     do {
-       //
-        system("cls");
+
+      //  system("cls");
         menu();
         touche = _getch();
+        printf("\n\n%d\n\n", touche);
         switch (touche) {
             case 59 :
                 system("cls");
@@ -204,11 +189,27 @@ int main() {
                 break;
             case 0:
                 break;
-            default:
-
-                main();
+            default: principal();
         }
 
-    } while (touche != 27);
-    system("cls");
+    } while (touche != 27 );
+   // system("cls");
+   printf("\n\npresque\n\n");
+    return touche;
+}
+int main() {
+#pragma execution_caracter_set("UTF-8")
+    SetConsoleOutputCP(CP_UTF8); // For accented characters
+
+        keybd_event(VK_F11,0,0,0); //Appuie sur ALT
+        keybd_event(VK_F11,0,KEYEVENTF_KEYUP,0); // Relache ENTREE
+    system("color f1");
+    menu();
+        principal();
+        printf("fin");
+
+
+
+
+
 }
