@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/Johnny.VACA-JARAMILL/Documents/projets/BN-JVA-Bataille-Navale/development/test
+# Install script for directory: E:/Documents/Projets/BN-JVA-Bataille-Navale/development/test
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/Johnny.VACA-JARAMILL/Documents/projets/BN-JVA-Bataille-Navale/development/test/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "E:/Documents/Projets/BN-JVA-Bataille-Navale/development/test/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

@@ -171,13 +171,18 @@ void afficher_aide() {
 int main() {
 #pragma execution_caracter_set("UTF-8")
     SetConsoleOutputCP(CP_UTF8); // For accented characters
-    keybd_event(VK_F11,0,0,0); //Appuie sur ALT
-    keybd_event(VK_F11,0,KEYEVENTF_KEYUP,0); // Relache ENTREE
-    system("color f1");
     int ch;
-    int coucou = bioskey();
 
-    int touche;
+    int touche = 0;
+    int base = 0;
+    if(touche == 0 || touche == 59 || touche == 13 || touche == 27)
+    {
+        keybd_event(VK_F11,0,0,0); //Appuie sur ALT
+        keybd_event(VK_F11,0,KEYEVENTF_KEYUP,0); // Relache ENTREE
+    }
+
+    system("color f1");
+    base++;
     menu();
     do {
        //
@@ -200,6 +205,7 @@ int main() {
             case 0:
                 break;
             default:
+
                 main();
         }
 
