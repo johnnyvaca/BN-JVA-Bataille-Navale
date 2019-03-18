@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/main.c" line="23" />
-    <bookmark url="file://$PROJECT_DIR$/main.c" line="212" />
-    <bookmark url="file://$PROJECT_DIR$/main.c" line="205" />
-    <bookmark url="file://$PROJECT_DIR$/main.c" line="202" />
+    <bookmark url="file://$PROJECT_DIR$/main.c" line="21" />
+    <bookmark url="file://$PROJECT_DIR$/main.c" line="208" />
+    <bookmark url="file://$PROJECT_DIR$/main.c" line="201" />
+    <bookmark url="file://$PROJECT_DIR$/main.c" line="198" />
   </component>
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
     <generated>
@@ -36,15 +36,19 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="168" column="15" lean-forward="true" selection-start-line="168" selection-start-column="15" selection-end-line="168" selection-end-column="15" />
+            <state relative-caret-position="221">
+              <caret line="210" column="1" lean-forward="true" selection-start-line="210" selection-start-column="1" selection-end-line="210" selection-end-column="1" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
+                <element signature="e#61#626#0" />
                 <element signature="e#646#1761#0" />
                 <element signature="e#1763#2384#0" />
+                <element signature="e#2386#3522#0" />
                 <element signature="e#3523#4391#0" />
                 <element signature="e#4392#5438#0" />
                 <element signature="e#5439#7439#0" />
+                <element signature="e#7441#8126#0" />
+                <element signature="e#8127#8446#0" />
               </folding>
             </state>
           </provider>
@@ -63,10 +67,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="109" />
-    <option name="y" value="-24" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="x" value="-7" />
+    <option name="width" value="974" />
+    <option name="height" value="1047" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -74,8 +77,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane" />
       <pane id="Scope" />
+      <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -142,16 +145,18 @@
       <workItem from="1552694964433" duration="768000" />
       <workItem from="1552696108844" duration="2691000" />
       <workItem from="1552858884172" duration="602000" />
+      <workItem from="1552897043130" duration="57000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40743000" />
+    <option name="totallyTimeSpent" value="40800000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.38875306" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.39285713" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -183,15 +188,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="168" column="15" lean-forward="true" selection-start-line="168" selection-start-column="15" selection-end-line="168" selection-end-column="15" />
+        <state relative-caret-position="221">
+          <caret line="210" column="1" lean-forward="true" selection-start-line="210" selection-start-column="1" selection-end-line="210" selection-end-column="1" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#61#626#0" />
             <element signature="e#646#1761#0" />
             <element signature="e#1763#2384#0" />
+            <element signature="e#2386#3522#0" />
             <element signature="e#3523#4391#0" />
             <element signature="e#4392#5438#0" />
             <element signature="e#5439#7439#0" />
+            <element signature="e#7441#8126#0" />
+            <element signature="e#8127#8446#0" />
           </folding>
         </state>
       </provider>

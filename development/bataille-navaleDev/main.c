@@ -2,9 +2,7 @@
 #include <conio.h>
 #include <windows.h>
 
-
-void full_screen()
-{
+void full_screen(){
     keybd_event(VK_F11,0,0,0); //Appuie sur ALT
   //   keybd_event(VK_F11,0,KEYEVENTF_KEYUP,0); // Relache ENTREE
     //keybd_event(VK_MENU,0x38,0,0); //Appuie sur ALT
@@ -52,7 +50,6 @@ void logo() {
            "             |____/ \\__,_|\\__\\__,_|_|_|_|\\___| |_| \\_|\\__,_| \\_/ \\__,_|_|\\___|");
     printf("\n\n\n\n");
 }
-
 void menu() {
     logo();
 
@@ -164,7 +161,6 @@ void afficher_aide() {
 
     } while (ch != 27);
 }
-
 int principal(){
     int touche;
 
