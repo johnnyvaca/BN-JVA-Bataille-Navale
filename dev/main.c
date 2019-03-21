@@ -101,7 +101,11 @@ void body()
     for (int j = 0; j < TAB_SIZE; ++j) {
         printf("  ",j);
         for (int i = 0; i < TAB_SIZE ; ++i) {
-            printf("%d ",j+1);
+            if(i == 0)
+            {
+                printf("%d ",j+1);
+            }
+
             printf("%c    ",DVSB);
         }
         printf("%c",DVSB);
@@ -111,7 +115,7 @@ void body()
             for (int i = 0; i < TAB_SIZE ; ++i) {
                 if(i == 0)
                 {
-                    printf("%c",DVLB);
+                    printf("  %c",DVLB);
                 }
                 else
                 {
