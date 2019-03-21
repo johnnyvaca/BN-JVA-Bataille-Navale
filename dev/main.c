@@ -78,44 +78,60 @@ void top()
     for (int i = 0; i < TAB_SIZE; ++i) {
         if(i == 0)
         {
-            printf("     %c   ",i+'A');
+            printf("         %c   ",i+'A');
         }
         else
         {
-            printf("   %c   ",i+'A');
+            printf("       %c   ",i+'A');
         }
 
     }
     printf("\n");
-    printf("    %c",DTLC);
+    printf("     %c",DTLC);
     for (int i = 0; i < TAB_SIZE -1; ++i) {
-        printf("    %c%c%c%c%c",DHSB,DHSB,DHSB,DHSB,DHTB);
+        printf("%c%c%c%c%c",DHSB,DHSB,DHSB,DHSB,DHTB);
     }
-    printf("    %c%c%c%c%c",DHSB,DHSB,DHSB,DHSB,DTRC);
+    printf("%c%c%c%c%c",DHSB,DHSB,DHSB,DHSB,DTRC);
    printf("\n");
 
 }
 void body()
 {
-   // printf("");
     for (int j = 0; j < TAB_SIZE; ++j) {
         printf("  ",j);
         for (int i = 0; i < TAB_SIZE ; ++i) {
             if(i == 0)
             {
-                printf("%d ",j+1);
+                if(i <10)
+                {
+                    printf("%d  ",j+1);
+                }
+                else
+                {
+                    printf("%d",j+1);
+                }
+
+            }
+            if(i <10)
+            {
+                printf("%c   ",DVSB);
+            }
+            else
+            {
+                printf("%c",DVSB);
             }
 
-            printf("%c    ",DVSB);
+
+
         }
-        printf("%c",DVSB);
+        printf(" %c",DVSB);
         printf("\n");
         if(j != TAB_SIZE-1)
         {
             for (int i = 0; i < TAB_SIZE ; ++i) {
                 if(i == 0)
                 {
-                    printf("  %c",DVLB);
+                    printf("     %c",DVLB);
                 }
                 else
                 {
@@ -138,7 +154,7 @@ void bottom()
     SetConsoleOutputCP(65001); // For accented characters
     SetConsoleOutputCP(437); // For semi-graphic characters
 
-    printf("%c",DBLC);
+    printf("     %c",DBLC);
     for (int i = 0; i < TAB_SIZE -1; ++i) {
         printf("%c%c%c%c%c",DHSB,DHSB,DHSB,DHSB,DHBB);
     }
