@@ -57,8 +57,17 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="183" column="20" lean-forward="true" selection-start-line="183" selection-start-column="20" selection-end-line="183" selection-end-column="20" />
+            <state relative-caret-position="249">
+              <caret line="102" column="45" lean-forward="true" selection-start-line="102" selection-start-column="45" selection-end-line="102" selection-end-column="45" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+                <element signature="e#1761#2382#0" />
+                <element signature="e#2383#3519#0" />
+                <element signature="e#4635#4657#0" />
+                <element signature="e#4658#4866#0" />
+                <element signature="e#5436#7436#0" />
+                <element signature="e#8072#8379#0" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -131,17 +140,18 @@
       <workItem from="1553178831908" duration="126000" />
       <workItem from="1553178984646" duration="39000" />
       <workItem from="1553179103843" duration="75000" />
+      <workItem from="1553179331976" duration="4453000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1184000" />
+    <option name="totallyTimeSpent" value="5637000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26119402" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26385927" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -172,8 +182,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="183" column="20" lean-forward="true" selection-start-line="183" selection-start-column="20" selection-end-line="183" selection-end-column="20" />
+        <state relative-caret-position="249">
+          <caret line="102" column="45" lean-forward="true" selection-start-line="102" selection-start-column="45" selection-end-line="102" selection-end-column="45" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#1761#2382#0" />
+            <element signature="e#2383#3519#0" />
+            <element signature="e#4635#4657#0" />
+            <element signature="e#4658#4866#0" />
+            <element signature="e#5436#7436#0" />
+            <element signature="e#8072#8379#0" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <conio.h>
 #include <windows.h>
-
+#define TAB_SIZE 10
 void full_screen(){
     keybd_event(VK_F11,0,0,0); //Appuie sur ALT
   //   keybd_event(VK_F11,0,KEYEVENTF_KEYUP,0); // Relache ENTREE
@@ -15,7 +15,6 @@ void full_screen(){
    // keybd_event(VK_F11,0x79,KEYEVENTF_KEYUP,0); //Relache ALT
 //Suite du code...
 }
-int position = -2;
 void raccourcis(){
 
 #define STLC 218 // ┌, Single Top Left Corner
@@ -71,26 +70,88 @@ void menu() {
     printf("F1 AIDE");
     printf("\n");
 }
-void affichageGrille() {
-    raccourcis();
-    int ch;
+void top()
+{
 #pragma execution_caracter_set("UTF-8")
     SetConsoleOutputCP(65001); // For accented characters
     SetConsoleOutputCP(437); // For semi-graphic characters
+    for (int i = 0; i < TAB_SIZE; ++i) {
+        if(i == 0)
+        {
+            printf("     %c   ",i+'A');
+        }
+        else
+        {
+            printf("   %c   ",i+'A');
+        }
+
+    }
+    printf("\n");
+    printf("    %c",DTLC);
+    for (int i = 0; i < TAB_SIZE -1; ++i) {
+        printf("    %c%c%c%c%c",DHSB,DHSB,DHSB,DHSB,DHTB);
+    }
+    printf("    %c%c%c%c%c",DHSB,DHSB,DHSB,DHSB,DTRC);
+   printf("\n");
+
+}
+void body()
+{
+   // printf("");
+    for (int j = 0; j < TAB_SIZE; ++j) {
+        printf("  ",j);
+        for (int i = 0; i < TAB_SIZE ; ++i) {
+            printf("%d ",j+1);
+            printf("%c    ",DVSB);
+        }
+        printf("%c",DVSB);
+        printf("\n");
+        if(j != TAB_SIZE-1)
+        {
+            for (int i = 0; i < TAB_SIZE ; ++i) {
+                if(i == 0)
+                {
+                    printf("%c",DVLB);
+                }
+                else
+                {
+                    printf("%c",DC);
+                }
+                printf("%c%c%c%c",DHSB,DHSB,DHSB,DHSB);
+                if(i == TAB_SIZE-1)
+                {
+                    printf("%c",DVRB);
+                }
+            }
+            printf("\n");
+        }
+
+    }
+}
+void bottom()
+{
+#pragma execution_caracter_set("UTF-8")
+    SetConsoleOutputCP(65001); // For accented characters
+    SetConsoleOutputCP(437); // For semi-graphic characters
+
+    printf("%c",DBLC);
+    for (int i = 0; i < TAB_SIZE -1; ++i) {
+        printf("%c%c%c%c%c",DHSB,DHSB,DHSB,DHSB,DHBB);
+    }
+    printf("%c%c%c%c%c",DHSB,DHSB,DHSB,DHSB,DBRC);
+}
+void affichageGrille() {
+    raccourcis();
+    int ch;
+top();
+body();
+bottom();
+
     do {
-            system("cls");
+            //system("cls");
 
-        printf("%c%c%c%c%c\n",STLC,SHSB,SHSB,SHSB,STRC);
-        printf("%c   %c\n",SVSB,SVSB,SVSB);
-        printf("%c%c%c%c%c\n",SBLC,SHSB,SHSB,SHSB,SBRC);
 
-/*
 
-        printf ("%c%c%c%c%c%c%c%c%c\n",DTLC,DHSB,DHSB,DHSB,DHTB,DHSB,DHSB,DHSB,DTRC);
-        printf ("%c   %c   %c\n",DVSB,DVSB,DVSB);
-        printf ("%c%c%c%c%c%c%c%c%c\n",DVLB,DHSB,DHSB,DHSB,DC,DHSB,DHSB,DHSB,DVRB);
-        printf ("%c   %c   %c\n",DVSB,DVSB,DVSB);
-        printf ("%c%c%c%c%c%c%c%c%c\n",DBLC,DHSB,DHSB,DHSB,DHBB,DHSB,DHSB,DHSB,DBRC); */
 
 
      //printf("\n\n\n%d",ch);
@@ -123,7 +184,6 @@ printf("\n\ngrille fixe");
         if(ch == 50)
         {
             system("cls");
-            position =  49;
             affichageGrille();
         }
         printf("\n\n\n\n");
@@ -174,12 +234,10 @@ void principal(){
             case 59 :
                 system("cls");
                 afficher_aide();
-                position = 59;
                 break;
             case 13:
                 system("cls");
                 menuGrilles();
-                position = 13;
                 break;
             case 27:
                 break;
