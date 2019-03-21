@@ -1,17 +1,16 @@
-Procédure de qualification : 88600/1/2/3 Informaticien/ne CFC (Ordonnance 2014) Cahier des charges
+# Bataille Navale
 
-
-# DESCRIPTIF DU PROJET
-
-## 1 Généralités
-
+## 1. Description
 Il s’agit d’un jeu implémentant les règles de la bataille navale. Ce projet a pour objectifs de:
 
-    ● Entrainer les apprenants à la réalisation d’un logiciel sur la base d’un cahier des charges
-    ● Offrir un aperçu aux apprenants du travail certificatif du CFC (TPI)
-    ● Réaliser de A-Z un programme en C.
+- Programmer le jeu de la Bataille Navale
+- Entrainer les apprenants à la réalisation d’un logiciel sur la base d’un cahier des charges
+- Offrir un aperçu aux apprenants du travail certificatif du CFC (TPI)
+- Réaliser de A-Z un programme en C.
+<br><br>
 
-## 2 Fonctionnalités minimales
+
+## 2. Fonctionnalités minimales
 
 Le type d’application C demandé doit offrir les fonctionnalités minimales suivantes :
 
@@ -27,10 +26,30 @@ Le type d’application C demandé doit offrir les fonctionnalités minimales su
       • Le programme choisit une grille au hasard dans un répertoire et la charge
       • Afficher la liste des scores atteints lors des parties précédentes
 
-### Notes :
+## 3. Génération
 
-      • Des fichiers seront utilisés pour la persistance des données.
-      • Un menu de type console sera utilisé pour accéder aux différentes fonctionnalités.
-      • Une extension pourra être envisagée pour ceux qui auraient terminé toutes les
-    fonctionnalités avant la fin du temps imparti. Elle sera à discuter entre l’élève et le
-    mandant du projet.
+Vous aurez besoin de:
+
+- Windows 7 révolu
+- un IDE pour c (conseil: Clion)
+- Une Invite de Commande
+
+
+Pour générer l'exécutable, vous devez:
+
+1. cloner
+1. ouvrir avec Clion
+1. Lancer le programme
+1. Build
+
+
+
+<br><br>
+## 4. Exécution
+
+Pour exécuter le programme, vous devez:
+
+1. Copy executable way
+1. open the cmd
+1. paste
+1. execute
