@@ -1,3 +1,8 @@
+// Auteur : Johnny Vaca
+// Date   : 7 mars 2019
+// Descriptions : Bataille Navale
+
+
 #include <stdio.h>
 #include <conio.h>
 #include <windows.h>
