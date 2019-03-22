@@ -1,12 +1,10 @@
 // Auteur : Johnny Vaca
 // Date   : 7 mars 2019
 // Descriptions : Bataille Navale
-
-
 #include <stdio.h>
 #include <conio.h>
 #include <windows.h>
-#define TAB_SIZE 10
+#define TAB_SIZE 26
 void full_screen(){
     keybd_event(VK_F11,0,0,0); //Appuie sur ALT
   //   keybd_event(VK_F11,0,KEYEVENTF_KEYUP,0); // Relache ENTREE
@@ -22,17 +20,7 @@ void full_screen(){
 }
 void raccourcis(){
 
-#define STLC 218 // ┌, Single Top Left Corner
-#define STRC 191 // ┐, Single Top Right Corner
-#define SBLC 192 // └, Single Bottom Left Corner
-#define SBRC 217 // ┘, Single Bottom Right Corner
-#define SVSB 179 // │, Single Vertical Simple Border
-#define SVRB 180 // ┤, Single Vertical Right Border
-#define SVLB 195 // ├, Single Vertical Left Border
-#define SHSB 196 // ─, Single Horizontal Simple Border
-#define SHBB 193 // ┴, Single Horizontal Bottom Border
-#define SHTB 194 // ┬, Single Horizontal Top Border
-#define SC   197 // ┼, Single Center
+
 #define DTLC 201 // ╔, Double Top Left Corner
 #define DTRC 187 // ╗, Double Top Right Corner
 #define DBLC 200 // ╚, Double Bottom Left Corner
@@ -45,6 +33,54 @@ void raccourcis(){
 #define DHTB 203 // ╦, Double Horizontal Top Border
 #define DC   206 // ╬, Double Center
 };
+void body()
+{
+    for (int j = 0; j < TAB_SIZE; ++j) {
+
+        for (int i = 0; i < TAB_SIZE ; ++i) {
+            if(i == 0)
+            {
+                if(j >=9)
+                {
+                    printf("%d",j+1);
+                } else
+                {
+                    printf(" %d",j+1);
+                }
+
+
+            }
+
+            printf("    %c",DVSB);
+
+
+
+
+        }
+        printf("    %c",DVSB);
+        printf("\n");
+        if(j != TAB_SIZE-1)
+        {
+            for (int i = 0; i < TAB_SIZE ; ++i) {
+                if(i == 0)
+                {
+                    printf("      %c",DVLB);
+                }
+                else
+                {
+                    printf("%c",DC);
+                }
+                printf("%c%c%c%c",DHSB,DHSB,DHSB,DHSB);
+                if(i == TAB_SIZE-1)
+                {
+                    printf("%c",DVRB);
+                }
+            }
+            printf("\n");
+        }
+
+    }
+}
 void logo() {
     printf("              ____        _        _ _ _        _    _                  _      \n"
            "             |  _ \\     | |      (_) | |      | \\ | |                | |     \n"
@@ -83,16 +119,16 @@ void top()
     for (int i = 0; i < TAB_SIZE; ++i) {
         if(i == 0)
         {
-            printf("         %c   ",i+'A');
+            printf("        %c  ",i+'A');
         }
         else
         {
-            printf("       %c   ",i+'A');
+            printf("  %c  ",'A'+i);
         }
 
     }
     printf("\n");
-    printf("     %c",DTLC);
+    printf("      %c",DTLC);
     for (int i = 0; i < TAB_SIZE -1; ++i) {
         printf("%c%c%c%c%c",DHSB,DHSB,DHSB,DHSB,DHTB);
     }
@@ -100,60 +136,13 @@ void top()
    printf("\n");
 
 }
-void body()
-{
-    for (int j = 0; j < TAB_SIZE; ++j) {
 
-        for (int i = 0; i < TAB_SIZE ; ++i) {
-            if(i == 0)
-            {
-                if(j >=9)
-                {
-                    printf("%d",j+1);
-                } else
-                {
-                    printf("%d",j+1);
-                }
-
-
-            }
-
-                printf("    %c",DVSB);
-
-
-
-
-        }
-        printf("    %c",DVSB);
-        printf("\n");
-        if(j != TAB_SIZE-1)
-        {
-            for (int i = 0; i < TAB_SIZE ; ++i) {
-                if(i == 0)
-                {
-                    printf("     %c",DVLB);
-                }
-                else
-                {
-                    printf("%c",DC);
-                }
-                printf("%c%c%c%c",DHSB,DHSB,DHSB,DHSB);
-                if(i == TAB_SIZE-1)
-                {
-                    printf("%c",DVRB);
-                }
-            }
-            printf("\n");
-        }
-
-    }
-}
 void bottom()
 {
     SetConsoleOutputCP(65001); // For accented characters
     SetConsoleOutputCP(437); // For semi-graphic characters
 
-    printf("     %c",DBLC);
+    printf("      %c",DBLC);
     for (int i = 0; i < TAB_SIZE -1; ++i) {
         printf("%c%c%c%c%c",DHSB,DHSB,DHSB,DHSB,DHBB);
     }

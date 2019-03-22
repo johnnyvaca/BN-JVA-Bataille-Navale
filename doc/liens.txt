@@ -10,3 +10,22 @@ Position of text :   https://www.youtube.com/watch?v=nz9eOk5XOtI&ab_channel=Kevi
 
 
 raccoursis .^: https://tcharles.developpez.com/simul/
+
+
+
+
+
+
+
+
+#define STLC 218 // +, Single Top Left Corner
+#define STRC 191 // +, Single Top Right Corner
+#define SBLC 192 // +, Single Bottom Left Corner
+#define SBRC 217 // +, Single Bottom Right Corner
+#define SVSB 179 // ¦, Single Vertical Simple Border
+#define SVRB 180 // ¦, Single Vertical Right Border
+#define SVLB 195 // +, Single Vertical Left Border
+#define SHSB 196 // -, Single Horizontal Simple Border
+#define SHBB 193 // -, Single Horizontal Bottom Border
+#define SHTB 194 // -, Single Horizontal Top Border
+#define SC   197 // +, Single Center
