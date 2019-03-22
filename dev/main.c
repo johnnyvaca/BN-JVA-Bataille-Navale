@@ -175,10 +175,6 @@ bottom();
     do {
             //system("cls");
 
-
-
-
-
      //printf("\n\n\n%d",ch);
         ch = _getch();
     } while (ch != 27);
