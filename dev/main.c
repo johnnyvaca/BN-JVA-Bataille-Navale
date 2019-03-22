@@ -103,33 +103,28 @@ void top()
 void body()
 {
     for (int j = 0; j < TAB_SIZE; ++j) {
-        printf("  ",j);
+
         for (int i = 0; i < TAB_SIZE ; ++i) {
             if(i == 0)
             {
-                if(i <10)
+                if(j >=9)
                 {
-                    printf("%d  ",j+1);
-                }
-                else
+                    printf("%d",j+1);
+                } else
                 {
                     printf("%d",j+1);
                 }
 
+
             }
-            if(i <10)
-            {
-                printf("%c   ",DVSB);
-            }
-            else
-            {
-                printf("%c",DVSB);
-            }
+
+                printf("    %c",DVSB);
+
 
 
 
         }
-        printf(" %c",DVSB);
+        printf("    %c",DVSB);
         printf("\n");
         if(j != TAB_SIZE-1)
         {
@@ -155,7 +150,6 @@ void body()
 }
 void bottom()
 {
-#pragma execution_caracter_set("UTF-8")
     SetConsoleOutputCP(65001); // For accented characters
     SetConsoleOutputCP(437); // For semi-graphic characters
 
