@@ -233,7 +233,6 @@ int principal(){
         system("cls");
         menu();
         touche = _getch();
-        printf("\n\n%d\n\n", touche);
         switch (touche) {
             case 59 :
                 system("cls");
@@ -265,5 +264,5 @@ int main() {
         principal();
 
 
-
+    return 0;
 }
