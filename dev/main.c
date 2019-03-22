@@ -4,7 +4,22 @@
 #include <stdio.h>
 #include <conio.h>
 #include <windows.h>
-#define TAB_SIZE 26
+#define TAB_SIZE 10
+
+int grilleFixe[TAB_SIZE][TAB_SIZE] = {
+        {1,0,0,0,0,0,0,0,0,1},
+        {2,0,5,5,5,5,5,0,0,3},
+        {2,0,0,0,0,0,0,0,0,3},
+        {0,0,3,0,0,0,0,0,0,3},
+        {0,0,3,0,1,1,0,0,0,0},
+        {0,0,3,0,1,1,0,0,0,0},
+        {0,0,0,0,0,0,0,0,0,0},
+        {0,0,0,0,0,0,4,4,4,4},
+        {0,0,0,0,0,0,0,0,0,0},
+        {1,0,0,0,0,0,0,0,0,1}
+};
+
+
 void full_screen(){
     keybd_event(VK_F11,0,0,0); //Appuie sur ALT
   //   keybd_event(VK_F11,0,KEYEVENTF_KEYUP,0); // Relache ENTREE
@@ -33,6 +48,8 @@ void raccourcis(){
 #define DHTB 203 // ╦, Double Horizontal Top Border
 #define DC   206 // ╬, Double Center
 };
+
+
 void body()
 {
     for (int j = 0; j < TAB_SIZE; ++j) {
@@ -50,14 +67,23 @@ void body()
 
 
             }
+if(i == 0)
+{
+    printf("    %c  %d ",DVSB, grilleFixe[j][i]);
+}
+else
+{
+printf("%c  %d ",DVSB,grilleFixe[j][i]);
 
-            printf("    %c",DVSB);
+}
+
 
 
 
 
         }
-        printf("    %c",DVSB);
+
+        printf("%c",DVSB);
         printf("\n");
         if(j != TAB_SIZE-1)
         {
@@ -254,6 +280,9 @@ int principal(){
     return 0;
 }
 int main() {
+
+
+
 #pragma execution_caracter_set("UTF-8")
     SetConsoleOutputCP(CP_UTF8); // For accented characters
 
@@ -262,6 +291,13 @@ int main() {
     system("color f1");
     menu();
         principal();
+
+
+    for (int i = 0; i < TAB_SIZE; ++i) {
+        for (int j = 0; j <     TAB_SIZE; ++j) {
+            printf("%d",grilleFixe[i][j]);
+        }printf("\n");
+    }
 
 
     return 0;
