@@ -242,7 +242,7 @@ void afficher_aide() {
 
     } while (ch != 27);
 }
-void principal(){
+int principal(){
     int touche;
 
     do {
@@ -268,8 +268,8 @@ void principal(){
         }
 
     } while (touche != 27 );
-    system("cls");
 
+    return 0;
 }
 int main() {
 #pragma execution_caracter_set("UTF-8")
@@ -282,5 +282,5 @@ int main() {
         principal();
 
 
-    return 0;
+
 }
