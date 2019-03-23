@@ -69,13 +69,13 @@ void body()
             }
 if(i == 0)
 {
-    printf("    %c  %d ",DVSB, grilleFixe[j][i]);
+    printf("    ");
 }
-else
-{
-printf("%c  %d ",DVSB,grilleFixe[j][i]);
 
-}
+printf("%c  ",DVSB);
+printf("%d ",grilleFixe[j][i]);
+
+
 
 
 
