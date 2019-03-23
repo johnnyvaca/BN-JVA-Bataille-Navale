@@ -12,6 +12,44 @@ void color(int couleurDuTexte,int couleurDeFond) // fonction d'affichage de coul
     SetConsoleTextAttribute(H,couleurDeFond*16+couleurDuTexte);
 }
 
+
+
+
+void full_screen(){
+    keybd_event(VK_F11,0,0,0); //Appuie sur ALT
+    //   keybd_event(VK_F11,0,KEYEVENTF_KEYUP,0); // Relache ENTREE
+    //keybd_event(VK_MENU,0x38,0,0); //Appuie sur ALT
+    //keybd_event(VK_RETURN,0x1c,0,0); //Appuie ENTREE
+
+    //keybd_event(VK_MENU,0x38,KEYEVENTF_KEYUP,0); //Relache ALT
+    //   keybd_event(VK_F11,0x79,0,0); //Appuie sur ALT
+//keybd_event(VK_RETURN,0x1c,0,0); //Appuie ENTREE
+//keybd_event(VK_RETURN,0x1c,KEYEVENTF_KEYUP,0); // Relache ENTREE
+    // keybd_event(VK_F11,0x79,KEYEVENTF_KEYUP,0); //Relache ALT
+//Suite du code...
+}
+void raccourcis(){
+
+
+#define DTLC 201 // +, Double Top Left Corner
+#define DTRC 187 // +, Double Top Right Corner
+#define DBLC 200 // +, Double Bottom Left Corner
+#define DBRC 188 // +, Double Bottom Right Corner
+#define DVSB 186 // �, Double Vertical Simple Border
+#define DVRB 185 // �, Double Vertical Right Border
+#define DVLB 204 // �, Double Vertical Left Border
+#define DHSB 205 // -, Double Horizontal Simple Border
+#define DHBB 202 // -, Double Horizontal Bottom Border
+#define DHTB 203 // -, Double Horizontal Top Border
+#define DC   206 // +, Double Center
+#define BLEU  17 //, BLEU SUR BLEU
+#define BLEU_BLANC  241 //, BLEU SUR BLANC
+#define BLANC  255 //, BLANC SUR BLANC
+#define NOIR  0 //, NOIR
+#define ROUGE  68 //, ROUGE
+
+};
+
 int grilleFixe[TAB_SIZE][TAB_SIZE] = {
         {1,0,0,0,0,0,0,0,0,1},
         {2,0,5,5,5,5,5,0,0,3},
@@ -24,43 +62,14 @@ int grilleFixe[TAB_SIZE][TAB_SIZE] = {
         {0,0,0,0,0,0,0,0,0,0},
         {1,0,0,0,0,0,0,0,0,1}
 };
-
-
-void full_screen(){
-    keybd_event(VK_F11,0,0,0); //Appuie sur ALT
-  //   keybd_event(VK_F11,0,KEYEVENTF_KEYUP,0); // Relache ENTREE
-    //keybd_event(VK_MENU,0x38,0,0); //Appuie sur ALT
-    //keybd_event(VK_RETURN,0x1c,0,0); //Appuie ENTREE
-
-    //keybd_event(VK_MENU,0x38,KEYEVENTF_KEYUP,0); //Relache ALT
- //   keybd_event(VK_F11,0x79,0,0); //Appuie sur ALT
-//keybd_event(VK_RETURN,0x1c,0,0); //Appuie ENTREE
-//keybd_event(VK_RETURN,0x1c,KEYEVENTF_KEYUP,0); // Relache ENTREE
-   // keybd_event(VK_F11,0x79,KEYEVENTF_KEYUP,0); //Relache ALT
-//Suite du code...
-}
-void raccourcis(){
-
-
-#define DTLC 201 // ╔, Double Top Left Corner
-#define DTRC 187 // ╗, Double Top Right Corner
-#define DBLC 200 // ╚, Double Bottom Left Corner
-#define DBRC 188 // ╝, Double Bottom Right Corner
-#define DVSB 186 // ║, Double Vertical Simple Border
-#define DVRB 185 // ╣, Double Vertical Right Border
-#define DVLB 204 // ╠, Double Vertical Left Border
-#define DHSB 205 // ═, Double Horizontal Simple Border
-#define DHBB 202 // ╩, Double Horizontal Bottom Border
-#define DHTB 203 // ╦, Double Horizontal Top Border
-#define DC   206 // ╬, Double Center
-};
-
-
 void body()
 {
+
     for (int j = 0; j < TAB_SIZE; ++j) {
 
         for (int i = 0; i < TAB_SIZE ; ++i) {
+            SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),241 );
+
             if(i == 0)
             {
                 if(j >=9)
@@ -73,14 +82,16 @@ void body()
 
 
             }
-if(i == 0)
-{
-    printf("    ");
-}
-color(9,15);
-printf("%c",DVSB);
+            if(i == 0)
+            {
+                SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),BLEU_BLANC );
+                printf("    ");
+            }
+            printf("%c",DVSB);
 
-printf("%c%c%c%c",219,219,219,219);
+
+            printf("    ");
+
 
 
 
@@ -89,12 +100,13 @@ printf("%c%c%c%c",219,219,219,219);
 
 
         }
-
+        SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),BLEU_BLANC );
         printf("%c",DVSB);
         printf("\n");
         if(j != TAB_SIZE-1)
         {
             for (int i = 0; i < TAB_SIZE ; ++i) {
+                SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),BLEU_BLANC);
                 if(i == 0)
                 {
                     printf("      %c",DVLB);
@@ -113,9 +125,10 @@ printf("%c%c%c%c",219,219,219,219);
         }
 
     }
+
 }
 void logo() {
-    color(9,15);
+
     printf("              ____        _        _ _ _        _    _                  _      \n"
            "             |  _ \\     | |      (_) | |      | \\ | |                | |     \n"
            "             | |_) | __ _| |_ __ _ _| | | ___  |  \\| | __ ___   ____ _| | ___ \n"
@@ -125,7 +138,7 @@ void logo() {
     printf("\n\n\n\n");
 }
 void menu() {
-    color(9,15);
+
     logo();
 
     printf("                                        |    |    |\n"
@@ -168,7 +181,7 @@ void top()
         printf("%c%c%c%c%c",DHSB,DHSB,DHSB,DHSB,DHTB);
     }
     printf("%c%c%c%c%c",DHSB,DHSB,DHSB,DHSB,DTRC);
-   printf("\n");
+    printf("\n");
 
 }
 
@@ -185,28 +198,29 @@ void bottom()
     printf("%c%c%c%c%c",DHSB,DHSB,DHSB,DHSB,DBRC);
 }
 void affichageGrille() {
-    color(9,15);
+
     raccourcis();
     int ch;
-top();
-body();
-bottom();
+    top();
+    body();
+    bottom();
 
     do {
-            //system("cls");
+        //system("cls");
 
-     //printf("\n\n\n%d",ch);
+        //printf("\n\n\n%d",ch);
         ch = _getch();
     } while (ch != 27);
-system("cls");
+    system("cls");
 
 }
 void menuGrilles() {
-    color(9,15);
+
     int ch = -1;
 
 
     do {
+
         system("cls");
 
         logo();
@@ -220,8 +234,8 @@ void menuGrilles() {
             printf("CETTE MER N'EXISTE PAS !!!");
         }
         if (ch == 49) {
-system("cls");
-printf("\n\ngrille fixe");
+            system("cls");
+            printf("\n\ngrille fixe");
         }
         if(ch == 50)
         {
@@ -236,7 +250,7 @@ printf("\n\ngrille fixe");
     } while (ch != 27);
 }
 void afficher_aide() {
-    color(9,15);
+
 #pragma execution_caracter_set("UTF-8")
     SetConsoleOutputCP(CP_UTF8); // For accented characters
     int ch;
@@ -252,11 +266,11 @@ void afficher_aide() {
            "                                                            \n"
            "                                                             ");
     printf("\n\n\n\n\n");
-    printf("La bataille navale oppose deux joueurs qui s'affrontent. Chacun a une flotte composée de 5 bateaux, qui sont, en général, les suivants : 1 porte-avion (5 cases), 1 croiseur (4 cases), 1 contre-torpilleur (3 cases), 1 sous-marin (3 cases), 1 torpilleur (2 cases). \n"
+    printf("La bataille navale oppose deux joueurs qui s'affrontent. Chacun a une flotte compos�e de 5 bateaux, qui sont, en g�n�ral, les suivants : 1 porte-avion (5 cases), 1 croiseur (4 cases), 1 contre-torpilleur (3 cases), 1 sous-marin (3 cases), 1 torpilleur (2 cases). \n"
            "\n"
-           "Au début du jeu, chaque joueur place ses bateaux sur sa grille. Celle-ci est toujours numérotée de A à J verticalement et de 1 à 10 horizontalement. Un à un, les joueurs vont \"tirer\" sur une case de l'adversaire : par exemple, B.3 ou encore H.8. Le but est donc de couler les bateaux adverses. Au fur et à mesure, il faut mettre les pions sur sa propre grille afin de se souvenir de ses tirs passés.[réf. nécessaire]\n"
+           "Au d�but du jeu, chaque joueur place ses bateaux sur sa grille. Celle-ci est toujours num�rot�e de A � J verticalement et de 1 � 10 horizontalement. Un � un, les joueurs vont \"tirer\" sur une case de l'adversaire : par exemple, B.3 ou encore H.8. Le but est donc de couler les bateaux adverses. Au fur et � mesure, il faut mettre les pions sur sa propre grille afin de se souvenir de ses tirs pass�s.[r�f. n�cessaire]\n"
            "\n"
-           "Un fonctionnement plus sophistiqué mettant en œuvre de la stratégie est de tirer une salve (trois coups par exemple) et de donner le résultat global de la salve.");
+           "Un fonctionnement plus sophistiqu� mettant en �uvre de la strat�gie est de tirer une salve (trois coups par exemple) et de donner le r�sultat global de la salve.");
     printf("\n\n\n\n");
     printf("                                                                                                                                       ESCAPE:   POUR RETOURNER EN ARRIERE");
     do {
@@ -266,7 +280,7 @@ void afficher_aide() {
 }
 int principal(){
     int touche;
-    color(9,15);
+
     do {
 
         system("cls");
@@ -299,19 +313,14 @@ int main() {
 #pragma execution_caracter_set("UTF-8")
     SetConsoleOutputCP(CP_UTF8); // For accented characters
 
-        keybd_event(VK_F11,0,0,0); //Appuie sur ALT
-        keybd_event(VK_F11,0,KEYEVENTF_KEYUP,0); // Relache ENTREE
-  //  system("color f1");
-    color(9,15);
+    keybd_event(VK_F11,0,0,0); //Appuie sur ALT
+    keybd_event(VK_F11,0,KEYEVENTF_KEYUP,0); // Relache ENTREE
+
+    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),BLEU_BLANC );
     menu();
-        principal();
+    principal();
 
 
-    for (int i = 0; i < TAB_SIZE; ++i) {
-        for (int j = 0; j <     TAB_SIZE; ++j) {
-            printf("%d",grilleFixe[i][j]);
-        }printf("\n");
-    }
 
 
     return 0;
