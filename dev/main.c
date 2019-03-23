@@ -6,6 +6,12 @@
 #include <windows.h>
 #define TAB_SIZE 10
 
+void color(int couleurDuTexte,int couleurDeFond) // fonction d'affichage de couleurs
+{
+    HANDLE H=GetStdHandle(STD_OUTPUT_HANDLE);
+    SetConsoleTextAttribute(H,couleurDeFond*16+couleurDuTexte);
+}
+
 int grilleFixe[TAB_SIZE][TAB_SIZE] = {
         {1,0,0,0,0,0,0,0,0,1},
         {2,0,5,5,5,5,5,0,0,3},
@@ -71,9 +77,10 @@ if(i == 0)
 {
     printf("    ");
 }
+color(9,15);
+printf("%c",DVSB);
 
-printf("%c  ",DVSB);
-printf("%d ",grilleFixe[j][i]);
+printf("%c%c%c%c",219,219,219,219);
 
 
 
@@ -108,6 +115,7 @@ printf("%d ",grilleFixe[j][i]);
     }
 }
 void logo() {
+    color(9,15);
     printf("              ____        _        _ _ _        _    _                  _      \n"
            "             |  _ \\     | |      (_) | |      | \\ | |                | |     \n"
            "             | |_) | __ _| |_ __ _ _| | | ___  |  \\| | __ ___   ____ _| | ___ \n"
@@ -117,6 +125,7 @@ void logo() {
     printf("\n\n\n\n");
 }
 void menu() {
+    color(9,15);
     logo();
 
     printf("                                        |    |    |\n"
@@ -165,6 +174,7 @@ void top()
 
 void bottom()
 {
+
     SetConsoleOutputCP(65001); // For accented characters
     SetConsoleOutputCP(437); // For semi-graphic characters
 
@@ -175,6 +185,7 @@ void bottom()
     printf("%c%c%c%c%c",DHSB,DHSB,DHSB,DHSB,DBRC);
 }
 void affichageGrille() {
+    color(9,15);
     raccourcis();
     int ch;
 top();
@@ -191,6 +202,7 @@ system("cls");
 
 }
 void menuGrilles() {
+    color(9,15);
     int ch = -1;
 
 
@@ -224,6 +236,7 @@ printf("\n\ngrille fixe");
     } while (ch != 27);
 }
 void afficher_aide() {
+    color(9,15);
 #pragma execution_caracter_set("UTF-8")
     SetConsoleOutputCP(CP_UTF8); // For accented characters
     int ch;
@@ -253,7 +266,7 @@ void afficher_aide() {
 }
 int principal(){
     int touche;
-
+    color(9,15);
     do {
 
         system("cls");
@@ -288,7 +301,8 @@ int main() {
 
         keybd_event(VK_F11,0,0,0); //Appuie sur ALT
         keybd_event(VK_F11,0,KEYEVENTF_KEYUP,0); // Relache ENTREE
-    system("color f1");
+  //  system("color f1");
+    color(9,15);
     menu();
         principal();
 
