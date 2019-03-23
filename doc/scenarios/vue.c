@@ -71,23 +71,23 @@ void body()
             }
             printf("%c",DVSB);
 
-            if(grilleFixe[j][i] == VIDE)
-            {
-                SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),BLANC );
-            }
-            else
-            {
-                if(grilleFixe[j][i] == RATE)
-                {
-                    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),BLEU );
-                }
-                else
-                {
+if(grilleFixe[j][i] == VIDE)
+{
+    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),BLANC );
+}
+else
+{
+    if(grilleFixe[j][i] == RATE)
+    {
+        SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),BLEU );
+    }
+    else
+    {
 
-                    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),ROUGE );
-                }
+        SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),ROUGE );
+    }
 
-            }
+}
 
             printf("%c%c%c%c", 219, 219, 219, 219);
 
@@ -125,30 +125,30 @@ void body()
 
 }
 void logo() {
-//printf("                                                          ");
-    printf("                                                                        ____        _        _ _ _        _    _                  _      \n"
-           "                                                                       |  _ \\     | |      (_) | |      | \\ | |                | |     \n"
-           "                                                                       | |_) | __ _| |_ __ _ _| | | ___  |  \\| | __ ___   ____ _| | ___ \n"
-           "                                                                       |  _ < / _` | __/ _` | | | |/ _ \\ | . ` |/ _` \\ \\ / / _` | |/ _ \\\n"
-           "                                                                       | |_) | (_| | || (_| | | | |  __/ | |\\  | (_| |\\ V / (_| | |  __/\n"
-           "                                                                       |____/ \\__,_|\\__\\__,_|_|_|_|\\___| |_| \\_|\\__,_| \\_/ \\__,_|_|\\___|");
+
+    printf("              ____        _        _ _ _        _    _                  _      \n"
+           "             |  _ \\     | |      (_) | |      | \\ | |                | |     \n"
+           "             | |_) | __ _| |_ __ _ _| | | ___  |  \\| | __ ___   ____ _| | ___ \n"
+           "             |  _ < / _` | __/ _` | | | |/ _ \\ | . ` |/ _` \\ \\ / / _` | |/ _ \\\n"
+           "             | |_) | (_| | || (_| | | | |  __/ | |\\  | (_| |\\ V / (_| | |  __/\n"
+           "             |____/ \\__,_|\\__\\__,_|_|_|_|\\___| |_| \\_|\\__,_| \\_/ \\__,_|_|\\___|");
     printf("\n\n\n\n");
 }
 void menu() {
 
     logo();
 
-    printf("                                                                                                  |    |    |\n"
-           "                                                                                                 )_)  )_)  )_)\n"
-           "                                                                                                )___))___))___)\\\n"
-           "                                                                                               )____)____)_____)\\\\\n"
-           "                                                                                             _____|____|____|____\\\\\\__\n"
-           "                                                                                    ---------\\                   /---------\n"
-           "                                                                                      ^^^^^ ^^^^^^^^^^^^^^^^^^^^^\n"
-           "                                                                                        ^^^^      ^^^^     ^^^    ^^\n"
-           "                                                                                             ^^^^      ^^^\n"
-           "                                                                                    \n"
-           "                                                          ---------------------------------------------------------------------------------------------------------\n");
+    printf("                                        |    |    |\n"
+           "                                       )_)  )_)  )_)\n"
+           "                                      )___))___))___)\\\n"
+           "                                     )____)____)_____)\\\\\n"
+           "                                   _____|____|____|____\\\\\\__\n"
+           "                          ---------\\                   /---------\n"
+           "                            ^^^^^ ^^^^^^^^^^^^^^^^^^^^^\n"
+           "                              ^^^^      ^^^^     ^^^    ^^\n"
+           "                                   ^^^^      ^^^\n"
+           "                          \n"
+           "---------------------------------------------------------------------------------------------------------\n");
     printf("\n\n\n\n\n\n\n");
     printf("APPUYER SUR ENTER POUR JOUER");
     printf("                                                                    ");
@@ -181,6 +181,7 @@ void top()
     printf("\n");
 
 }
+
 void bottom()
 {
 
@@ -214,15 +215,16 @@ void menuGrilles() {
 
     int ch = -1;
 
+
     do {
 
         system("cls");
 
         logo();
-        printf("                                                                                        CHOISISSEZ VOTRE MER...");
+        printf("                              CHOISISSEZ VOTRE MER...");
         printf("\n\n\n      ");
-        printf("                                                                                             1. MER FIXE\n");
-        printf("                                                                                             2. AFFICHAGE GRILLE");
+        printf("                                   1. MER FIXE\n");
+        printf("                                   2. AFFICHAGE GRILLE");
         printf("\n\n\n\n");
         if (ch != 49 && ch != -1 ) {
             printf("                                                           ");
@@ -237,8 +239,7 @@ void menuGrilles() {
             system("cls");
             affichageGrille();
         }
-        printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
-
+        printf("\n\n\n\n");
         printf("APPUYER SUR LE NUMERO CORRESPONDANT POUR CONTINUER :   ");
         printf("                                                                                            ESCAPE:   POUR RETOURNER EN ARRIERE");
         ch = _getch();
