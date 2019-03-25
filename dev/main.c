@@ -6,8 +6,28 @@
 #include <windows.h>
 #define TAB_SIZE 10
 
+void color(int couleurDuTexte,int couleurDeFond) // fonction d'affichage de couleurs
+{
+    HANDLE H=GetStdHandle(STD_OUTPUT_HANDLE);
+    SetConsoleTextAttribute(H,couleurDeFond*16+couleurDuTexte);
+}
 
 
+
+
+void full_screen(){
+    keybd_event(VK_F11,0,0,0); //Appuie sur ALT
+    //   keybd_event(VK_F11,0,KEYEVENTF_KEYUP,0); // Relache ENTREE
+    //keybd_event(VK_MENU,0x38,0,0); //Appuie sur ALT
+    //keybd_event(VK_RETURN,0x1c,0,0); //Appuie ENTREE
+
+    //keybd_event(VK_MENU,0x38,KEYEVENTF_KEYUP,0); //Relache ALT
+    //   keybd_event(VK_F11,0x79,0,0); //Appuie sur ALT
+//keybd_event(VK_RETURN,0x1c,0,0); //Appuie ENTREE
+//keybd_event(VK_RETURN,0x1c,KEYEVENTF_KEYUP,0); // Relache ENTREE
+    // keybd_event(VK_F11,0x79,KEYEVENTF_KEYUP,0); //Relache ALT
+//Suite du code...
+}
 void raccourcis(){
 
 
@@ -15,9 +35,9 @@ void raccourcis(){
 #define DTRC 187 // +, Double Top Right Corner
 #define DBLC 200 // +, Double Bottom Left Corner
 #define DBRC 188 // +, Double Bottom Right Corner
-#define DVSB 186 // ?, Double Vertical Simple Border
-#define DVRB 185 // ?, Double Vertical Right Border
-#define DVLB 204 // ?, Double Vertical Left Border
+#define DVSB 186 // �, Double Vertical Simple Border
+#define DVRB 185 // �, Double Vertical Right Border
+#define DVLB 204 // �, Double Vertical Left Border
 #define DHSB 205 // -, Double Horizontal Simple Border
 #define DHBB 202 // -, Double Horizontal Bottom Border
 #define DHTB 203 // -, Double Horizontal Top Border
@@ -27,9 +47,7 @@ void raccourcis(){
 #define BLANC  255 //, BLANC SUR BLANC
 #define NOIR  0 //, NOIR
 #define ROUGE  68 //, ROUGE
-#define VIDE  0
-#define RATE  1
-#define COULER  2
+
 };
 
 int grilleFixe[TAB_SIZE][TAB_SIZE] = {
@@ -50,7 +68,7 @@ void body()
     for (int j = 0; j < TAB_SIZE; ++j) {
 
         for (int i = 0; i < TAB_SIZE ; ++i) {
-            SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),BLEU_BLANC );
+            SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),241 );
 
             if(i == 0)
             {
@@ -71,25 +89,10 @@ void body()
             }
             printf("%c",DVSB);
 
-            if(grilleFixe[j][i] == VIDE)
-            {
-                SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),BLANC );
-            }
-            else
-            {
-                if(grilleFixe[j][i] == RATE)
-                {
-                    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),BLEU );
-                }
-                else
-                {
 
-                    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),ROUGE );
-                }
+            printf("    ");
 
-            }
 
-            printf("%c%c%c%c", 219, 219, 219, 219);
 
 
 
@@ -125,30 +128,30 @@ void body()
 
 }
 void logo() {
-//printf("                                                          ");
-    printf("                                                                        ____        _        _ _ _        _    _                  _      \n"
-           "                                                                       |  _ \\     | |      (_) | |      | \\ | |                | |     \n"
-           "                                                                       | |_) | __ _| |_ __ _ _| | | ___  |  \\| | __ ___   ____ _| | ___ \n"
-           "                                                                       |  _ < / _` | __/ _` | | | |/ _ \\ | . ` |/ _` \\ \\ / / _` | |/ _ \\\n"
-           "                                                                       | |_) | (_| | || (_| | | | |  __/ | |\\  | (_| |\\ V / (_| | |  __/\n"
-           "                                                                       |____/ \\__,_|\\__\\__,_|_|_|_|\\___| |_| \\_|\\__,_| \\_/ \\__,_|_|\\___|");
+
+    printf("              ____        _        _ _ _        _    _                  _      \n"
+           "             |  _ \\     | |      (_) | |      | \\ | |                | |     \n"
+           "             | |_) | __ _| |_ __ _ _| | | ___  |  \\| | __ ___   ____ _| | ___ \n"
+           "             |  _ < / _` | __/ _` | | | |/ _ \\ | . ` |/ _` \\ \\ / / _` | |/ _ \\\n"
+           "             | |_) | (_| | || (_| | | | |  __/ | |\\  | (_| |\\ V / (_| | |  __/\n"
+           "             |____/ \\__,_|\\__\\__,_|_|_|_|\\___| |_| \\_|\\__,_| \\_/ \\__,_|_|\\___|");
     printf("\n\n\n\n");
 }
 void menu() {
 
     logo();
 
-    printf("                                                                                                  |    |    |\n"
-           "                                                                                                 )_)  )_)  )_)\n"
-           "                                                                                                )___))___))___)\\\n"
-           "                                                                                               )____)____)_____)\\\\\n"
-           "                                                                                             _____|____|____|____\\\\\\__\n"
-           "                                                                                    ---------\\                   /---------\n"
-           "                                                                                      ^^^^^ ^^^^^^^^^^^^^^^^^^^^^\n"
-           "                                                                                        ^^^^      ^^^^     ^^^    ^^\n"
-           "                                                                                             ^^^^      ^^^\n"
-           "                                                                                    \n"
-           "                                                          ---------------------------------------------------------------------------------------------------------\n");
+    printf("                                        |    |    |\n"
+           "                                       )_)  )_)  )_)\n"
+           "                                      )___))___))___)\\\n"
+           "                                     )____)____)_____)\\\\\n"
+           "                                   _____|____|____|____\\\\\\__\n"
+           "                          ---------\\                   /---------\n"
+           "                            ^^^^^ ^^^^^^^^^^^^^^^^^^^^^\n"
+           "                              ^^^^      ^^^^     ^^^    ^^\n"
+           "                                   ^^^^      ^^^\n"
+           "                          \n"
+           "---------------------------------------------------------------------------------------------------------\n");
     printf("\n\n\n\n\n\n\n");
     printf("APPUYER SUR ENTER POUR JOUER");
     printf("                                                                    ");
@@ -181,6 +184,7 @@ void top()
     printf("\n");
 
 }
+
 void bottom()
 {
 
@@ -214,15 +218,16 @@ void menuGrilles() {
 
     int ch = -1;
 
+
     do {
 
         system("cls");
 
         logo();
-        printf("                                                                                        CHOISISSEZ VOTRE MER...");
+        printf("                              CHOISISSEZ VOTRE MER...");
         printf("\n\n\n      ");
-        printf("                                                                                             1. MER FIXE\n");
-        printf("                                                                                             2. AFFICHAGE GRILLE");
+        printf("                                   1. MER FIXE\n");
+        printf("                                   2. AFFICHAGE GRILLE");
         printf("\n\n\n\n");
         if (ch != 49 && ch != -1 ) {
             printf("                                                           ");
@@ -237,8 +242,7 @@ void menuGrilles() {
             system("cls");
             affichageGrille();
         }
-        printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
-
+        printf("\n\n\n\n");
         printf("APPUYER SUR LE NUMERO CORRESPONDANT POUR CONTINUER :   ");
         printf("                                                                                            ESCAPE:   POUR RETOURNER EN ARRIERE");
         ch = _getch();
@@ -262,11 +266,11 @@ void afficher_aide() {
            "                                                            \n"
            "                                                             ");
     printf("\n\n\n\n\n");
-    printf("La bataille navale oppose deux joueurs qui s'affrontent. Chacun a une flotte compos?e de 5 bateaux, qui sont, en g?n?ral, les suivants : 1 porte-avion (5 cases), 1 croiseur (4 cases), 1 contre-torpilleur (3 cases), 1 sous-marin (3 cases), 1 torpilleur (2 cases). \n"
+    printf("La bataille navale oppose deux joueurs qui s'affrontent. Chacun a une flotte compos�e de 5 bateaux, qui sont, en g�n�ral, les suivants : 1 porte-avion (5 cases), 1 croiseur (4 cases), 1 contre-torpilleur (3 cases), 1 sous-marin (3 cases), 1 torpilleur (2 cases). \n"
            "\n"
-           "Au d?but du jeu, chaque joueur place ses bateaux sur sa grille. Celle-ci est toujours num?rot?e de A ? J verticalement et de 1 ? 10 horizontalement. Un ? un, les joueurs vont \"tirer\" sur une case de l'adversaire : par exemple, B.3 ou encore H.8. Le but est donc de couler les bateaux adverses. Au fur et ? mesure, il faut mettre les pions sur sa propre grille afin de se souvenir de ses tirs pass?s.[r?f. n?cessaire]\n"
+           "Au d�but du jeu, chaque joueur place ses bateaux sur sa grille. Celle-ci est toujours num�rot�e de A � J verticalement et de 1 � 10 horizontalement. Un � un, les joueurs vont \"tirer\" sur une case de l'adversaire : par exemple, B.3 ou encore H.8. Le but est donc de couler les bateaux adverses. Au fur et � mesure, il faut mettre les pions sur sa propre grille afin de se souvenir de ses tirs pass�s.[r�f. n�cessaire]\n"
            "\n"
-           "Un fonctionnement plus sophistiqu? mettant en ?uvre de la strat?gie est de tirer une salve (trois coups par exemple) et de donner le r?sultat global de la salve.");
+           "Un fonctionnement plus sophistiqu� mettant en �uvre de la strat�gie est de tirer une salve (trois coups par exemple) et de donner le r�sultat global de la salve.");
     printf("\n\n\n\n");
     printf("                                                                                                                                       ESCAPE:   POUR RETOURNER EN ARRIERE");
     do {
