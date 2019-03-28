@@ -25,8 +25,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="316">
-              <caret line="71" column="31" lean-forward="true" selection-start-line="71" selection-start-column="31" selection-end-line="71" selection-end-column="31" />
+            <state relative-caret-position="486">
+              <caret line="81" column="17" selection-start-line="81" selection-start-column="17" selection-end-line="81" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -35,7 +35,7 @@
         <entry file="file://Z:/jayme.c">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="459">
-              <caret line="133" lean-forward="true" selection-start-line="133" selection-end-line="133" />
+              <caret line="133" selection-start-line="133" selection-end-line="133" />
             </state>
           </provider>
         </entry>
@@ -44,7 +44,7 @@
         <entry file="file://$PROJECT_DIR$/../doc/scenarios/vue.c">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="238">
-              <caret line="40" column="30" lean-forward="true" selection-end-line="323" selection-end-column="1" />
+              <caret line="40" column="30" selection-end-line="323" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -53,7 +53,7 @@
         <entry file="file://$PROJECT_DIR$/../doc/scenarios/modele.c">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="187">
-              <caret line="13" column="45" lean-forward="true" selection-end-line="306" selection-end-column="1" />
+              <caret line="13" column="45" selection-end-line="306" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -80,7 +80,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="810" />
     <option name="y" value="229" />
     <option name="width" value="697" />
@@ -128,12 +128,12 @@
       <option name="presentableId" value="Default" />
       <updated>1553498366572</updated>
       <workItem from="1553498369565" duration="1149000" />
-      <workItem from="1553759516184" duration="4618000" />
+      <workItem from="1553759516184" duration="5902000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5767000" />
+    <option name="totallyTimeSpent" value="7051000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -197,28 +197,28 @@
     <entry file="file://Z:/jayme.c">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
-          <caret line="133" lean-forward="true" selection-start-line="133" selection-end-line="133" />
+          <caret line="133" selection-start-line="133" selection-end-line="133" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../doc/scenarios/modele.c">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
-          <caret line="13" column="45" lean-forward="true" selection-end-line="306" selection-end-column="1" />
+          <caret line="13" column="45" selection-end-line="306" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../doc/scenarios/vue.c">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
-          <caret line="40" column="30" lean-forward="true" selection-end-line="323" selection-end-column="1" />
+          <caret line="40" column="30" selection-end-line="323" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="316">
-          <caret line="71" column="31" lean-forward="true" selection-start-line="71" selection-start-column="31" selection-end-line="71" selection-end-column="31" />
+        <state relative-caret-position="486">
+          <caret line="81" column="17" selection-start-line="81" selection-start-column="17" selection-end-line="81" selection-end-column="17" />
         </state>
       </provider>
     </entry>
