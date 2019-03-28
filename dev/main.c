@@ -15,9 +15,9 @@ void raccourcis(){
 #define DTRC 187 // +, Double Top Right Corner
 #define DBLC 200 // +, Double Bottom Left Corner
 #define DBRC 188 // +, Double Bottom Right Corner
-#define DVSB 186 // �, Double Vertical Simple Border
-#define DVRB 185 // �, Double Vertical Right Border
-#define DVLB 204 // �, Double Vertical Left Border
+#define DVSB 186 // ?, Double Vertical Simple Border
+#define DVRB 185 // ?, Double Vertical Right Border
+#define DVLB 204 // ?, Double Vertical Left Border
 #define DHSB 205 // -, Double Horizontal Simple Border
 #define DHBB 202 // -, Double Horizontal Bottom Border
 #define DHTB 203 // -, Double Horizontal Top Border
@@ -27,20 +27,24 @@ void raccourcis(){
 #define BLANC  255 //, BLANC SUR BLANC
 #define NOIR  0 //, NOIR
 #define ROUGE  68 //, ROUGE
-
+#define VIDE  0
+#define EAU  10
+#define TOUCHE  10
+#define COULE  20
+#define COULER  2
 };
 
 int grilleFixe[TAB_SIZE][TAB_SIZE] = {
-        {1,0,0,0,0,0,0,0,0,1},
-        {2,0,5,5,5,5,5,0,0,3},
-        {2,0,0,0,0,0,0,0,0,3},
-        {0,0,3,0,0,0,0,0,0,3},
-        {0,0,3,0,1,1,0,0,0,0},
-        {0,0,3,0,1,1,0,0,0,0},
-        {0,0,0,0,0,0,0,0,0,0},
-        {0,0,0,0,0,0,4,4,4,4},
-        {0,0,0,0,0,0,0,0,0,0},
-        {1,0,0,0,0,0,0,0,0,1}
+        {10,0,0,0,0,0,0,0,0,0},
+        {12,0,25,25,25,25,25,10,0,3},
+        {2,0,0,0,0,0,0,0,0,13},
+        {0,0,3,0,10,0,0,10,0,3},
+        {0,0,3,0,0,0,0,0,0,0},
+        {0,0,3,0,0,0,0,0,0,0},
+        {0,0,10,0,10,0,0,0,0,0},
+        {0,0,0,0,0,0,4,14,4,4},
+        {0,10,0,10,0,0,0,0,0,0},
+        {0,0,0,0,0,0,0,10,0,10}
 };
 void body()
 {
@@ -68,11 +72,40 @@ void body()
                 printf("    ");
             }
             printf("%c",DVSB);
+            if(grilleFixe[j][i] == VIDE || grilleFixe[j][i] < EAU)
+            {
+                SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),BLANC );
+            }
+            else
+            {
+                if(grilleFixe[j][i] == EAU)
+                {
+                    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),BLEU );
+                }
+                else
+                {
+                    if(grilleFixe[j][i] > TOUCHE && grilleFixe[j][i] < COULE)
+                    {
+                        SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),NOIR );
+                    }
+                    else
+                    {
+                        if(grilleFixe[j][i] > COULER)
+                        {
+                            SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),ROUGE );
+                        }
+                        else
+                        {
+                            SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),BLANC );
+                        }
 
+                    }
 
-            printf(" %d  ", grilleFixe[j][i]);
+                }
 
+            }
 
+            printf("%c%c%c%c", 219, 219, 219, 219);
 
 
 
@@ -246,11 +279,11 @@ void afficher_aide() {
            "                                                            \n"
            "                                                             ");
     printf("\n\n\n\n\n");
-    printf("La bataille navale oppose deux joueurs qui s'affrontent. Chacun a une flotte compos�e de 5 bateaux, qui sont, en g�n�ral, les suivants : 1 porte-avion (5 cases), 1 croiseur (4 cases), 1 contre-torpilleur (3 cases), 1 sous-marin (3 cases), 1 torpilleur (2 cases). \n"
+    printf("La bataille navale oppose deux joueurs qui s'affrontent. Chacun a une flotte compos?e de 5 bateaux, qui sont, en g?n?ral, les suivants : 1 porte-avion (5 cases), 1 croiseur (4 cases), 1 contre-torpilleur (3 cases), 1 sous-marin (3 cases), 1 torpilleur (2 cases). \n"
            "\n"
-           "Au d�but du jeu, chaque joueur place ses bateaux sur sa grille. Celle-ci est toujours num�rot�e de A � J verticalement et de 1 � 10 horizontalement. Un � un, les joueurs vont \"tirer\" sur une case de l'adversaire : par exemple, B.3 ou encore H.8. Le but est donc de couler les bateaux adverses. Au fur et � mesure, il faut mettre les pions sur sa propre grille afin de se souvenir de ses tirs pass�s.[r�f. n�cessaire]\n"
+           "Au d?but du jeu, chaque joueur place ses bateaux sur sa grille. Celle-ci est toujours num?rot?e de A ? J verticalement et de 1 ? 10 horizontalement. Un ? un, les joueurs vont \"tirer\" sur une case de l'adversaire : par exemple, B.3 ou encore H.8. Le but est donc de couler les bateaux adverses. Au fur et ? mesure, il faut mettre les pions sur sa propre grille afin de se souvenir de ses tirs pass?s.[r?f. n?cessaire]\n"
            "\n"
-           "Un fonctionnement plus sophistiqu� mettant en �uvre de la strat�gie est de tirer une salve (trois coups par exemple) et de donner le r�sultat global de la salve.");
+           "Un fonctionnement plus sophistiqu? mettant en ?uvre de la strat?gie est de tirer une salve (trois coups par exemple) et de donner le r?sultat global de la salve.");
     printf("\n\n\n\n");
     printf("                                                                                                                                       ESCAPE:   POUR RETOURNER EN ARRIERE");
     do {
