@@ -6,28 +6,8 @@
 #include <windows.h>
 #define TAB_SIZE 10
 
-void color(int couleurDuTexte,int couleurDeFond) // fonction d'affichage de couleurs
-{
-    HANDLE H=GetStdHandle(STD_OUTPUT_HANDLE);
-    SetConsoleTextAttribute(H,couleurDeFond*16+couleurDuTexte);
-}
 
 
-
-
-void full_screen(){
-    keybd_event(VK_F11,0,0,0); //Appuie sur ALT
-    //   keybd_event(VK_F11,0,KEYEVENTF_KEYUP,0); // Relache ENTREE
-    //keybd_event(VK_MENU,0x38,0,0); //Appuie sur ALT
-    //keybd_event(VK_RETURN,0x1c,0,0); //Appuie ENTREE
-
-    //keybd_event(VK_MENU,0x38,KEYEVENTF_KEYUP,0); //Relache ALT
-    //   keybd_event(VK_F11,0x79,0,0); //Appuie sur ALT
-//keybd_event(VK_RETURN,0x1c,0,0); //Appuie ENTREE
-//keybd_event(VK_RETURN,0x1c,KEYEVENTF_KEYUP,0); // Relache ENTREE
-    // keybd_event(VK_F11,0x79,KEYEVENTF_KEYUP,0); //Relache ALT
-//Suite du code...
-}
 void raccourcis(){
 
 
@@ -68,7 +48,7 @@ void body()
     for (int j = 0; j < TAB_SIZE; ++j) {
 
         for (int i = 0; i < TAB_SIZE ; ++i) {
-            SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),241 );
+            SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),BLEU_BLANC );
 
             if(i == 0)
             {
@@ -90,7 +70,7 @@ void body()
             printf("%c",DVSB);
 
 
-            printf("    ");
+            printf(" %d  ", grilleFixe[j][i]);
 
 
 
