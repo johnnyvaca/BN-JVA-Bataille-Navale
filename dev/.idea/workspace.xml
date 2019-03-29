@@ -25,16 +25,17 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="299">
-              <caret line="227" column="41" lean-forward="true" selection-start-line="227" selection-start-column="41" selection-end-line="227" selection-end-column="41" />
+            <state relative-caret-position="117">
+              <caret line="218" column="30" lean-forward="true" selection-start-line="218" selection-start-column="30" selection-end-line="218" selection-end-column="30" />
               <folding>
-                <element signature="e#1361#1983#0" />
-                <element signature="e#1362#3875#0" />
-                <element signature="e#5637#6229#0" />
-                <element signature="e#6231#6553#0" />
-                <element signature="e#6785#7829#0" />
-                <element signature="e#7830#9831#0" />
-                <element signature="e#9832#10360#0" />
+                <element signature="e#1550#2172#0" />
+                <element signature="e#2174#3311#0" />
+                <element signature="e#5510#6097#0" />
+                <element signature="e#6099#6433#0" />
+                <element signature="e#7751#8787#0" />
+                <element signature="e#8789#10790#0" />
+                <element signature="e#10792#11336#0" />
+                <element signature="e#11338#11692#0" />
               </folding>
             </state>
           </provider>
@@ -90,8 +91,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="810" />
-    <option name="y" value="229" />
+    <option name="x" value="361" />
+    <option name="y" value="-16" />
     <option name="width" value="697" />
     <option name="height" value="735" />
   </component>
@@ -140,11 +141,12 @@
       <workItem from="1553498369565" duration="1149000" />
       <workItem from="1553759516184" duration="5902000" />
       <workItem from="1553785476063" duration="3015000" />
+      <workItem from="1553843088583" duration="5827000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10066000" />
+    <option name="totallyTimeSpent" value="15893000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -200,16 +202,17 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/main.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="227" column="41" lean-forward="true" selection-start-line="227" selection-start-column="41" selection-end-line="227" selection-end-column="41" />
+        <state relative-caret-position="117">
+          <caret line="218" column="30" lean-forward="true" selection-start-line="218" selection-start-column="30" selection-end-line="218" selection-end-column="30" />
           <folding>
-            <element signature="e#1361#1983#0" />
-            <element signature="e#1362#3875#0" />
-            <element signature="e#5637#6229#0" />
-            <element signature="e#6231#6553#0" />
-            <element signature="e#6785#7829#0" />
-            <element signature="e#7830#9831#0" />
-            <element signature="e#9832#10360#0" />
+            <element signature="e#1550#2172#0" />
+            <element signature="e#2174#3311#0" />
+            <element signature="e#5510#6097#0" />
+            <element signature="e#6099#6433#0" />
+            <element signature="e#7751#8787#0" />
+            <element signature="e#8789#10790#0" />
+            <element signature="e#10792#11336#0" />
+            <element signature="e#11338#11692#0" />
           </folding>
         </state>
       </provider>
