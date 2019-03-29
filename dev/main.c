@@ -2,6 +2,7 @@
 // Date   : 7 mars 2019
 // Descriptions : Bataille Navale
 #include <stdio.h>
+#include <stdlib.h>
 #include <conio.h>
 #include <windows.h>
 
@@ -53,6 +54,18 @@ int grilleFixe[TAB_SIZE][TAB_SIZE] = {
         {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
         {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
 };
+
+
+void vider_buffer()
+{
+
+    int c;
+    do {
+        c = getchar();
+    } while (c != EOF && c != '\n');
+
+}
+
 
 void logo() {
 
@@ -193,77 +206,108 @@ void bottom() {
 }
 
 void affichageGrille() {
-int x, y2;
+
+#pragma execution_caracter_set("UTF-8")
+    SetConsoleOutputCP(CP_UTF8); // For accented characters
+
+    SetConsoleOutputCP(65001); // For accented characters
+    SetConsoleOutputCP(437); // For semi-graphic characters
+int x, y2 = -1;
 char y;
 int liste_bateaux[6]={0,0,0,0,0,0};
 int compteur = 0;
     raccourcis();
-    int ch;
+
 
  //   do {
-    while ( compteur != TAB_SIZE*TAB_SIZE)
-    {
+    while ( compteur != TAB_SIZE*TAB_SIZE) {
+        if (y2 < 0 || y2 > TAB_SIZE) {
             top();
             body();
             bottom();
 
 
-            printf("\n\n\n\neaux : %d\n\n\n", EAUX);
-            printf("Selectionner votre case : \n");
+            printf("\n\n\n\n\n\n\n");
+            printf("Selectionner votre case :  ");
+            printf("\n\ny2 : %d\n\n", y2);
 
-
-         //   scanf("%d", &x);
-         x = 0;
+            //   scanf("%d", &x);
+            x;
             scanf("%c", &y);
-            y2 = ((int)y)-48;
-printf("numero : %d\n\n", y2);
-            printf("numero position : %d\n\n", grilleFixe[x][y2]);
-            if (grilleFixe[x][y2] == EAU && grilleFixe[x][y2] < TOUCHE_EAU && liste_bateaux[0] < EAUX) {
-                grilleFixe[x][y2] = grilleFixe[x][y2] + 10;
-                liste_bateaux[0]++;
-            }
+            y2 = (int) y - 48 - 49;
+            vider_buffer();
+            system("cls");
 
-            if (grilleFixe[x][y2] == BATEAU_2) {
-                grilleFixe[x][y2] = grilleFixe[x][y2] + 10;
-                liste_bateaux[1]++;
-            }
+        } else {
+            top();
+            body();
+            bottom();
 
-            if (grilleFixe[x][y2] == BATEAU_3_1) {
-                grilleFixe[x][y2] = grilleFixe[x][y2] + 10;
-                liste_bateaux[2]++;
-            }
 
-            if (grilleFixe[x][y2] == BATEAU_3_2) {
-                grilleFixe[x][y2] = grilleFixe[x][y2] + 10;
-                liste_bateaux[3]++;
-            }
+            printf("\n\n\n\n\n\n\n");
+            printf("Selectionner votre case :  ");
+            printf("\n\ny2 : %d\n\n", y2);
 
-            if (grilleFixe[x][y2] == BATEAU_4) {
-                grilleFixe[x][y2] = grilleFixe[x][y2] + 10;
-                liste_bateaux[4]++;
-            }
+            //   scanf("%d", &x);
+            x;
+            scanf("%c", &y);
+            y2 = (int) y - 48 - 49;
+            system("cls");
+        }
 
-            if (grilleFixe[x][y2] == BATEAU_5) {
-                grilleFixe[x][y2] = grilleFixe[x][y2] + 10;
-                liste_bateaux[5]++;
-            }
 
-            printf("0 : %d\n", liste_bateaux[0]);
-            printf("1 : %d\n", liste_bateaux[1]);
-            printf("2 : %d\n", liste_bateaux[2]);
-            printf("3 : %d\n", liste_bateaux[3]);
-            printf("4 : %d\n", liste_bateaux[4]);
-            printf("5 : %d\n", liste_bateaux[5]);
+        printf("numero position : %d\n\n", grilleFixe[x][y2]);
+        if (grilleFixe[x][y2] == EAU && grilleFixe[x][y2] < TOUCHE_EAU && liste_bateaux[0] < EAUX) {
+            grilleFixe[x][y2] = grilleFixe[x][y2] + 10;
+            liste_bateaux[0]++;
+        }
 
-        //    system("cls");
-compteur++;
-}
+        if (grilleFixe[x][y2] == BATEAU_2) {
+            grilleFixe[x][y2] = grilleFixe[x][y2] + 10;
+            liste_bateaux[1]++;
+        }
+
+        if (grilleFixe[x][y2] == BATEAU_3_1) {
+            grilleFixe[x][y2] = grilleFixe[x][y2] + 10;
+            liste_bateaux[2]++;
+        }
+
+        if (grilleFixe[x][y2] == BATEAU_3_2) {
+            grilleFixe[x][y2] = grilleFixe[x][y2] + 10;
+            liste_bateaux[3]++;
+        }
+
+        if (grilleFixe[x][y2] == BATEAU_4) {
+            grilleFixe[x][y2] = grilleFixe[x][y2] + 10;
+            liste_bateaux[4]++;
+        }
+
+        if (grilleFixe[x][y2] == BATEAU_5) {
+            grilleFixe[x][y2] = grilleFixe[x][y2] + 10;
+            liste_bateaux[5]++;
+        }
+
+        printf("0 : %d\n", liste_bateaux[0]);
+        printf("1 : %d\n", liste_bateaux[1]);
+        printf("2 : %d\n", liste_bateaux[2]);
+        printf("3 : %d\n", liste_bateaux[3]);
+        printf("4 : %d\n", liste_bateaux[4]);
+        printf("5 : %d\n", liste_bateaux[5]);
+
+        system("cls");
+        compteur++;
+    }
+
+
       //  grilleFixe[x][y] = grilleFixe[x][y]+10;
 
        // while(liste_bateaux[])
        // ch = _getch();
             //system("cls");
   //  } while (ch != 27);
+
+
+
     system("cls");
 
 }

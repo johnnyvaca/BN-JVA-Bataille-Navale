@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/main.c" line="232" />
+    <bookmark url="file://$PROJECT_DIR$/main.c" line="237" />
+  </component>
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
     <generated>
       <config projectName="dev" targetName="dev" />
@@ -19,23 +23,20 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="309">
-              <caret line="252" column="49" lean-forward="true" selection-start-line="252" selection-start-column="49" selection-end-line="252" selection-end-column="49" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://Z:/jayme.c">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2261">
-              <caret line="133" selection-start-line="133" selection-end-line="133" />
+            <state relative-caret-position="418">
+              <caret line="301" column="49" lean-forward="true" selection-start-line="301" selection-start-column="49" selection-end-line="301" selection-end-column="49" />
+              <folding>
+                <element signature="e#82#100#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -94,6 +95,7 @@
     <panes />
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -133,22 +135,22 @@
       <workItem from="1553785476063" duration="3015000" />
       <workItem from="1553843088583" duration="5827000" />
       <workItem from="1553868483527" duration="704000" />
+      <workItem from="1553871071524" duration="3822000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16597000" />
+    <option name="totallyTimeSpent" value="20419000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.25" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32936078" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -191,17 +193,14 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://Z:/jayme.c" />
     <entry file="file://$PROJECT_DIR$/main.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
-          <caret line="252" column="49" lean-forward="true" selection-start-line="252" selection-start-column="49" selection-end-line="252" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://Z:/jayme.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2261">
-          <caret line="133" selection-start-line="133" selection-end-line="133" />
+        <state relative-caret-position="418">
+          <caret line="301" column="49" lean-forward="true" selection-start-line="301" selection-start-column="49" selection-end-line="301" selection-end-column="49" />
+          <folding>
+            <element signature="e#82#100#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
