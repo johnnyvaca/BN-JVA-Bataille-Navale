@@ -8,7 +8,18 @@
 
 #define TAB_SIZE 10
 
-
+int grilleFixe[TAB_SIZE][TAB_SIZE] = {
+        {2, 2, 5, 5, 5, 5, 5, 3, 3, 3},
+        {3, 3, 3, 4, 4, 4, 4, 0, 0, 0},
+        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+};
 void raccourcis() {
 
 
@@ -40,24 +51,10 @@ void raccourcis() {
 #define BATEAU_5 5
 #define EAU 0
 #define EAUX (TAB_SIZE)*(TAB_SIZE)-BATEAU_2-BATEAU_3_1-BATEAU_3_2-BATEAU_4-BATEAU_5
+#define GAGNE BATEAU_2+BATEAU_3_1+BATEAU_3_2+BATEAU_4+BATEAU_5
+#define PERDU TAB_SIZE*TAB_SIZE-1
 };
-
-int grilleFixe[TAB_SIZE][TAB_SIZE] = {
-        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-        {2, 0, 5, 5, 5, 5, 5, 0, 0, 3},
-        {2, 0, 0, 0, 0, 0, 0, 0, 0, 3},
-        {0, 0, 3, 0, 0, 0, 0, 0, 0, 3},
-        {0, 0, 3, 0, 0, 0, 0, 0, 0, 0},
-        {0, 0, 3, 0, 0, 0, 0, 0, 0, 0},
-        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-        {0, 0, 0, 0, 0, 0, 4, 4, 4, 4},
-        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
-};
-
-
-void vider_buffer()
-{
+void vider_buffer(){
 
     int c;
     do {
@@ -65,8 +62,6 @@ void vider_buffer()
     } while (c != EOF && c != '\n');
 
 }
-
-
 void logo() {
 
     printf("              ____        _        _ _ _        _    _                  _      \n"
@@ -77,7 +72,6 @@ void logo() {
            "             |____/ \\__,_|\\__\\__,_|_|_|_|\\___| |_| \\_|\\__,_| \\_/ \\__,_|_|\\___|");
     printf("\n\n\n\n");
 }
-
 void menu() {
 
     logo();
@@ -100,8 +94,6 @@ void menu() {
     printf("F1 AIDE");
     printf("\n");
 }
-
-
 void top() {
 #pragma execution_caracter_set("UTF-8")
     SetConsoleOutputCP(65001); // For accented characters
@@ -188,7 +180,6 @@ void body() {
     }
 
 }
-
 void bottom() {
 
     SetConsoleOutputCP(65001); // For accented characters
@@ -200,7 +191,6 @@ void bottom() {
     }
     printf("%c%c%c%c%c", DHSB, DHSB, DHSB, DHSB, DBRC);
 }
-
 void affichageGrille() {
 
 #pragma execution_caracter_set("UTF-8")
@@ -209,20 +199,21 @@ void affichageGrille() {
     SetConsoleOutputCP(65001); // For accented characters
     SetConsoleOutputCP(437); // For semi-graphic characters
     int ch;
-int x = -1, y2 = 0;
-char y = '<';
+int x = 0, y2 = 0;
+char y = '/';
 int liste_bateaux[6]={0,0,0,0,0,0};
 int compteur_tout = 0;
 int compteur_bateaux = 0;
     raccourcis();
+    int switchs = 1;
 
 
 
  //   do {
 
-    while ((compteur_tout != TAB_SIZE*TAB_SIZE-1)||( compteur_bateaux < BATEAU_2+BATEAU_3_1+BATEAU_3_2+BATEAU_4+BATEAU_5)){
+    while (((compteur_tout != PERDU)||( compteur_bateaux < GAGNE))&&(switchs == 1)){
 
-        if( compteur_bateaux < BATEAU_2+BATEAU_3_1+BATEAU_3_2+BATEAU_4+BATEAU_5)
+        if( compteur_bateaux < GAGNE)
         {
             if ((x >=0 || x< TAB_SIZE)||(y2 >=0 || y2 <TAB_SIZE))
             {   top();
@@ -261,6 +252,10 @@ int compteur_bateaux = 0;
 
                 x--;
 
+if(grilleFixe[y2][x] >= TOUCHE)
+{
+    compteur_tout++;
+}
 
 
 
@@ -269,7 +264,6 @@ int compteur_bateaux = 0;
 
 
 
-                compteur_tout++;
                 x = -1;
                 y2 = -1;
             }
@@ -308,15 +302,11 @@ if((grilleFixe[y2][x] != 10)&&(grilleFixe[y2][x] != 0))
 }
 if(compteur_bateaux == BATEAU_2+BATEAU_3_1+BATEAU_3_2+BATEAU_4+BATEAU_5)
 {
-    compteur_tout == TAB_SIZE*TAB_SIZE-1;
+    switchs = 0;
 }
 
         }
-        else
-        {
-            system("cls");
-            printf("BRAVO  !!!");
-        }
+
 
 
 
@@ -381,9 +371,8 @@ if(compteur_bateaux == BATEAU_2+BATEAU_3_1+BATEAU_3_2+BATEAU_4+BATEAU_5)
 
 
     system("cls");
-
+    printf("BRAVO  !!!");
 }
-
 void menuGrilles() {
 
     int ch = -1;
@@ -418,7 +407,6 @@ void menuGrilles() {
 
     } while (ch != 27);
 }
-
 void afficher_aide() {
 
 #pragma execution_caracter_set("UTF-8")
@@ -448,7 +436,6 @@ void afficher_aide() {
 
     } while (ch != 27);
 }
-
 int principal() {
     int touche;
 
@@ -478,7 +465,6 @@ int principal() {
 
     return 0;
 }
-
 int main() {
 
 
