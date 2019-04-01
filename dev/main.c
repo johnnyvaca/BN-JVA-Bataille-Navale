@@ -9,7 +9,7 @@
 #define TAB_SIZE 10
 
 int grilleFixe[TAB_SIZE][TAB_SIZE] = {
-        {2, 2, 5, 5, 5, 5, 5, 3, 3, 3},
+        {1, 1, 2, 2, 2, 5, 5, 5, 5, 5},
         {3, 3, 3, 4, 4, 4, 4, 0, 0, 0},
         {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
         {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
@@ -44,15 +44,16 @@ void raccourcis() {
 #define TOUCHE  10
 #define COULE  20
 #define COULER  2
-#define BATEAU_2 2
-#define BATEAU_3_1 3
+#define BATEAU_2 1
+#define BATEAU_3_1 2
 #define BATEAU_3_2 3
 #define BATEAU_4 4
 #define BATEAU_5 5
 #define EAU 0
 #define EAUX (TAB_SIZE)*(TAB_SIZE)-BATEAU_2-BATEAU_3_1-BATEAU_3_2-BATEAU_4-BATEAU_5
-#define GAGNE BATEAU_2+BATEAU_3_1+BATEAU_3_2+BATEAU_4+BATEAU_5
+#define GAGNE BATEAU_2+BATEAU_3_1+BATEAU_3_2+BATEAU_4+BATEAU_5+2
 #define PERDU TAB_SIZE*TAB_SIZE-1
+#define NBR_BATEAUX 6
 };
 void vider_buffer(){
 
@@ -201,9 +202,10 @@ void affichageGrille() {
     int ch;
 int x = 0, y2 = 0;
 char y = '/';
-int liste_bateaux[6]={0,0,0,0,0,0};
+int liste_bateaux[NBR_BATEAUX]={0,0,0,0,0,0};
 int compteur_tout = 0;
 int compteur_bateaux = 0;
+int compteur_touches =1;
     raccourcis();
     int switchs = 1;
 
@@ -223,24 +225,8 @@ int compteur_bateaux = 0;
 
                 printf("\n\n\n\n\n\n\n");
 
-                for (int i = 0; i < TAB_SIZE; ++i) {
-                    for (int j = 0; j < TAB_SIZE; ++j) {
-                        printf("%d ",grilleFixe[i][j]);
-                    }printf("\n");
-                }
 
 
-
-
-                printf("\n0 : %d\n", liste_bateaux[0]);
-                printf("1 : %d\n", liste_bateaux[1]);
-                printf("2 : %d\n", liste_bateaux[2]);
-                printf("3 : %d\n", liste_bateaux[3]);
-                printf("4 : %d\n", liste_bateaux[4]);
-                printf("5 : %d\n", liste_bateaux[5]);
-
-                printf("compteur:bat : %d\n", compteur_bateaux);
-                printf("compteur: tout : %d\n\n\n", compteur_tout);
 
                 printf("Selectionner votre case :  ");
 
@@ -258,19 +244,16 @@ if(grilleFixe[y2][x] >= TOUCHE)
 }
 
 
+if(compteur_tout == 0)
+{
+
+} else{
+    x = -1;
+    y2 = -1;
+}
 
 
-
-
-
-
-                x = -1;
-                y2 = -1;
             }
-
-
-
-
             while ((x <0 || x> TAB_SIZE)||(y2 <0 || y2 >TAB_SIZE))
             {
                 system("cls");
@@ -287,9 +270,6 @@ if(grilleFixe[y2][x] >= TOUCHE)
                 x--;
                 printf("bbb : %d%d\n\n", y2,x);
 
-
-
-
             }
 
 if((grilleFixe[y2][x] != 10)&&(grilleFixe[y2][x] != 0))
@@ -300,7 +280,7 @@ if((grilleFixe[y2][x] != 10)&&(grilleFixe[y2][x] != 0))
     }
 
 }
-if(compteur_bateaux == BATEAU_2+BATEAU_3_1+BATEAU_3_2+BATEAU_4+BATEAU_5)
+if(compteur_bateaux == GAGNE)
 {
     switchs = 0;
 }
@@ -315,38 +295,97 @@ if(compteur_bateaux == BATEAU_2+BATEAU_3_1+BATEAU_3_2+BATEAU_4+BATEAU_5)
 
         if (grilleFixe[y2][x] == EAU && grilleFixe[y2][x] < TOUCHE_EAU && liste_bateaux[0] < EAUX) {
             grilleFixe[y2][x] = grilleFixe[y2][x] + 10;
-
             liste_bateaux[0]++;
+
         }
 
-        if (grilleFixe[y2][x] == BATEAU_2) {
-            grilleFixe[y2][x] = grilleFixe[y2][x] + 10;
+            if (grilleFixe[y2][x] == BATEAU_2) {
+                grilleFixe[y2][x] = grilleFixe[y2][x] + 10;
+                liste_bateaux[1]++;
+                if(liste_bateaux[1] == BATEAU_2+1)
+                {
+                    for (int i = 0; i < TAB_SIZE; ++i) {
+                        for (int j = 0; j < TAB_SIZE; ++j) {
+                            if(grilleFixe[i][j] == BATEAU_2+10)
+                            {
+                                grilleFixe[i][j] = grilleFixe[i][j] + 10;
+                            }
+                        }
+                    }
+                }
+            }
 
-            liste_bateaux[1]++;
-        }
+
 
         if (grilleFixe[y2][x] == BATEAU_3_1) {
             grilleFixe[y2][x] = grilleFixe[y2][x] + 10;
-
             liste_bateaux[2]++;
+
+            if(liste_bateaux[2] == BATEAU_3_1+1)
+            {
+                for (int i = 0; i < TAB_SIZE; ++i) {
+                    for (int j = 0; j < TAB_SIZE; ++j) {
+                        if(grilleFixe[i][j] == BATEAU_3_1+10)
+                        {
+                            grilleFixe[i][j] = grilleFixe[i][j] + 10;
+                        }
+                    }
+                }
+            }
+
         }
 
         if (grilleFixe[y2][x] == BATEAU_3_2) {
             grilleFixe[y2][x] = grilleFixe[y2][x] + 10;
 
             liste_bateaux[3]++;
+
+            if(liste_bateaux[3] == BATEAU_3_2)
+            {
+                for (int i = 0; i < TAB_SIZE; ++i) {
+                    for (int j = 0; j < TAB_SIZE; ++j) {
+                        if(grilleFixe[i][j] == BATEAU_3_2+10)
+                        {
+                            grilleFixe[i][j] = grilleFixe[i][j] + 10;
+                        }
+                    }
+                }
+            }
         }
 
         if (grilleFixe[y2][x] == BATEAU_4) {
             grilleFixe[y2][x] = grilleFixe[y2][x] + 10;
 
             liste_bateaux[4]++;
+
+            if(liste_bateaux[1] == BATEAU_4)
+            {
+                for (int i = 0; i < TAB_SIZE; ++i) {
+                    for (int j = 0; j < TAB_SIZE; ++j) {
+                        if(grilleFixe[i][j] == BATEAU_4+10)
+                        {
+                            grilleFixe[i][j] = grilleFixe[i][j] + 10;
+                        }
+                    }
+                }
+            }
         }
 
         if (grilleFixe[y2][x] == BATEAU_5) {
             grilleFixe[y2][x] = grilleFixe[y2][x] + 10;
 
             liste_bateaux[5]++;
+            if(liste_bateaux[5] == BATEAU_5)
+            {
+                for (int i = 0; i < TAB_SIZE; ++i) {
+                    for (int j = 0; j < TAB_SIZE; ++j) {
+                        if(grilleFixe[i][j] == BATEAU_5+10)
+                        {
+                            grilleFixe[i][j] = grilleFixe[i][j] + 10;
+                        }
+                    }
+                }
+            }
         }
 
 
