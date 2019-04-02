@@ -5,52 +5,55 @@
 #include <stdlib.h>
 #include <conio.h>
 #include <windows.h>
-
+#include <time.h>
 #define TAB_SIZE 10
-int grilleFixe[TAB_SIZE][TAB_SIZE] = {
-        {1, 1, 2, 2, 2, 5, 5, 5, 5, 5},
-        {3, 3, 3, 4, 4, 4, 4, 0, 0, 0},
-        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
-};
-void grilles()
-{
-FILE *fichier = fopen("grilles\\grille1.txt","r");
-char case_tableau[TAB_SIZE];
-//case_tableau = fgetc(fichier);
+int grille[TAB_SIZE][TAB_SIZE];
+
+void grille_fixe(){
+ int  grille[TAB_SIZE][TAB_SIZE] = {
+            {1, 1, 2, 2, 2, 5, 5, 5, 5, 5},
+            {3, 3, 3, 4, 4, 4, 4, 0, 0, 0},
+            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+    };
+}
+void grilles_aleatoires() {
+    FILE * Handle;
+    char tmp[500];
+    int nombreAleatoire = 0;
+    const int MAX = 10, MIN = 1;
+  //  while(nombreAleatoire <= MAX && nombreAleatoire >= MIN)
+  //  {
+        srand(time(NULL));
+        nombreAleatoire =(rand() % 10)+1;
+    //  }
 
 
+    sprintf(tmp,"grille%d.txt",nombreAleatoire);
+    printf("tmp : %s",tmp);
+    Handle = fopen(tmp, "r");
+    if(Handle != NULL) {
 
-   /* for ( int l =0 ; l < TAB_SIZE ; l++ )
-    {
-        fread(&case_tableau[l],sizeof(int),1,fichier);
-      case_tableau[l] = fscanf(fichier,"%d", &case_tableau[l]);
+        for( int f = 0; f < TAB_SIZE; f++) {
+            for (int g = 0; g < TAB_SIZE; ++g) {
+                grille[f][g] = fgetc(Handle);
+                printf("%c",grille[f][g]);
+            }
+            printf("\n");
+
+
+        }
+        fclose(Handle);
     }
-    fclose(fichier);
-    for ( int m =0 ; m <TAB_SIZE; m++ )
-    {
-        printf("%d",case_tableau[m]);
-    } */
-    for (int i = 0; i < TAB_SIZE; ++i) {
-        for (int j = 0; j < TAB_SIZE; ++j) {
-            fscanf(fichier,"%c", &case_tableau[i]);
-            printf("%c",grilleFixe[i][j]);
-        }printf("\n");
-
-    }
-
-
-
-
-
 
 }
+
 void raccourcis() {
 #define DTLC 201 // +, Double Top Left Corner
 #define DTRC 187 // +, Double Top Right Corner
@@ -83,7 +86,7 @@ void raccourcis() {
 #define GAGNE BATEAU_2+BATEAU_3_1+BATEAU_3_2+BATEAU_4+BATEAU_5+2
 #define PERDU TAB_SIZE*TAB_SIZE-1
 #define NBR_BATEAUX 6
-};
+}
 
 void vider_buffer() {
 
@@ -153,6 +156,7 @@ void top() {
 void body() {
 
 
+
     for (int j = 0; j < TAB_SIZE; ++j) {
 
         for (int i = 0; i < TAB_SIZE; ++i) {
@@ -168,16 +172,16 @@ void body() {
                 printf("    ");
             }
             printf("%c", DVSB);
-            if (grilleFixe[j][i] == VIDE || grilleFixe[j][i] < TOUCHE_EAU) {
+            if (grille[j][i] == VIDE || grille[j][i] < TOUCHE_EAU) {
                 SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), BLANC);
             } else {
-                if (grilleFixe[j][i] == TOUCHE_EAU) {
+                if (grille[j][i] == TOUCHE_EAU) {
                     SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), BLEU);
                 } else {
-                    if (grilleFixe[j][i] > TOUCHE && grilleFixe[j][i] < COULE) {
+                    if (grille[j][i] > TOUCHE && grille[j][i] < COULE) {
                         SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), NOIR);
                     } else {
-                        if (grilleFixe[j][i] > COULER) {
+                        if (grille[j][i] > COULER) {
                             SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), ROUGE);
                         } else {
                             SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), BLANC);
@@ -230,6 +234,7 @@ void bottom() {
 
 void affichageGrille() {
 
+
 #pragma execution_caracter_set("UTF-8")
     SetConsoleOutputCP(CP_UTF8); // For accented characters
 
@@ -270,7 +275,7 @@ void affichageGrille() {
 
                 x--;
 
-                if (grilleFixe[y2][x] >= TOUCHE) {
+                if (grille[y2][x] >= TOUCHE) {
                     compteur_tout++;
                 }
 
@@ -301,8 +306,8 @@ void affichageGrille() {
 
             }
 
-            if ((grilleFixe[y2][x] != 10) && (grilleFixe[y2][x] != 0)) {
-                if (grilleFixe[y2][x] < 10) {
+            if ((grille[y2][x] != 10) && (grille[y2][x] != 0)) {
+                if (grille[y2][x] < 10) {
                     compteur_bateaux++;
                 }
 
@@ -314,20 +319,20 @@ void affichageGrille() {
         }
 
 
-        if (grilleFixe[y2][x] == EAU && grilleFixe[y2][x] < TOUCHE_EAU && liste_bateaux[0] < EAUX) {
-            grilleFixe[y2][x] = grilleFixe[y2][x] + 10;
+        if (grille[y2][x] == EAU && grille[y2][x] < TOUCHE_EAU && liste_bateaux[0] < EAUX) {
+            grille[y2][x] = grille[y2][x] + 10;
             liste_bateaux[0]++;
 
         }
 
-        if (grilleFixe[y2][x] == BATEAU_2) {
-            grilleFixe[y2][x] = grilleFixe[y2][x] + 10;
+        if (grille[y2][x] == BATEAU_2) {
+            grille[y2][x] = grille[y2][x] + 10;
             liste_bateaux[1]++;
             if (liste_bateaux[1] == BATEAU_2 + 1) {
                 for (int i = 0; i < TAB_SIZE; ++i) {
                     for (int j = 0; j < TAB_SIZE; ++j) {
-                        if (grilleFixe[i][j] == BATEAU_2 + 10) {
-                            grilleFixe[i][j] = grilleFixe[i][j] + 10;
+                        if (grille[i][j] == BATEAU_2 + 10) {
+                            grille[i][j] = grille[i][j] + 10;
                         }
                     }
                 }
@@ -335,15 +340,15 @@ void affichageGrille() {
         }
 
 
-        if (grilleFixe[y2][x] == BATEAU_3_1) {
-            grilleFixe[y2][x] = grilleFixe[y2][x] + 10;
+        if (grille[y2][x] == BATEAU_3_1) {
+            grille[y2][x] = grille[y2][x] + 10;
             liste_bateaux[2]++;
 
             if (liste_bateaux[2] == BATEAU_3_1 + 1) {
                 for (int i = 0; i < TAB_SIZE; ++i) {
                     for (int j = 0; j < TAB_SIZE; ++j) {
-                        if (grilleFixe[i][j] == BATEAU_3_1 + 10) {
-                            grilleFixe[i][j] = grilleFixe[i][j] + 10;
+                        if (grille[i][j] == BATEAU_3_1 + 10) {
+                            grille[i][j] = grille[i][j] + 10;
                         }
                     }
                 }
@@ -351,47 +356,47 @@ void affichageGrille() {
 
         }
 
-        if (grilleFixe[y2][x] == BATEAU_3_2) {
-            grilleFixe[y2][x] = grilleFixe[y2][x] + 10;
+        if (grille[y2][x] == BATEAU_3_2) {
+            grille[y2][x] = grille[y2][x] + 10;
 
             liste_bateaux[3]++;
 
             if (liste_bateaux[3] == BATEAU_3_2) {
                 for (int i = 0; i < TAB_SIZE; ++i) {
                     for (int j = 0; j < TAB_SIZE; ++j) {
-                        if (grilleFixe[i][j] == BATEAU_3_2 + 10) {
-                            grilleFixe[i][j] = grilleFixe[i][j] + 10;
+                        if (grille[i][j] == BATEAU_3_2 + 10) {
+                            grille[i][j] = grille[i][j] + 10;
                         }
                     }
                 }
             }
         }
 
-        if (grilleFixe[y2][x] == BATEAU_4) {
-            grilleFixe[y2][x] = grilleFixe[y2][x] + 10;
+        if (grille[y2][x] == BATEAU_4) {
+            grille[y2][x] = grille[y2][x] + 10;
 
             liste_bateaux[4]++;
 
             if (liste_bateaux[4] == BATEAU_4) {
                 for (int i = 0; i < TAB_SIZE; ++i) {
                     for (int j = 0; j < TAB_SIZE; ++j) {
-                        if (grilleFixe[i][j] == BATEAU_4 + 10) {
-                            grilleFixe[i][j] = grilleFixe[i][j] + 10;
+                        if (grille[i][j] == BATEAU_4 + 10) {
+                            grille[i][j] = grille[i][j] + 10;
                         }
                     }
                 }
             }
         }
 
-        if (grilleFixe[y2][x] == BATEAU_5) {
-            grilleFixe[y2][x] = grilleFixe[y2][x] + 10;
+        if (grille[y2][x] == BATEAU_5) {
+            grille[y2][x] = grille[y2][x] + 10;
 
             liste_bateaux[5]++;
             if (liste_bateaux[5] == BATEAU_5) {
                 for (int i = 0; i < TAB_SIZE; ++i) {
                     for (int j = 0; j < TAB_SIZE; ++j) {
-                        if (grilleFixe[i][j] == BATEAU_5 + 10) {
-                            grilleFixe[i][j] = grilleFixe[i][j] + 10;
+                        if (grille[i][j] == BATEAU_5 + 10) {
+                            grille[i][j] = grille[i][j] + 10;
                         }
                     }
                 }
@@ -407,7 +412,7 @@ void affichageGrille() {
 
 
 
-        //  grilleFixe[x][y] = grilleFixe[x][y]+10;
+        //  grille[x][y] = grille[x][y]+10;
 
         // while(liste_bateaux[])
         // ch = _getch();
@@ -433,20 +438,24 @@ void menuGrilles() {
         printf("                              CHOISISSEZ VOTRE MER...");
         printf("\n\n\n      ");
         printf("                                   1. MER FIXE\n");
-      //  printf("                                   2. AFFICHAGE GRILLE");
+          printf("                                   2.GRILLE ALEATOIRES");
         printf("\n\n\n\n");
         if (ch != 49 && ch != -1) {
             printf("                                                           ");
             printf("CETTE MER N'EXISTE PAS !!!");
-        }/*
+        }
         if (ch == 49) {
             system("cls");
-            printf("\n\ngrille fixe");
-        } */
-        if (ch == 49) {
-            system("cls");
+            grilles_aleatoires();
             affichageGrille();
         }
+        if (ch == 50) {
+            system("cls");
+            grille_fixe();
+            affichageGrille();
+        }
+
+
         printf("\n\n\n\n");
         printf("APPUYER SUR LE NUMERO CORRESPONDANT POUR CONTINUER :   ");
         printf("                                                                                            ESCAPE:   POUR RETOURNER EN ARRIERE");
@@ -491,7 +500,7 @@ int principal() {
     do {
 
         system("cls");
-        grilles();
+
 
         menu();
         touche = _getch();
@@ -518,7 +527,11 @@ int principal() {
 }
 
 int main() {
-#pragma execution_caracter_set("UTF-8")
+
+
+
+
+    #pragma execution_caracter_set("UTF-8")
     SetConsoleOutputCP(CP_UTF8); // For accented characters
 
     keybd_event(VK_F11, 0, 0, 0); //Appuie sur ALT
