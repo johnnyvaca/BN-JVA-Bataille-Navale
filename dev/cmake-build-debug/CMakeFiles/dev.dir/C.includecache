@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/yogo-/projet/BN-JVA-Bataille-Navale/dev/main.c
+stdio.h
+-
+stdlib.h
+-
+conio.h
+-
+windows.h
+-
+time.h
+-
+

@@ -8,27 +8,45 @@
 #include <time.h>
 #define TAB_SIZE 10
 
-void grille_fixe(){
- int  grille[TAB_SIZE][TAB_SIZE] = {
-            {1, 1, 2, 2, 2, 5, 5, 5, 5, 5},
-            {3, 3, 3, 4, 4, 4, 4, 0, 0, 0},
-            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
-    };
-}
-int grilles_aleatoires(int nombreAleatoire) {
-
+int grilles_aleatoires() {
+    int nombreAleatoire;
 
     srand(time(NULL));
     nombreAleatoire =(rand() % 10)+1;
 
     return nombreAleatoire;
+}
+void logins()
+{/*
+    FILE * Handle;
+    char tmp[500];
+printf("Etes vous deja logger ?");
+
+    sprintf(tmp,"%s.txt",tmp);
+    // printf("\nfichier = %s\n",tmp);
+    Handle = fopen(tmp, "r");
+    if(Handle != NULL) {
+
+        for( int f = 0; f < TAB_SIZE; f++) {
+            for (int g = 0; g < TAB_SIZE; ++g) {
+                grille[f][g] = fgetc(Handle);
+                grille[f][g] = grille[f][g]-48;
+                //     printf("%c",grille[f][g]);
+            }
+            // printf("\n");
+
+
+        }
+        fclose(Handle);
+    }
+
+
+
+
+    */
+
+
+
 }
 void raccourcis() {
 #define DTLC 201 // +, Double Top Left Corner
@@ -125,32 +143,41 @@ void top() {
 
 }
 void body() {
-    int nombreAleatoire;
-    int stock;
+
+
+    int alea;
+
+        alea = grilles_aleatoires();
+
+
+
+
+    printf("alea : %d",alea);
+
+
     int grille[TAB_SIZE][TAB_SIZE];
-nombreAleatoire = grilles_aleatoires(stock);
+
 
     FILE * Handle;
     char tmp[500];
 
-    sprintf(tmp,"grille%d.txt",nombreAleatoire);
-
+    sprintf(tmp,"grille%d.txt",alea);
+  //  printf("\nfichier = %s\n",tmp);
     Handle = fopen(tmp, "r");
     if(Handle != NULL) {
 
         for( int f = 0; f < TAB_SIZE; f++) {
             for (int g = 0; g < TAB_SIZE; ++g) {
                 grille[f][g] = fgetc(Handle);
-                printf("%c",grille[f][g]);
+                grille[f][g] = grille[f][g]-48;
+          //      printf("%c",grille[f][g]);
             }
-            printf("\n");
+           // printf("\n");
 
 
         }
         fclose(Handle);
     }
-
-
 
 
     for (int j = 0; j < TAB_SIZE; ++j) {
@@ -229,6 +256,51 @@ void bottom() {
 void affichageGrille() {
 
 
+    int alea;
+    alea = grilles_aleatoires();
+
+
+   // printf("alea : %d",alea);
+
+
+    int grille[TAB_SIZE][TAB_SIZE];
+
+
+    FILE * Handle;
+    char tmp[500];
+
+    sprintf(tmp,"grille%d.txt",alea);
+   // printf("\nfichier = %s\n",tmp);
+    Handle = fopen(tmp, "r");
+    if(Handle != NULL) {
+
+        for( int f = 0; f < TAB_SIZE; f++) {
+            for (int g = 0; g < TAB_SIZE; ++g) {
+                grille[f][g] = fgetc(Handle);
+                grille[f][g] = grille[f][g]-48;
+           //     printf("%c",grille[f][g]);
+            }
+           // printf("\n");
+
+
+        }
+        fclose(Handle);
+    }
+
+
+    for( int f = 0; f < TAB_SIZE; f++) {
+        for (int g = 0; g < TAB_SIZE; ++g) {
+
+        //    printf("%d",grille[f][g]);
+        }
+        printf("\n");
+
+
+    }
+
+
+
+
 #pragma execution_caracter_set("UTF-8")
     SetConsoleOutputCP(CP_UTF8); // For accented characters
 
@@ -252,9 +324,238 @@ void affichageGrille() {
 
         if (compteur_bateaux < GAGNE) {
             if ((x >= 0 || x < TAB_SIZE) || (y2 >= 0 || y2 < TAB_SIZE)) {
-                top();
-                body();
-                bottom();
+
+
+
+
+
+
+           ///     top();
+#pragma execution_caracter_set("UTF-8")
+                SetConsoleOutputCP(65001); // For accented characters
+                SetConsoleOutputCP(437); // For semi-graphic characters
+                for (int i = 0; i < TAB_SIZE; ++i) {
+                    if (i == 0) {
+                        printf("        %d  ", i + 1);
+                    } else {
+                        printf("  %d  ", i + 1);
+                    }
+
+                }
+                printf("\n");
+                printf("      %c", DTLC);
+                for (int i = 0; i < TAB_SIZE - 1; ++i) {
+                    printf("%c%c%c%c%c", DHSB, DHSB, DHSB, DHSB, DHTB);
+                }
+                printf("%c%c%c%c%c", DHSB, DHSB, DHSB, DHSB, DTRC);
+                printf("\n");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+             ///   body();
+
+
+
+
+                for (int j = 0; j < TAB_SIZE; ++j) {
+
+                    for (int i = 0; i < TAB_SIZE; ++i) {
+                        SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), BLEU_BLANC);
+
+                        if (i == 0) {
+
+
+                            printf(" %c", j + 'A');
+                        }
+                        if (i == 0) {
+                            SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), BLEU_BLANC);
+                            printf("    ");
+                        }
+                        printf("%c", DVSB);
+                        if (grille[j][i] == VIDE || grille[j][i] < TOUCHE_EAU) {
+                            SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), BLANC);
+                        } else {
+                            if (grille[j][i] == TOUCHE_EAU) {
+                                SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), BLEU);
+                            } else {
+                                if (grille[j][i] > TOUCHE && grille[j][i] < COULE) {
+                                    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), NOIR);
+                                } else {
+                                    if (grille[j][i] > COULER) {
+                                        SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), ROUGE);
+                                    } else {
+                                        SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), BLANC);
+                                    }
+
+                                }
+
+                            }
+
+                        }
+
+                        printf("%c%c%c%c", 219, 219, 219, 219);
+
+
+                    }
+                    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), BLEU_BLANC);
+                    printf("%c", DVSB);
+                    printf("\n");
+                    if (j != TAB_SIZE - 1) {
+                        for (int i = 0; i < TAB_SIZE; ++i) {
+                            SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), BLEU_BLANC);
+                            if (i == 0) {
+                                printf("      %c", DVLB);
+                            } else {
+                                printf("%c", DC);
+                            }
+                            printf("%c%c%c%c", DHSB, DHSB, DHSB, DHSB);
+                            if (i == TAB_SIZE - 1) {
+                                printf("%c", DVRB);
+                            }
+                        }
+                        printf("\n");
+                    }
+
+                }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            ///    bottom();
+
+
+                SetConsoleOutputCP(65001); // For accented characters
+                SetConsoleOutputCP(437); // For semi-graphic characters
+
+                printf("      %c", DBLC);
+                for (int i = 0; i < TAB_SIZE - 1; ++i) {
+                    printf("%c%c%c%c%c", DHSB, DHSB, DHSB, DHSB, DHBB);
+                }
+                printf("%c%c%c%c%c", DHSB, DHSB, DHSB, DHSB, DBRC);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
                 printf("\n\n\n\n\n\n\n");
@@ -285,9 +586,209 @@ void affichageGrille() {
             }
             while ((x < 0 || x > TAB_SIZE) || (y2 < 0 || y2 > TAB_SIZE)) {
                 system("cls");
-                top();
-                body();
-                bottom();
+
+
+
+
+                ///     top();
+#pragma execution_caracter_set("UTF-8")
+                SetConsoleOutputCP(65001); // For accented characters
+                SetConsoleOutputCP(437); // For semi-graphic characters
+                for (int i = 0; i < TAB_SIZE; ++i) {
+                    if (i == 0) {
+                        printf("        %d  ", i + 1);
+                    } else {
+                        printf("  %d  ", i + 1);
+                    }
+
+                }
+                printf("\n");
+                printf("      %c", DTLC);
+                for (int i = 0; i < TAB_SIZE - 1; ++i) {
+                    printf("%c%c%c%c%c", DHSB, DHSB, DHSB, DHSB, DHTB);
+                }
+                printf("%c%c%c%c%c", DHSB, DHSB, DHSB, DHSB, DTRC);
+                printf("\n");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                ///   body();
+
+
+
+
+                for (int j = 0; j < TAB_SIZE; ++j) {
+
+                    for (int i = 0; i < TAB_SIZE; ++i) {
+                        SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), BLEU_BLANC);
+
+                        if (i == 0) {
+
+
+                            printf(" %c", j + 'A');
+                        }
+                        if (i == 0) {
+                            SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), BLEU_BLANC);
+                            printf("    ");
+                        }
+                        printf("%c", DVSB);
+                        if (grille[j][i] == VIDE || grille[j][i] < TOUCHE_EAU) {
+                            SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), BLANC);
+                        } else {
+                            if (grille[j][i] == TOUCHE_EAU) {
+                                SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), BLEU);
+                            } else {
+                                if (grille[j][i] > TOUCHE && grille[j][i] < COULE) {
+                                    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), NOIR);
+                                } else {
+                                    if (grille[j][i] > COULER) {
+                                        SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), ROUGE);
+                                    } else {
+                                        SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), BLANC);
+                                    }
+
+                                }
+
+                            }
+
+                        }
+
+                        printf("%c%c%c%c", 219, 219, 219, 219);
+
+
+                    }
+                    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), BLEU_BLANC);
+                    printf("%c", DVSB);
+                    printf("\n");
+                    if (j != TAB_SIZE - 1) {
+                        for (int i = 0; i < TAB_SIZE; ++i) {
+                            SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), BLEU_BLANC);
+                            if (i == 0) {
+                                printf("      %c", DVLB);
+                            } else {
+                                printf("%c", DC);
+                            }
+                            printf("%c%c%c%c", DHSB, DHSB, DHSB, DHSB);
+                            if (i == TAB_SIZE - 1) {
+                                printf("%c", DVRB);
+                            }
+                        }
+                        printf("\n");
+                    }
+
+                }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                ///    bottom();
+
+
+                SetConsoleOutputCP(65001); // For accented characters
+                SetConsoleOutputCP(437); // For semi-graphic characters
+
+                printf("      %c", DBLC);
+                for (int i = 0; i < TAB_SIZE - 1; ++i) {
+                    printf("%c%c%c%c%c", DHSB, DHSB, DHSB, DHSB, DHBB);
+                }
+                printf("%c%c%c%c%c", DHSB, DHSB, DHSB, DHSB, DBRC);
+
+
+
 
 
                 printf("\n\n\n\n\n\n\n");
@@ -430,8 +931,8 @@ void menuGrilles() {
         logo();
         printf("                              CHOISISSEZ VOTRE MER...");
         printf("\n\n\n      ");
-        printf("                                   1. MER FIXE\n");
-          printf("                                   2.GRILLE ALEATOIRES");
+        printf("                                   1. MERS ALEATOIRES\n");
+
         printf("\n\n\n\n");
         if (ch != 49 && ch != -1) {
             printf("                                                           ");
@@ -439,14 +940,9 @@ void menuGrilles() {
         }
         if (ch == 49) {
             system("cls");
-            grilles_aleatoires();
             affichageGrille();
         }
-        if (ch == 50) {
-            system("cls");
-            grille_fixe();
-            affichageGrille();
-        }
+
 
 
         printf("\n\n\n\n");
@@ -517,6 +1013,11 @@ int principal() {
     return 0;
 }
 int main() {
+
+
+
+
+
 
 
 
