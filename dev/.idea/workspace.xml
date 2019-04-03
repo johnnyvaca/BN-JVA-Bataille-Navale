@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/main.c" line="12" />
-  </component>
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
     <generated>
       <config projectName="dev" targetName="dev" />
@@ -14,10 +11,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bc286b0c-fa01-4e53-81c9-b326a92c1ff3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/grilles/grille1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
-    </list>
+    <list default="true" id="d66251eb-8fae-4924-bee1-0b5c76a8bb7f" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -27,36 +21,31 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+    <leaf>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="22" column="42" lean-forward="true" selection-start-line="22" selection-start-column="42" selection-end-line="22" selection-end-column="42" />
+            <state relative-caret-position="232">
+              <caret line="64" column="1" lean-forward="true" selection-start-line="64" selection-start-column="1" selection-end-line="64" selection-end-column="1" />
               <folding>
-                <element signature="e#82#100#0" expanded="true" />
-                <element signature="e#742#1435#0" />
-                <element signature="e#1264#2414#0" />
-                <element signature="e#2417#2522#0" />
-                <element signature="e#2524#3146#0" />
-                <element signature="e#3148#4285#0" />
-                <element signature="e#4287#4870#0" />
-                <element signature="e#6967#7301#0" />
-                <element signature="e#12956#14957#0" />
-                <element signature="e#14959#15513#0" />
-                <element signature="e#15968#16328#0" />
+                <element signature="e#232#736#0" />
+                <element signature="e#1418#2568#0" />
+                <element signature="e#2570#2675#0" />
+                <element signature="e#2677#3299#0" />
+                <element signature="e#3301#4438#0" />
+                <element signature="e#4440#5023#0" />
+                <element signature="e#7097#7431#0" />
+                <element signature="e#7433#12318#0" />
+                <element signature="e#12320#13413#0" />
+                <element signature="e#13415#15416#0" />
+                <element signature="e#15418#15964#0" />
+                <element signature="e#15966#16326#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>max</find>
-      <find>alea</find>
-    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -68,10 +57,10 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="238" />
-    <option name="y" value="22" />
-    <option name="width" value="1696" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="176" />
+    <option name="y" value="33" />
+    <option name="width" value="1287" />
     <option name="height" value="1026" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -80,6 +69,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -91,7 +81,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -123,42 +112,41 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="bc286b0c-fa01-4e53-81c9-b326a92c1ff3" name="Default Changelist" comment="" />
-      <created>1554138347365</created>
+      <changelist id="d66251eb-8fae-4924-bee1-0b5c76a8bb7f" name="Default Changelist" comment="" />
+      <created>1554273249825</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1554138347365</updated>
-      <workItem from="1554138349726" duration="6458000" />
-      <workItem from="1554233567498" duration="9179000" />
+      <updated>1554273249825</updated>
+      <workItem from="1554273252465" duration="2844000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15637000" />
+    <option name="totallyTimeSpent" value="2844000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
+    <frame x="176" y="33" width="1287" height="1026" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49931225" visible="true" weight="0.25305623" />
-      <window_info id="Structure" order="1" sideWeight="0.5006878" side_tool="true" visible="true" weight="0.25305623" />
-      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info id="Favorites" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18907906" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Database Changes" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="CMake" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32922733" />
+      <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Database Changes" order="7" />
-      <window_info active="true" anchor="bottom" id="Messages" order="8" visible="true" weight="0.18589026" />
-      <window_info anchor="bottom" id="Terminal" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="11" />
-      <window_info anchor="bottom" id="CMake" order="12" />
+      <window_info anchor="right" id="Database" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Database" order="3" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -167,20 +155,21 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/main.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="42" lean-forward="true" selection-start-line="22" selection-start-column="42" selection-end-line="22" selection-end-column="42" />
+        <state relative-caret-position="232">
+          <caret line="64" column="1" lean-forward="true" selection-start-line="64" selection-start-column="1" selection-end-line="64" selection-end-column="1" />
           <folding>
-            <element signature="e#82#100#0" expanded="true" />
-            <element signature="e#742#1435#0" />
-            <element signature="e#1264#2414#0" />
-            <element signature="e#2417#2522#0" />
-            <element signature="e#2524#3146#0" />
-            <element signature="e#3148#4285#0" />
-            <element signature="e#4287#4870#0" />
-            <element signature="e#6967#7301#0" />
-            <element signature="e#12956#14957#0" />
-            <element signature="e#14959#15513#0" />
-            <element signature="e#15968#16328#0" />
+            <element signature="e#232#736#0" />
+            <element signature="e#1418#2568#0" />
+            <element signature="e#2570#2675#0" />
+            <element signature="e#2677#3299#0" />
+            <element signature="e#3301#4438#0" />
+            <element signature="e#4440#5023#0" />
+            <element signature="e#7097#7431#0" />
+            <element signature="e#7433#12318#0" />
+            <element signature="e#12320#13413#0" />
+            <element signature="e#13415#15416#0" />
+            <element signature="e#15418#15964#0" />
+            <element signature="e#15966#16326#0" />
           </folding>
         </state>
       </provider>

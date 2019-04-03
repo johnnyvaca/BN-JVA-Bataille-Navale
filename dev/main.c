@@ -7,7 +7,6 @@
 #include <windows.h>
 #include <time.h>
 #define TAB_SIZE 10
-int grille[TAB_SIZE][TAB_SIZE];
 
 void grille_fixe(){
  int  grille[TAB_SIZE][TAB_SIZE] = {
@@ -23,37 +22,14 @@ void grille_fixe(){
             {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
     };
 }
-void grilles_aleatoires() {
-    FILE * Handle;
-    char tmp[500];
-    int nombreAleatoire = 0;
-    const int MAX = 10, MIN = 1;
-  //  while(nombreAleatoire <= MAX && nombreAleatoire >= MIN)
-  //  {
-        srand(time(NULL));
-        nombreAleatoire =(rand() % 10)+1;
-    //  }
+int grilles_aleatoires(int nombreAleatoire) {
 
 
-    sprintf(tmp,"grille%d.txt",nombreAleatoire);
-    printf("tmp : %s",tmp);
-    Handle = fopen(tmp, "r");
-    if(Handle != NULL) {
+    srand(time(NULL));
+    nombreAleatoire =(rand() % 10)+1;
 
-        for( int f = 0; f < TAB_SIZE; f++) {
-            for (int g = 0; g < TAB_SIZE; ++g) {
-                grille[f][g] = fgetc(Handle);
-                printf("%c",grille[f][g]);
-            }
-            printf("\n");
-
-
-        }
-        fclose(Handle);
-    }
-
+    return nombreAleatoire;
 }
-
 void raccourcis() {
 #define DTLC 201 // +, Double Top Left Corner
 #define DTRC 187 // +, Double Top Right Corner
@@ -87,7 +63,6 @@ void raccourcis() {
 #define PERDU TAB_SIZE*TAB_SIZE-1
 #define NBR_BATEAUX 6
 }
-
 void vider_buffer() {
 
     int c;
@@ -96,7 +71,6 @@ void vider_buffer() {
     } while (c != EOF && c != '\n');
 
 }
-
 void logo() {
 
     printf("              ____        _        _ _ _        _    _                  _      \n"
@@ -107,7 +81,6 @@ void logo() {
            "             |____/ \\__,_|\\__\\__,_|_|_|_|\\___| |_| \\_|\\__,_| \\_/ \\__,_|_|\\___|");
     printf("\n\n\n\n");
 }
-
 void menu() {
 
     logo();
@@ -130,7 +103,6 @@ void menu() {
     printf("F1 AIDE");
     printf("\n");
 }
-
 void top() {
 #pragma execution_caracter_set("UTF-8")
     SetConsoleOutputCP(65001); // For accented characters
@@ -152,8 +124,32 @@ void top() {
     printf("\n");
 
 }
-
 void body() {
+    int nombreAleatoire;
+    int stock;
+    int grille[TAB_SIZE][TAB_SIZE];
+nombreAleatoire = grilles_aleatoires(stock);
+
+    FILE * Handle;
+    char tmp[500];
+
+    sprintf(tmp,"grille%d.txt",nombreAleatoire);
+
+    Handle = fopen(tmp, "r");
+    if(Handle != NULL) {
+
+        for( int f = 0; f < TAB_SIZE; f++) {
+            for (int g = 0; g < TAB_SIZE; ++g) {
+                grille[f][g] = fgetc(Handle);
+                printf("%c",grille[f][g]);
+            }
+            printf("\n");
+
+
+        }
+        fclose(Handle);
+    }
+
 
 
 
@@ -219,7 +215,6 @@ void body() {
     }
 
 }
-
 void bottom() {
 
     SetConsoleOutputCP(65001); // For accented characters
@@ -231,7 +226,6 @@ void bottom() {
     }
     printf("%c%c%c%c%c", DHSB, DHSB, DHSB, DHSB, DBRC);
 }
-
 void affichageGrille() {
 
 
@@ -424,7 +418,6 @@ void affichageGrille() {
     system("cls");
     printf("BRAVO  !!!");
 }
-
 void menuGrilles() {
 
     int ch = -1;
@@ -463,7 +456,6 @@ void menuGrilles() {
 
     } while (ch != 27);
 }
-
 void afficher_aide() {
 
 #pragma execution_caracter_set("UTF-8")
@@ -493,7 +485,6 @@ void afficher_aide() {
 
     } while (ch != 27);
 }
-
 int principal() {
     int touche;
 
@@ -525,7 +516,6 @@ int principal() {
 
     return 0;
 }
-
 int main() {
 
 
