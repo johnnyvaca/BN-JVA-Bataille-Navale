@@ -8,6 +8,73 @@
 #include <time.h>
 #define TAB_SIZE 10
 
+/*
+
+char *correspondance(int a)
+//{    FILE * fichierloggin;
+//    char nom_utilisateur[15];
+/    int longes;
+    printf("taper votre nom d'utilisateur :\n");
+    scanf("%s",nom_utilisateur);
+    sprintf(nom_utilisateur,"%s.txt",nom_utilisateur);
+
+    printf("\nfichier = %s\n",nom_utilisateur);
+    fichierloggin = fopen(nom_utilisateur, "w");
+/
+//
+//
+//
+//
+//
+//   fclose(fichierloggin);
+    longes = strlen(nom_utilisateur);
+    char place[] = nom_utilisateur;
+
+
+    switch (a)
+    {
+        default:
+            return "???";
+            break;
+
+        case 6:
+            return place;
+            break;
+    }
+} */
+
+char loggins(){
+
+  //  FILE * fichierloggin;
+    char nom_utilisateur[15];
+    int longes;
+    printf("taper votre nom d'utilisateur :\n");
+    scanf("%s",nom_utilisateur);
+    sprintf(nom_utilisateur,"%s.txt",nom_utilisateur);
+
+   // printf("\nfichier = %s\n",nom_utilisateur);
+  //  fichierloggin = fopen(nom_utilisateur, "w");
+  //  fclose(fichierloggin);
+
+
+    return nom_utilisateur;
+
+}
+
+int lon(char* str) {
+    int i=1;
+    while (str[i] != 0) {
+        i++;
+    }
+    return i;
+}
+char inv(char* str) {
+    int i=0; char inv[32];
+    for (i=0 ; i<lon(str) ; i++) {
+        inv[i]=str[lon(str)-1-i];
+    }
+    return inv;
+}
 int grilles_aleatoires() {
     int nombreAleatoire;
 
@@ -15,27 +82,6 @@ int grilles_aleatoires() {
     nombreAleatoire =(rand() % 3)+1;
 
     return nombreAleatoire;
-}
-char logins(){
-    FILE * fichierloggin;
-    char nom_utilisateur[15];
-    sprintf(nom_utilisateur,"%s.txt",nom_utilisateur);
-printf("Etes vous deja logger ?");
-// printf("\nfichier = %s\n",tmp);
-    fichierloggin = fopen(nom_utilisateur, "w");
-
-
-    if(fichierloggin != NULL) {
-
-
-        fclose(fichierloggin);
-    }
-    else
-    {
-
-    }
-    return nom_utilisateur;
-
 }
 void raccourcis() {
 #define DTLC 201 // +, Double Top Left Corner
@@ -136,7 +182,7 @@ void body() {
 
     int alea;
 
-        alea = grilles_aleatoires();
+    alea = grilles_aleatoires();
 
 
 
@@ -151,7 +197,7 @@ void body() {
     char tmp[500];
 
     sprintf(tmp,"grille%d.txt",alea);
-  //  printf("\nfichier = %s\n",tmp);
+    //  printf("\nfichier = %s\n",tmp);
     Handle = fopen(tmp, "r");
     if(Handle != NULL) {
 
@@ -159,9 +205,9 @@ void body() {
             for (int g = 0; g < TAB_SIZE; ++g) {
                 grille[f][g] = fgetc(Handle);
                 grille[f][g] = grille[f][g]-48;
-          //      printf("%c",grille[f][g]);
+                //      printf("%c",grille[f][g]);
             }
-           // printf("\n");
+            // printf("\n");
 
 
         }
@@ -249,7 +295,7 @@ void affichageGrille() {
     alea = grilles_aleatoires();
 
 
-   // printf("alea : %d",alea);
+    // printf("alea : %d",alea);
 
 
     int grille[TAB_SIZE][TAB_SIZE];
@@ -259,7 +305,7 @@ void affichageGrille() {
     char tmp[500];
 
     sprintf(tmp,"grille%d.txt",alea);
-   // printf("\nfichier = %s\n",tmp);
+    // printf("\nfichier = %s\n",tmp);
     Handle = fopen(tmp, "r");
     if(Handle != NULL) {
 
@@ -267,9 +313,9 @@ void affichageGrille() {
             for (int g = 0; g < TAB_SIZE; ++g) {
                 grille[f][g] = fgetc(Handle);
                 grille[f][g] = grille[f][g]-48;
-           //     printf("%c",grille[f][g]);
+                //     printf("%c",grille[f][g]);
             }
-           // printf("\n");
+            // printf("\n");
 
 
         }
@@ -280,7 +326,7 @@ void affichageGrille() {
     for( int f = 0; f < TAB_SIZE; f++) {
         for (int g = 0; g < TAB_SIZE; ++g) {
 
-        //    printf("%d",grille[f][g]);
+            //    printf("%d",grille[f][g]);
         }
         printf("\n");
 
@@ -297,14 +343,13 @@ void affichageGrille() {
     SetConsoleOutputCP(437); // For semi-graphic characters
     int ch;
     int x = 0, y2 = 0;
-    int y = 0;
+    char y = '/';
     int liste_bateaux[NBR_BATEAUX] = {0, 0, 0, 0, 0, 0};
     int compteur_tout = 0;
     int compteur_bateaux = 0;
     int compteur_touches = 1;
     raccourcis();
     int switchs = 1;
-    int confirm=0;
 
 
 
@@ -316,8 +361,8 @@ void affichageGrille() {
             if ((x >= 0 || x < TAB_SIZE) || (y2 >= 0 || y2 < TAB_SIZE)) {
 
 
-               top();
-             ///   body();
+                top();
+                ///   body();
 
                 for (int j = 0; j < TAB_SIZE; ++j) {
 
@@ -385,11 +430,9 @@ void affichageGrille() {
                 bottom();
                 printf("Selectionner votre case :  ");
 
-                y = _getch();
-                x = _getch();
-                confirm = _getch();
-                y2 = (int) y - 48 ;
-                printf("y = %d ||  x = %d  || confirm : %d  ",y,x,confirm );
+
+                scanf("%c%d", &y, &x);
+                y2 = (int) y - 48 - 49;
 
 
                 x--;
@@ -411,7 +454,7 @@ void affichageGrille() {
             while ((x < 0 || x > TAB_SIZE) || (y2 < 0 || y2 > TAB_SIZE)) {
                 system("cls");
 
-                    top();
+                top();
 
                 ///   body();
 
@@ -479,7 +522,7 @@ void affichageGrille() {
 
                 }
 
-                    bottom();
+                bottom();
 
 
 
@@ -487,7 +530,7 @@ void affichageGrille() {
 
                 printf("\n\n\n\n\n\n\n");
                 printf("Selectionner votre case :  ");
-                          y = _getch();
+                //_getch();
                 scanf("%c%d", &y, &x);
                 y2 = (int) y - 48 - 49;
                 x--;
@@ -632,7 +675,7 @@ void menuGrilles() {
         if (ch != 49 && ch != -1) {
             printf("                                                           ");
             printf("CETTE MER N'EXISTE PAS !!!");
-           // printf("%d",ch);
+            // printf("%d",ch);
         }
         if (ch == 49) {
             system("cls");
@@ -720,14 +763,18 @@ int main() {
     keybd_event(VK_F11, 0, KEYEVENTF_KEYUP, 0); // Relache ENTREE
 
     SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), BLEU_BLANC);
+char nom_utilisateur;
+char nom;
+    nom = loggins();
+    FILE * fichierloggin;
+   fichierloggin = fopen(nom, "w");
+    fclose(fichierloggin);
 
-
-
-
-
+printf("nom : %s",nom);
+/*
     menu();
     principal();
 
-
+*/
     return 0;
 }
