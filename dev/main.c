@@ -43,38 +43,17 @@ char *correspondance(int a)
     }
 } */
 
-char loggins(){
+void loggins( char *retour){
 
-  //  FILE * fichierloggin;
     char nom_utilisateur[15];
-    int longes;
+
     printf("taper votre nom d'utilisateur :\n");
     scanf("%s",nom_utilisateur);
     sprintf(nom_utilisateur,"%s.txt",nom_utilisateur);
-
-   // printf("\nfichier = %s\n",nom_utilisateur);
-  //  fichierloggin = fopen(nom_utilisateur, "w");
-  //  fclose(fichierloggin);
-
-
-    return nom_utilisateur;
+    strcpy(retour, nom_utilisateur);
 
 }
 
-int lon(char* str) {
-    int i=1;
-    while (str[i] != 0) {
-        i++;
-    }
-    return i;
-}
-char inv(char* str) {
-    int i=0; char inv[32];
-    for (i=0 ; i<lon(str) ; i++) {
-        inv[i]=str[lon(str)-1-i];
-    }
-    return inv;
-}
 int grilles_aleatoires() {
     int nombreAleatoire;
 
@@ -175,106 +154,6 @@ void top() {
     }
     printf("%c%c%c%c%c", DHSB, DHSB, DHSB, DHSB, DTRC);
     printf("\n");
-
-}
-void body() {
-
-
-    int alea;
-
-    alea = grilles_aleatoires();
-
-
-
-
-    printf("alea : %d",alea);
-
-
-    int grille[TAB_SIZE][TAB_SIZE];
-
-
-    FILE * Handle;
-    char tmp[500];
-
-    sprintf(tmp,"grille%d.txt",alea);
-    //  printf("\nfichier = %s\n",tmp);
-    Handle = fopen(tmp, "r");
-    if(Handle != NULL) {
-
-        for( int f = 0; f < TAB_SIZE; f++) {
-            for (int g = 0; g < TAB_SIZE; ++g) {
-                grille[f][g] = fgetc(Handle);
-                grille[f][g] = grille[f][g]-48;
-                //      printf("%c",grille[f][g]);
-            }
-            // printf("\n");
-
-
-        }
-        fclose(Handle);
-    }
-
-
-    for (int j = 0; j < TAB_SIZE; ++j) {
-
-        for (int i = 0; i < TAB_SIZE; ++i) {
-            SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), BLEU_BLANC);
-
-            if (i == 0) {
-
-
-                printf(" %c", j + 'A');
-            }
-            if (i == 0) {
-                SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), BLEU_BLANC);
-                printf("    ");
-            }
-            printf("%c", DVSB);
-            if (grille[j][i] == VIDE || grille[j][i] < TOUCHE_EAU) {
-                SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), BLANC);
-            } else {
-                if (grille[j][i] == TOUCHE_EAU) {
-                    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), BLEU);
-                } else {
-                    if (grille[j][i] > TOUCHE && grille[j][i] < COULE) {
-                        SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), NOIR);
-                    } else {
-                        if (grille[j][i] > COULER) {
-                            SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), ROUGE);
-                        } else {
-                            SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), BLANC);
-                        }
-
-                    }
-
-                }
-
-            }
-
-            printf("%c%c%c%c", 219, 219, 219, 219);
-
-
-        }
-        SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), BLEU_BLANC);
-        printf("%c", DVSB);
-        printf("\n");
-        if (j != TAB_SIZE - 1) {
-            for (int i = 0; i < TAB_SIZE; ++i) {
-                SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), BLEU_BLANC);
-                if (i == 0) {
-                    printf("      %c", DVLB);
-                } else {
-                    printf("%c", DC);
-                }
-                printf("%c%c%c%c", DHSB, DHSB, DHSB, DHSB);
-                if (i == TAB_SIZE - 1) {
-                    printf("%c", DVRB);
-                }
-            }
-            printf("\n");
-        }
-
-    }
 
 }
 void bottom() {
@@ -763,18 +642,20 @@ int main() {
     keybd_event(VK_F11, 0, KEYEVENTF_KEYUP, 0); // Relache ENTREE
 
     SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), BLEU_BLANC);
-char nom_utilisateur;
-char nom;
-    nom = loggins();
+
+char nom[15];
+loggins(nom);
+
+
     FILE * fichierloggin;
-   fichierloggin = fopen(nom, "w");
+    fichierloggin = fopen(nom, "w");
     fclose(fichierloggin);
 
-printf("nom : %s",nom);
-/*
+system("cls");
+
     menu();
     principal();
 
-*/
+
     return 0;
 }
