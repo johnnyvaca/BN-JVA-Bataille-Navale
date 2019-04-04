@@ -12,40 +12,29 @@ int grilles_aleatoires() {
     int nombreAleatoire;
 
     srand(time(NULL));
-    nombreAleatoire =(rand() % 10)+1;
+    nombreAleatoire =(rand() % 3)+1;
 
     return nombreAleatoire;
 }
-void logins()
-{/*
-    FILE * Handle;
-    char tmp[500];
+char logins(){
+    FILE * fichierloggin;
+    char nom_utilisateur[15];
+    sprintf(nom_utilisateur,"%s.txt",nom_utilisateur);
 printf("Etes vous deja logger ?");
-
-    sprintf(tmp,"%s.txt",tmp);
-    // printf("\nfichier = %s\n",tmp);
-    Handle = fopen(tmp, "r");
-    if(Handle != NULL) {
-
-        for( int f = 0; f < TAB_SIZE; f++) {
-            for (int g = 0; g < TAB_SIZE; ++g) {
-                grille[f][g] = fgetc(Handle);
-                grille[f][g] = grille[f][g]-48;
-                //     printf("%c",grille[f][g]);
-            }
-            // printf("\n");
+// printf("\nfichier = %s\n",tmp);
+    fichierloggin = fopen(nom_utilisateur, "w");
 
 
-        }
-        fclose(Handle);
+    if(fichierloggin != NULL) {
+
+
+        fclose(fichierloggin);
     }
+    else
+    {
 
-
-
-
-    */
-
-
+    }
+    return nom_utilisateur;
 
 }
 void raccourcis() {
@@ -308,13 +297,14 @@ void affichageGrille() {
     SetConsoleOutputCP(437); // For semi-graphic characters
     int ch;
     int x = 0, y2 = 0;
-    char y = '/';
+    int y = 0;
     int liste_bateaux[NBR_BATEAUX] = {0, 0, 0, 0, 0, 0};
     int compteur_tout = 0;
     int compteur_bateaux = 0;
     int compteur_touches = 1;
     raccourcis();
     int switchs = 1;
+    int confirm=0;
 
 
 
@@ -326,60 +316,8 @@ void affichageGrille() {
             if ((x >= 0 || x < TAB_SIZE) || (y2 >= 0 || y2 < TAB_SIZE)) {
 
 
-
-
-
-
-           ///     top();
-#pragma execution_caracter_set("UTF-8")
-                SetConsoleOutputCP(65001); // For accented characters
-                SetConsoleOutputCP(437); // For semi-graphic characters
-                for (int i = 0; i < TAB_SIZE; ++i) {
-                    if (i == 0) {
-                        printf("        %d  ", i + 1);
-                    } else {
-                        printf("  %d  ", i + 1);
-                    }
-
-                }
-                printf("\n");
-                printf("      %c", DTLC);
-                for (int i = 0; i < TAB_SIZE - 1; ++i) {
-                    printf("%c%c%c%c%c", DHSB, DHSB, DHSB, DHSB, DHTB);
-                }
-                printf("%c%c%c%c%c", DHSB, DHSB, DHSB, DHSB, DTRC);
-                printf("\n");
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+               top();
              ///   body();
-
-
-
 
                 for (int j = 0; j < TAB_SIZE; ++j) {
 
@@ -444,128 +382,14 @@ void affichageGrille() {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            ///    bottom();
-
-
-                SetConsoleOutputCP(65001); // For accented characters
-                SetConsoleOutputCP(437); // For semi-graphic characters
-
-                printf("      %c", DBLC);
-                for (int i = 0; i < TAB_SIZE - 1; ++i) {
-                    printf("%c%c%c%c%c", DHSB, DHSB, DHSB, DHSB, DHBB);
-                }
-                printf("%c%c%c%c%c", DHSB, DHSB, DHSB, DHSB, DBRC);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                printf("\n\n\n\n\n\n\n");
-
-
+                bottom();
                 printf("Selectionner votre case :  ");
 
-
-                scanf("%c%d", &y, &x);
-                y2 = (int) y - 48 - 49;
+                y = _getch();
+                x = _getch();
+                confirm = _getch();
+                y2 = (int) y - 48 ;
+                printf("y = %d ||  x = %d  || confirm : %d  ",y,x,confirm );
 
 
                 x--;
@@ -587,54 +411,7 @@ void affichageGrille() {
             while ((x < 0 || x > TAB_SIZE) || (y2 < 0 || y2 > TAB_SIZE)) {
                 system("cls");
 
-
-
-
-                ///     top();
-#pragma execution_caracter_set("UTF-8")
-                SetConsoleOutputCP(65001); // For accented characters
-                SetConsoleOutputCP(437); // For semi-graphic characters
-                for (int i = 0; i < TAB_SIZE; ++i) {
-                    if (i == 0) {
-                        printf("        %d  ", i + 1);
-                    } else {
-                        printf("  %d  ", i + 1);
-                    }
-
-                }
-                printf("\n");
-                printf("      %c", DTLC);
-                for (int i = 0; i < TAB_SIZE - 1; ++i) {
-                    printf("%c%c%c%c%c", DHSB, DHSB, DHSB, DHSB, DHTB);
-                }
-                printf("%c%c%c%c%c", DHSB, DHSB, DHSB, DHSB, DTRC);
-                printf("\n");
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                    top();
 
                 ///   body();
 
@@ -702,90 +479,7 @@ void affichageGrille() {
 
                 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                ///    bottom();
-
-
-                SetConsoleOutputCP(65001); // For accented characters
-                SetConsoleOutputCP(437); // For semi-graphic characters
-
-                printf("      %c", DBLC);
-                for (int i = 0; i < TAB_SIZE - 1; ++i) {
-                    printf("%c%c%c%c%c", DHSB, DHSB, DHSB, DHSB, DHBB);
-                }
-                printf("%c%c%c%c%c", DHSB, DHSB, DHSB, DHSB, DBRC);
+                    bottom();
 
 
 
@@ -793,7 +487,7 @@ void affichageGrille() {
 
                 printf("\n\n\n\n\n\n\n");
                 printf("Selectionner votre case :  ");
-
+                          y = _getch();
                 scanf("%c%d", &y, &x);
                 y2 = (int) y - 48 - 49;
                 x--;
@@ -917,6 +611,7 @@ void affichageGrille() {
 
 
     system("cls");
+    printf("scores : %d", compteur_tout);
     printf("BRAVO  !!!");
 }
 void menuGrilles() {
@@ -937,6 +632,7 @@ void menuGrilles() {
         if (ch != 49 && ch != -1) {
             printf("                                                           ");
             printf("CETTE MER N'EXISTE PAS !!!");
+           // printf("%d",ch);
         }
         if (ch == 49) {
             system("cls");
@@ -1017,18 +713,18 @@ int main() {
 
 
 
-
-
-
-
-
-    #pragma execution_caracter_set("UTF-8")
+#pragma execution_caracter_set("UTF-8")
     SetConsoleOutputCP(CP_UTF8); // For accented characters
 
     keybd_event(VK_F11, 0, 0, 0); //Appuie sur ALT
     keybd_event(VK_F11, 0, KEYEVENTF_KEYUP, 0); // Relache ENTREE
 
     SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), BLEU_BLANC);
+
+
+
+
+
     menu();
     principal();
 
