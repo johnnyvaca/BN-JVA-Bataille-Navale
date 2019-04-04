@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/main.c" line="537" />
-    <bookmark url="file://$PROJECT_DIR$/main.c" line="653" />
-    <bookmark url="file://$PROJECT_DIR$/main.c" line="647" />
-    <bookmark url="file://$PROJECT_DIR$/main.c" line="651" />
+    <bookmark url="file://$PROJECT_DIR$/main.c" line="521" />
+    <bookmark url="file://$PROJECT_DIR$/main.c" line="640" />
+    <bookmark url="file://$PROJECT_DIR$/main.c" line="634" />
+    <bookmark url="file://$PROJECT_DIR$/main.c" line="638" />
+    <bookmark url="file://$PROJECT_DIR$/main.c" line="596" />
   </component>
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
     <generated>
@@ -31,27 +32,19 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="148">
-              <caret line="136" column="1" lean-forward="true" selection-start-line="136" selection-start-column="1" selection-end-line="136" selection-end-column="1" />
-              <folding>
-                <element signature="e#200#821#0" />
-                <element signature="e#1453#1596#0" />
-                <element signature="e#1597#2747#0" />
-                <element signature="e#2748#2853#0" />
-                <element signature="e#2854#3476#0" />
-                <element signature="e#3477#4614#0" />
-                <element signature="e#4615#5198#0" />
-                <element signature="e#7890#8224#0" />
-                <element signature="e#8225#19234#0" />
-                <element signature="e#19235#20140#0" />
-                <element signature="e#20141#22142#0" />
-                <element signature="e#22143#22689#0" />
-              </folding>
+            <state relative-caret-position="426">
+              <caret line="306" column="17" lean-forward="true" selection-start-line="306" selection-start-column="17" selection-end-line="306" selection-end-column="17" />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>compteur_</find>
+      <find>compteur_tout</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -63,7 +56,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="190" />
     <option name="y" value="193" />
     <option name="width" value="1287" />
@@ -127,17 +120,18 @@
       <workItem from="1554362752220" duration="604000" />
       <workItem from="1554364389152" duration="3035000" />
       <workItem from="1554378183348" duration="1158000" />
+      <workItem from="1554380056692" duration="8388000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8504000" />
+    <option name="totallyTimeSpent" value="16892000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="190" y="193" width="1287" height="1026" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.117359415" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.07782516" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -148,7 +142,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Database Changes" order="7" />
-      <window_info active="true" anchor="bottom" id="Messages" order="8" visible="true" weight="0.15789473" />
+      <window_info active="true" anchor="bottom" id="Messages" order="8" visible="true" weight="0.1603467" />
       <window_info anchor="bottom" id="Terminal" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="11" />
@@ -172,22 +166,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="148">
-          <caret line="136" column="1" lean-forward="true" selection-start-line="136" selection-start-column="1" selection-end-line="136" selection-end-column="1" />
-          <folding>
-            <element signature="e#200#821#0" />
-            <element signature="e#1453#1596#0" />
-            <element signature="e#1597#2747#0" />
-            <element signature="e#2748#2853#0" />
-            <element signature="e#2854#3476#0" />
-            <element signature="e#3477#4614#0" />
-            <element signature="e#4615#5198#0" />
-            <element signature="e#7890#8224#0" />
-            <element signature="e#8225#19234#0" />
-            <element signature="e#19235#20140#0" />
-            <element signature="e#20141#22142#0" />
-            <element signature="e#22143#22689#0" />
-          </folding>
+        <state relative-caret-position="426">
+          <caret line="306" column="17" lean-forward="true" selection-start-line="306" selection-start-column="17" selection-end-line="306" selection-end-column="17" />
         </state>
       </provider>
     </entry>
