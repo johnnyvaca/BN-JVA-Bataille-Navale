@@ -19,17 +19,19 @@ void loggins(char *retour) {
     sprintf(nom_utilisateur, "%s.txt", nom_utilisateur);
     strcpy(retour, nom_utilisateur);
 
+
+
 }
+
 
 int grilles_aleatoires() {
     int nombreAleatoire;
 
     srand(time(NULL));
-    nombreAleatoire = (rand() % 3) + 1;
+    nombreAleatoire = (rand() % 10) + 1;
 
     return nombreAleatoire;
 }
-
 void raccourcis() {
 #define DTLC 201 // +, Double Top Left Corner
 #define DTRC 187 // +, Double Top Right Corner
@@ -63,7 +65,6 @@ void raccourcis() {
 #define PERDU TAB_SIZE*TAB_SIZE-1
 #define NBR_BATEAUX 6
 }
-
 void vider_buffer() {
 
     int c;
@@ -72,7 +73,6 @@ void vider_buffer() {
     } while (c != EOF && c != '\n');
 
 }
-
 void logo() {
 
     printf("              ____        _        _ _ _        _    _                  _      \n"
@@ -83,7 +83,6 @@ void logo() {
            "             |____/ \\__,_|\\__\\__,_|_|_|_|\\___| |_| \\_|\\__,_| \\_/ \\__,_|_|\\___|");
     printf("\n\n\n\n");
 }
-
 void bateau() {
 
     logo();
@@ -102,7 +101,6 @@ void bateau() {
     printf("\n\n\n\n\n\n\n");
 
 }
-
 void textMenu() {
     printf("APPUYER SUR ENTER POUR JOUER");
     printf("                                                                    ");
@@ -110,13 +108,13 @@ void textMenu() {
     printf("F1 AIDE");
     printf("\n");
 }
-
 void top() {
 #pragma execution_caracter_set("UTF-8")
     SetConsoleOutputCP(65001); // For accented characters
     SetConsoleOutputCP(437); // For semi-graphic characters
     for (int i = 0; i < TAB_SIZE; ++i) {
         if (i == 0) {
+            printf("                               ");
             printf("        %d  ", i + 1);
         } else {
             printf("  %d  ", i + 1);
@@ -124,35 +122,35 @@ void top() {
 
     }
     printf("\n");
+    printf("                               ");
     printf("      %c", DTLC);
     for (int i = 0; i < TAB_SIZE - 1; ++i) {
+        if( i == 0)
+        {
+
+        }
         printf("%c%c%c%c%c", DHSB, DHSB, DHSB, DHSB, DHTB);
     }
     printf("%c%c%c%c%c", DHSB, DHSB, DHSB, DHSB, DTRC);
     printf("\n");
 
 }
-
 void bottom() {
 
     SetConsoleOutputCP(65001); // For accented characters
     SetConsoleOutputCP(437); // For semi-graphic characters
 
-    printf("      %c", DBLC);
+    printf("                                     %c", DBLC);
     for (int i = 0; i < TAB_SIZE - 1; ++i) {
         printf("%c%c%c%c%c", DHSB, DHSB, DHSB, DHSB, DHBB);
     }
     printf("%c%c%c%c%c", DHSB, DHSB, DHSB, DHSB, DBRC);
 }
-
 void affichageGrille() {
 
 
     int alea;
     alea = grilles_aleatoires();
-
-
-    // printf("alea : %d",alea);
 
 
     int grille[TAB_SIZE][TAB_SIZE];
@@ -170,9 +168,8 @@ void affichageGrille() {
             for (int g = 0; g < TAB_SIZE; ++g) {
                 grille[f][g] = fgetc(Handle);
                 grille[f][g] = grille[f][g] - 48;
-                //     printf("%c",grille[f][g]);
+
             }
-            // printf("\n");
 
 
         }
@@ -210,14 +207,14 @@ void affichageGrille() {
 
     //   do {
 
-    while (((compteur_tout != PERDU) || (compteur_bateaux < GAGNE)) && (switchs == 1)) {
+    while (((compteur_tout < PERDU) || (compteur_bateaux < GAGNE)) && (switchs == 1)) {
 
         if (compteur_bateaux < GAGNE) {
-            if ((x >= 0 || x < TAB_SIZE) && (y2 >= 0 || y2 < TAB_SIZE)) {
+            if ((x >= 0 || x < TAB_SIZE) || (y2 >= 0 || y2 < TAB_SIZE)) {
 
-
+printf("\n\n\n\n\n\n\n");printf("\n\n\n\n\n\n\n");printf("\n\n\n\n\n\n\n");
                 top();
-                ///   body();
+
 
                 for (int j = 0; j < TAB_SIZE; ++j) {
 
@@ -227,7 +224,7 @@ void affichageGrille() {
                         if (i == 0) {
 
 
-                            printf(" %c", j + 'A');
+                            printf("                                %c", j + 'A');
                         }
                         if (i == 0) {
                             SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), BLEU_BLANC);
@@ -263,6 +260,7 @@ void affichageGrille() {
                     printf("%c", DVSB);
                     printf("\n");
                     if (j != TAB_SIZE - 1) {
+                        printf("                               ");
                         for (int i = 0; i < TAB_SIZE; ++i) {
                             SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), BLEU_BLANC);
                             if (i == 0) {
@@ -273,6 +271,20 @@ void affichageGrille() {
                             printf("%c%c%c%c", DHSB, DHSB, DHSB, DHSB);
                             if (i == TAB_SIZE - 1) {
                                 printf("%c", DVRB);
+                                if(j == 5)
+                                {
+                                    if(grille[y2][x] >20){
+                                        printf("                       COULE");
+                                    }else if(grille[y2][x] == 10)
+                                    {
+                                        printf("                       A L'EAU !!!");
+                                    } else if(grille[y2][x] >10){
+                                        printf("                       TOUCHE");
+                                    }
+
+                                }
+
+
                             }
                         }
                         printf("\n");
@@ -282,9 +294,8 @@ void affichageGrille() {
 
 
                 bottom();
-                printf("     grille:%d        y2 = %d       ||    x = %d        compteur tout : %d\n", grille[y2][x],
-                       y2, x, compteur_tout);
-                printf("\nSelectionner votre case :  ");
+              //  printf("     grille:%d        y2 = %d       ||    x = %d        compteur tout : %d\n", grille[y2][x],y2, x, compteur_tout);
+                printf("\n\n\n\n\nSelectionner votre case :  ");
 
 
                 scanf("%c%d", &y, &x);
@@ -302,20 +313,14 @@ void affichageGrille() {
 
                 }
 
-                if (grille[y2][x] < TOUCHE) {
-                    compteur_tout++;
-                }
+
 
 
             }
             while ((x < 0 || x > TAB_SIZE) || (y2 < 0 || y2 > TAB_SIZE)) {
-                system("cls");
-
+                 system("cls");
+                printf("\n\n\n\n\n\n\n");printf("\n\n\n\n\n\n\n");printf("\n\n\n\n\n\n\n");
                 top();
-
-
-
-
 
 
                 for (int j = 0; j < TAB_SIZE; ++j) {
@@ -326,7 +331,7 @@ void affichageGrille() {
                         if (i == 0) {
 
 
-                            printf(" %c", j + 'A');
+                            printf("                                %c", j + 'A');
                         }
                         if (i == 0) {
                             SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), BLEU_BLANC);
@@ -367,6 +372,10 @@ void affichageGrille() {
                             if (i == 0) {
                                 printf("      %c", DVLB);
                             } else {
+                                if(j == 0)
+                                {
+                                  //  printf("                                ");
+                                }
                                 printf("%c", DC);
                             }
                             printf("%c%c%c%c", DHSB, DHSB, DHSB, DHSB);
@@ -384,20 +393,24 @@ void affichageGrille() {
 
                 printf("\n");
                 printf("compteur tout : %d\n", compteur_tout);
-                printf("Selectionner votre case :  ");
+                printf("\n\n\n\n\nSelectionner votre case :  ");
                 //_getch();
                 scanf("%c%d", &y, &x);
                 y2 = (int) y - 48 - 49;
                 x--;
-                printf("bbb : %d%d\n\n", y2, x);
+                printf("grille : %d%d\n\n", y2, x);
 
 
+            }
+
+
+            if (grille[y2][x] < 10) {
+                compteur_tout++;
             }
 
             if ((grille[y2][x] != 10) && (grille[y2][x] != 0)) {
                 if (grille[y2][x] < 10) {
                     compteur_bateaux++;
-
                 }
 
             }
@@ -499,7 +512,7 @@ void affichageGrille() {
         }
 
 
-        system("cls");
+           system("cls");
 
 
 
@@ -517,10 +530,21 @@ void affichageGrille() {
 
 
     system("cls");
-    printf("scores : %d", compteur_tout);
     printf("BRAVO  !!!");
-}
+    int score;
+    score = PERDU+1-compteur_tout-GAGNE;
+    printf("\n\nscores : %d\n\n", score);
+char scores[16];
+    char nom[15];
+    bateau();
+    loggins(nom);
+    FILE *fichierloggin;
+    fichierloggin = fopen(nom, "a+");
+    fprintf(fichierloggin,"votre score est : %d",score);
+    fclose(fichierloggin);
+system("cls");
 
+}
 void menuGrilles() {
 
     int ch = -1;
@@ -554,7 +578,6 @@ void menuGrilles() {
 
     } while (ch != 27);
 }
-
 void afficher_aide() {
 
 #pragma execution_caracter_set("UTF-8")
@@ -584,7 +607,6 @@ void afficher_aide() {
 
     } while (ch != 27);
 }
-
 int principal() {
     int touche;
 
@@ -617,7 +639,6 @@ int principal() {
 
     return 0;
 }
-
 int main() {
 
 
@@ -631,7 +652,7 @@ int main() {
 
     char nom[15];
     bateau();
-    loggins(nom);
+  loggins(nom);
 
 
     FILE *fichierloggin;
@@ -644,7 +665,6 @@ int main() {
     textMenu();
 
     principal();
-
 
     return 0;
 }
