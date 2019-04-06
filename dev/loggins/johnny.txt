@@ -1,0 +1,11 @@
+score: 64
+score: 66
+score: 68
+score: 59                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          score: 49
+score: 52
+score: 52
+score: 63
+score: 73
+score: 114
+score: 0
+score: 43

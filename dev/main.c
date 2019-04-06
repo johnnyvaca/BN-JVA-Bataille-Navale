@@ -10,20 +10,7 @@
 #define TAB_SIZE 10
 
 
-void loggins(char *retour) {
-
-    char nom_utilisateur[15];
-
-    printf("taper votre nom d'utilisateur :\n");
-    scanf("%s", nom_utilisateur);
-    sprintf(nom_utilisateur, "%s.txt", nom_utilisateur);
-    strcpy(retour, nom_utilisateur);
-
-
-
-}
-
-
+/// FONCTION QUI VA RETOURNER UN NOMBRE ALEATOIRE DE 1 à 10
 int grilles_aleatoires() {
     int nombreAleatoire;
 
@@ -32,7 +19,9 @@ int grilles_aleatoires() {
 
     return nombreAleatoire;
 }
-void raccourcis() {
+
+/// RACCOURCIS EN CONSTANTES
+void constantes() {
 #define DTLC 201 // +, Double Top Left Corner
 #define DTRC 187 // +, Double Top Right Corner
 #define DBLC 200 // +, Double Bottom Left Corner
@@ -64,28 +53,38 @@ void raccourcis() {
 #define GAGNE BATEAU_2+BATEAU_3_1+BATEAU_3_2+BATEAU_4+BATEAU_5+2
 #define PERDU TAB_SIZE*TAB_SIZE-1
 #define NBR_BATEAUX 6
+#define ESCAPE 59
+#define F1 27
+#define N1 49
+#define CARRE_COULEUR 219
+#define ENTER 13
 }
-void vider_buffer() {
+/*void vider_buffer() {
 
     int c;
     do {
         c = getchar();
     } while (c != EOF && c != '\n');
 
-}
-void logo() {
-
+} */
+/// TITRE PRINCIPALE
+void titre_Bat_Nav() {
+#pragma execution_caracter_set("UTF-8")
+    SetConsoleOutputCP(CP_UTF8); // For accented characters
     printf("              ____        _        _ _ _        _    _                  _      \n"
-           "             |  _ \\     | |      (_) | |      | \\ | |                | |     \n"
+           "             |   _ \\     | |      (_) | |      | \\ | |                | |     \n"
            "             | |_) | __ _| |_ __ _ _| | | ___  |  \\| | __ ___   ____ _| | ___ \n"
            "             |  _ < / _` | __/ _` | | | |/ _ \\ | . ` |/ _` \\ \\ / / _` | |/ _ \\\n"
            "             | |_) | (_| | || (_| | | | |  __/ | |\\  | (_| |\\ V / (_| | |  __/\n"
            "             |____/ \\__,_|\\__\\__,_|_|_|_|\\___| |_| \\_|\\__,_| \\_/ \\__,_|_|\\___|");
     printf("\n\n\n\n");
 }
-void bateau() {
 
-    logo();
+/// ASCII ART BATEAU
+void bateau() {
+#pragma execution_caracter_set("UTF-8")
+    SetConsoleOutputCP(CP_UTF8); // For accented characters
+    titre_Bat_Nav();
 
     printf("                                        |    |    |\n"
            "                                       )_)  )_)  )_)\n"
@@ -101,6 +100,8 @@ void bateau() {
     printf("\n\n\n\n\n\n\n");
 
 }
+
+/// AFFICHER TEXT DU MENU
 void textMenu() {
     printf("APPUYER SUR ENTER POUR JOUER");
     printf("                                                                    ");
@@ -108,6 +109,8 @@ void textMenu() {
     printf("F1 AIDE");
     printf("\n");
 }
+
+/// AFFICHE LES COINS ET LES ARRETES DU HAUT DE LA GRILLE
 void top() {
 #pragma execution_caracter_set("UTF-8")
     SetConsoleOutputCP(65001); // For accented characters
@@ -125,8 +128,7 @@ void top() {
     printf("                               ");
     printf("      %c", DTLC);
     for (int i = 0; i < TAB_SIZE - 1; ++i) {
-        if( i == 0)
-        {
+        if (i == 0) {
 
         }
         printf("%c%c%c%c%c", DHSB, DHSB, DHSB, DHSB, DHTB);
@@ -135,6 +137,8 @@ void top() {
     printf("\n");
 
 }
+
+/// AFFICHE LES COINS ET LES ARRETES DU BAS DE LA GRILLE
 void bottom() {
 
     SetConsoleOutputCP(65001); // For accented characters
@@ -146,45 +150,36 @@ void bottom() {
     }
     printf("%c%c%c%c%c", DHSB, DHSB, DHSB, DHSB, DBRC);
 }
-int affichageGrille() {
 
+/// CONFIGURATION DES REACTIONS DANS UNE PARITE
+void commancer_partie() {
+#pragma execution_caracter_set("UTF-8")
+    SetConsoleOutputCP(CP_UTF8); // For accented characters
 
-    int alea;
-    alea = grilles_aleatoires();
+    int aleatoire;
+    aleatoire = grilles_aleatoires(); // aleatoire recuper l'entier retourné par la fonction
 
 
     int grille[TAB_SIZE][TAB_SIZE];
 
 
-    FILE *Handle;
-    char tmp[500];
+    FILE *fichiergrilles;
+    char nom_grille_recup[9];
 
-    sprintf(tmp, "grille%d.txt", alea);
-    // printf("\nfichier = %s\n",tmp);
-    Handle = fopen(tmp, "r");
-    if (Handle != NULL) {
+    sprintf(nom_grille_recup, "..\\grilles\\grille%d.txt",
+            aleatoire); // donne le nom du fichier text avec valeur aleatoire
+
+    fichiergrilles = fopen(nom_grille_recup, "r"); // ouvrire en lecture
+    if (fichiergrilles != NULL) { // si fichier existe donner valeur dans le fichier à la grille
 
         for (int f = 0; f < TAB_SIZE; f++) {
             for (int g = 0; g < TAB_SIZE; ++g) {
-                grille[f][g] = fgetc(Handle);
-                grille[f][g] = grille[f][g] - 48;
-
+                grille[f][g] = fgetc(
+                        fichiergrilles); // grille recuper valeurs decimal ASCII  du charactere lue du fichier
+                grille[f][g] = grille[f][g] - 48; // donne la valeur decimal 0 pour la plus petite
             }
-
-
         }
-        fclose(Handle);
-    }
-
-
-    for (int f = 0; f < TAB_SIZE; f++) {
-        for (int g = 0; g < TAB_SIZE; ++g) {
-
-            //    printf("%d",grille[f][g]);
-        }
-        printf("\n");
-
-
+        fclose(fichiergrilles);
     }
 
 
@@ -193,33 +188,35 @@ int affichageGrille() {
 
     SetConsoleOutputCP(65001); // For accented characters
     SetConsoleOutputCP(437); // For semi-graphic characters
-    int ch;
-    int x = 0, y2 = 0;
-    char y = '/';
-    int liste_bateaux[NBR_BATEAUX] = {0, 0, 0, 0, 0, 0};
-    int compteur_tout = 0;
-    int compteur_bateaux = 0;
-    int compteur_touches = 1;
-    raccourcis();
-    int switchs = 1;
+    int y = 0, x = 0;
+    char x1 ='/'; // reprends lattre selctionnée
+    int liste_bateaux[NBR_BATEAUX] = {0, 0, 0, 0, 0,
+                                      0}; // case 0 = eau   ||  case 1 = bateau1    ||   case 2 = bateau2  etc...
+    int compteur_tout = 0; // compteur qui dira perdu
+    int compteur_bateaux = 0; // compteur qui dira si gagné
+    constantes(); // ajout des raccourcis pour les couleurs , grille, et cibles
+    int switchs = 1; //pour sortir de la partie
 
 
 
-    //   do {
+
 
     while (((compteur_tout < PERDU) || (compteur_bateaux < GAGNE)) && (switchs == 1)) {
 
         if (compteur_bateaux < GAGNE) {
-            if ((x >= 0 || x < TAB_SIZE) || (y2 >= 0 || y2 < TAB_SIZE)) {
+            if ((y >= 0 || y < TAB_SIZE) || (x >= 0 || x < TAB_SIZE)) {
 
-printf("\n\n\n\n\n\n\n");printf("\n\n\n\n\n\n\n");printf("\n\n\n\n\n\n\n");
+                printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+
+
+/// BODY QUI SE MODIFIE AVEC LES SELECTIONS DES CASES
+///  DEBUT AFFICHAGE GRILLE     ---------------------------------------------------------------------------------------------------------------------------
                 top();
-
-
                 for (int j = 0; j < TAB_SIZE; ++j) {
 
                     for (int i = 0; i < TAB_SIZE; ++i) {
-                        SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), BLEU_BLANC);
+                        SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),
+                                                BLEU_BLANC); // BLUE SUR BLANC POUR TOUT LE DEBUT DU JEU
 
                         if (i == 0) {
 
@@ -252,11 +249,12 @@ printf("\n\n\n\n\n\n\n");printf("\n\n\n\n\n\n\n");printf("\n\n\n\n\n\n\n");
 
                         }
 
-                        printf("%c%c%c%c", 219, 219, 219, 219);
+                        printf("%c%c%c%c", CARRE_COULEUR, CARRE_COULEUR, CARRE_COULEUR, CARRE_COULEUR);
 
 
                     }
-                    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), BLEU_BLANC);
+                    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),
+                                            BLEU_BLANC); //DEFINIR QU'APRES LE CHANGEMENT DE COULEUR DES CASES DU BLEU SUR BLANC
                     printf("%c", DVSB);
                     printf("\n");
                     if (j != TAB_SIZE - 1) {
@@ -271,14 +269,12 @@ printf("\n\n\n\n\n\n\n");printf("\n\n\n\n\n\n\n");printf("\n\n\n\n\n\n\n");
                             printf("%c%c%c%c", DHSB, DHSB, DHSB, DHSB);
                             if (i == TAB_SIZE - 1) {
                                 printf("%c", DVRB);
-                                if(j == 5)
-                                {
-                                    if(grille[y2][x] >20){
+                                if (j == 5) {
+                                    if (grille[x][y] > COULE) {
                                         printf("                       COULE");
-                                    }else if(grille[y2][x] == 10)
-                                    {
+                                    } else if (grille[x][y] == TOUCHE_EAU) {
                                         printf("                       A L'EAU !!!");
-                                    } else if(grille[y2][x] >10){
+                                    } else if (grille[x][y] > TOUCHE) {
                                         printf("                       TOUCHE");
                                     }
 
@@ -291,43 +287,37 @@ printf("\n\n\n\n\n\n\n");printf("\n\n\n\n\n\n\n");printf("\n\n\n\n\n\n\n");
                     }
 
                 }
-
-
                 bottom();
-              //  printf("     grille:%d        y2 = %d       ||    x = %d        compteur tout : %d\n", grille[y2][x],y2, x, compteur_tout);
+///     FIN AFFICHAGE GRILLE  ---------------------------------------------------------------------------------------------------------------------------
+
+
                 printf("\n\n\n\n\nSelectionner votre case :  ");
 
 
-                scanf("%c%d", &y, &x);
-                if((y >= 65)&&(y <= 74))
-                {
-                    y2 = (int) y - 48 - 49 + 32;
-                }
-                else
-                {
-                    y2 = (int) y - 48 - 49;
+                scanf("%c%d", &x1, &y);
+                if ((x1 >= 65) && (x1 <= 74)) {
+                    x = (int) x1 - 97 + 32;
+                } else {
+                    x = (int) x1 - 97;
                 }
 
 
-
-                x--;
+                y--;
 
 
                 if (compteur_tout == 0) {
 
                 } else {
+                    y = -1;
                     x = -1;
-                    y2 = -1;
 
                 }
 
 
-
-
             }
-            while ((x < 0 || x > TAB_SIZE) || (y2 < 0 || y2 > TAB_SIZE)) {
-                 system("cls");
-                printf("\n\n\n\n\n\n\n");printf("\n\n\n\n\n\n\n");printf("\n\n\n\n\n\n\n");
+            while ((y < 0 || y > TAB_SIZE) || (x < 0 || x > TAB_SIZE)) { //  tant que les valeur sont pas entre 0 et 9 en reaffiche la grille et redemande
+                system("cls");
+                printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
                 top();
 
 
@@ -339,7 +329,7 @@ printf("\n\n\n\n\n\n\n");printf("\n\n\n\n\n\n\n");printf("\n\n\n\n\n\n\n");
                         if (i == 0) {
 
 
-                            printf("                                %c", j + 'A');
+                            printf("                                %c", j + 'A'); // lis dans la table ascii depuis la valeur de A jusqu'a Longuer de la grille
                         }
                         if (i == 0) {
                             SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), BLEU_BLANC);
@@ -368,7 +358,7 @@ printf("\n\n\n\n\n\n\n");printf("\n\n\n\n\n\n\n");printf("\n\n\n\n\n\n\n");
 
                         }
 
-                        printf("%c%c%c%c", 219, 219, 219, 219);
+                        printf("%c%c%c%c", CARRE_COULEUR, CARRE_COULEUR, CARRE_COULEUR, CARRE_COULEUR);
 
 
                     }
@@ -382,15 +372,17 @@ printf("\n\n\n\n\n\n\n");printf("\n\n\n\n\n\n\n");printf("\n\n\n\n\n\n\n");
                                 printf("                               ");
                                 printf("      %c", DVLB);
                             } else {
-                                if(j == 0)
-                                {
-                              //
+                                if (j == 0) {
+                                    //
                                 }
                                 printf("%c", DC);
                             }
                             printf("%c%c%c%c", DHSB, DHSB, DHSB, DHSB);
                             if (i == TAB_SIZE - 1) {
                                 printf("%c", DVRB);
+                                if (j == 5) {
+                                    printf("                       TERRE");
+                                }
                             }
                         }
                         printf("\n");
@@ -402,57 +394,55 @@ printf("\n\n\n\n\n\n\n");printf("\n\n\n\n\n\n\n");printf("\n\n\n\n\n\n\n");
 
 
                 printf("\n");
-              //  printf("compteur tout : %d\n", compteur_tout);
-               // printf("     grille:%d        y2 = %d       ||    x = %d        compteur tout : %d\n", grille[y2][x],y2, x, compteur_tout);
                 printf("\n\n\n\n\nSelectionner votre case :  ");
                 //_getch();
-                scanf("%c%d", &y, &x);
-                if((y >= 65)&&(y <= 74))
-                {
-                    y2 = (int) y - 48 - 49 + 32;
+                scanf("%c%d", &x1, &y);
+                if ((x1 >= 65) && (x1 <= 74)) {
+                    x = (int) x1 - 48 - 49 + 32;
+                } else {
+                    x = (int) x1 - 48 - 49;
                 }
-                else
-                {
-                    y2 = (int) y - 48 - 49;
-                }
-                x--;
-                printf("grille : %d%d\n\n", y2, x);
+                y--;
+                printf("grille : %d%d\n\n", x, y);
 
 
             }
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-
-            if (grille[y2][x] < 10) {
-                compteur_tout++;
+            if (grille[x][y] < 10) {
+                compteur_tout++; // ADITIONNER 1 AU COMPTEUR POUR DONNER LE NOMBRE DE FOIS QU'IL A TOUCHE UN BATEAU OU EAU
             }
 
-            if ((grille[y2][x] != 10) && (grille[y2][x] != 0)) {
-                if (grille[y2][x] < 10) {
+            if ((grille[x][y] != 10) && (grille[x][y] != 0)) {
+                if (grille[x][y] < 10) {// ADITIONNER 1 AU COMPTEUR POUR DONNER LE NOMBRE DE FOIS QU'IL A TOUCHE UN BATEAU
                     compteur_bateaux++;
                 }
 
             }
-            if (compteur_bateaux == GAGNE) {
+            if (compteur_bateaux == GAGNE) { // if compteur == addition des longeurs des bateaux alors sortir de la partie
+                switchs = 0;
+            }
+            if (compteur_tout == PERDU) { // if compteur == addition des longeurs des bateaux alors sortir de la partie
                 switchs = 0;
             }
 
         }
 
 
-        if (grille[y2][x] == EAU && grille[y2][x] < TOUCHE_EAU && liste_bateaux[0] < EAUX) {
-            grille[y2][x] = grille[y2][x] + 10;
+        if (grille[x][y] == EAU && grille[x][y] < TOUCHE_EAU && liste_bateaux[0] < EAUX) {
+            grille[x][y] = grille[x][y] + 10;
             liste_bateaux[0]++;
 
 
         }
-
-        if (grille[y2][x] == BATEAU_2) {
-            grille[y2][x] = grille[y2][x] + 10;
+// ajouter 10 au bateau si touche ou coulé
+        if (grille[x][y] == BATEAU_2) {
+            grille[x][y] = grille[x][y] + TOUCHE;
             liste_bateaux[1]++;
-            if (liste_bateaux[1] == BATEAU_2 + 1) {
+            if (liste_bateaux[1] == BATEAU_2 + 1) { // si bateau 1 == longeur bateau augmenter de 10 a toute les cases du bateau
                 for (int i = 0; i < TAB_SIZE; ++i) {
                     for (int j = 0; j < TAB_SIZE; ++j) {
-                        if (grille[i][j] == BATEAU_2 + 10) {
+                        if (grille[i][j] == BATEAU_2 + TOUCHE) {
                             grille[i][j] = grille[i][j] + 10;
 
                         }
@@ -461,15 +451,15 @@ printf("\n\n\n\n\n\n\n");printf("\n\n\n\n\n\n\n");printf("\n\n\n\n\n\n\n");
             }
         }
 
-
-        if (grille[y2][x] == BATEAU_3_1) {
-            grille[y2][x] = grille[y2][x] + 10;
+// ajouter 10 au bateau si touche ou coulé
+        if (grille[x][y] == BATEAU_3_1) {
+            grille[x][y] = grille[x][y] + TOUCHE;
             liste_bateaux[2]++;
 
-            if (liste_bateaux[2] == BATEAU_3_1 + 1) {
+            if (liste_bateaux[2] == BATEAU_3_1 + 1) {// si bateau 1 == longeur bateau augmenter de 10 a toute les cases du bateau
                 for (int i = 0; i < TAB_SIZE; ++i) {
                     for (int j = 0; j < TAB_SIZE; ++j) {
-                        if (grille[i][j] == BATEAU_3_1 + 10) {
+                        if (grille[i][j] == BATEAU_3_1 + TOUCHE) {
                             grille[i][j] = grille[i][j] + 10;
 
                         }
@@ -478,13 +468,13 @@ printf("\n\n\n\n\n\n\n");printf("\n\n\n\n\n\n\n");printf("\n\n\n\n\n\n\n");
             }
 
         }
-
-        if (grille[y2][x] == BATEAU_3_2) {
-            grille[y2][x] = grille[y2][x] + 10;
+// ajouter 10 au bateau si touche ou coulé
+        if (grille[x][y] == BATEAU_3_2) {
+            grille[x][y] = grille[x][y] + 10;
 
             liste_bateaux[3]++;
 
-            if (liste_bateaux[3] == BATEAU_3_2) {
+            if (liste_bateaux[3] == BATEAU_3_2) {// si bateau 1 == longeur bateau augmenter de 10 a toute les cases du bateau
                 for (int i = 0; i < TAB_SIZE; ++i) {
                     for (int j = 0; j < TAB_SIZE; ++j) {
                         if (grille[i][j] == BATEAU_3_2 + 10) {
@@ -495,13 +485,13 @@ printf("\n\n\n\n\n\n\n");printf("\n\n\n\n\n\n\n");printf("\n\n\n\n\n\n\n");
                 }
             }
         }
-
-        if (grille[y2][x] == BATEAU_4) {
-            grille[y2][x] = grille[y2][x] + 10;
+// ajouter 10 au bateau si touche ou coulé
+        if (grille[x][y] == BATEAU_4) {
+            grille[x][y] = grille[x][y] + 10;
 
             liste_bateaux[4]++;
 
-            if (liste_bateaux[4] == BATEAU_4) {
+            if (liste_bateaux[4] == BATEAU_4) {// si bateau 1 == longeur bateau augmenter de 10 a toute les cases du bateau
                 for (int i = 0; i < TAB_SIZE; ++i) {
                     for (int j = 0; j < TAB_SIZE; ++j) {
                         if (grille[i][j] == BATEAU_4 + 10) {
@@ -512,12 +502,12 @@ printf("\n\n\n\n\n\n\n");printf("\n\n\n\n\n\n\n");printf("\n\n\n\n\n\n\n");
                 }
             }
         }
-
-        if (grille[y2][x] == BATEAU_5) {
-            grille[y2][x] = grille[y2][x] + 10;
+// ajouter 10 au bateau si touche ou coulé
+        if (grille[x][y] == BATEAU_5) {
+            grille[x][y] = grille[x][y] + 10;
 
             liste_bateaux[5]++;
-            if (liste_bateaux[5] == BATEAU_5) {
+            if (liste_bateaux[5] == BATEAU_5) {// si bateau 1 == longeur bateau augmenter de 10 a toute les cases du bateau
                 for (int i = 0; i < TAB_SIZE; ++i) {
                     for (int j = 0; j < TAB_SIZE; ++j) {
                         if (grille[i][j] == BATEAU_5 + 10) {
@@ -530,66 +520,63 @@ printf("\n\n\n\n\n\n\n");printf("\n\n\n\n\n\n\n");printf("\n\n\n\n\n\n\n");
         }
 
 
-           system("cls");
+        system("cls");
 
-
-
-
-
-
-
-        //  grille[x][y] = grille[x][y]+10;
-
-        // while(liste_bateaux[])
-        // ch = _getch();
-        //system("cls");
-    } //while (ch != 27);
-
+    }
 
 
     system("cls");
-    printf("BRAVO  !!!");
     int score;
-    score = PERDU+1-(PERDU+1-compteur_tout)-GAGNE;
+    if(compteur_tout == PERDU)
+    {
+        printf("VOUS AVEZ PERDU");
+        score = 0;
+    }
+    else
+    {
+        printf("BRAVO  !!!");
+        score = PERDU + 1 - (PERDU + 1 - compteur_tout) - GAGNE;
+    }
+
+
+
     printf("\n\n votre scores est : %d\n\n", score);
 
-int charLecture;
-    char nom[15];
+    char nom_utilisateur[15]; // le nom du fichier
+    char nom_utilisateur_recup[15]; // recupere le nom du fichier+extention
+
     bateau();
     printf("\n\n\n\nReecriver votre nom d'utilisateur pour enregistrer votre score\n\n\n");
+    printf("taper votre nom d'utilisateur :\n");
 
-    FILE *fichierloggin;
-    fichierloggin = fopen(nom, "a");
-    while (fichierloggin == NULL)
-    {
-        loggins(nom);
-        fichierloggin = fopen(nom, "a");
+    scanf("%s", nom_utilisateur);
+    sprintf(nom_utilisateur_recup, "..\\loggins\\%s.txt", nom_utilisateur); // recupere le nom du fichier+extention
+
+
+    FILE *fichierloggin; // ouvrir pour editer un fichier
+    fichierloggin = fopen(nom_utilisateur_recup, "a"); // methode pour ecrire a la fin du fichier
+
+
+
+    fprintf(fichierloggin, "score: %d\n", score); // ecrire le score dans le fichier
+    fclose(fichierloggin);
+
+
+    fichierloggin = fopen(nom_utilisateur_recup, "r");
+    while (!feof(fichierloggin)) { // lire tout le fichier
+        putchar(fgetc(fichierloggin));
     }
-    fprintf(fichierloggin,"score: %d\n",score);
     fclose(fichierloggin);
 
+    system("pause");
+    system("cls");
 
-    fichierloggin = fopen(nom, "r");
- while((charLecture = fgetc(fichierloggin))!= EOF)
- {
-     if(charLecture == '\n')
-     {
-         printf("\n");
-     }
-     else
-     {
-         putchar(charLecture);
-     }
- }
-    fclose(fichierloggin);
-
-system("pause");
-system("cls");
-    return score;
 }
 
+/// AFFICHE UN MENU POUR LES GRILLES
 void menuGrilles() {
-
+#pragma execution_caracter_set("UTF-8")
+    SetConsoleOutputCP(CP_UTF8); // For accented characters
     int ch = -1;
 
 
@@ -597,7 +584,7 @@ void menuGrilles() {
 
         system("cls");
 
-        logo();
+        titre_Bat_Nav();
         printf("                              CHOISISSEZ VOTRE MER...");
         printf("\n\n\n      ");
         printf("                                   1. MERS ALEATOIRES\n");
@@ -606,12 +593,11 @@ void menuGrilles() {
         if (ch != 49 && ch != -1) {
             printf("                                                           ");
             printf("CETTE MER N'EXISTE PAS !!!");
-            printf("getch = %d",ch);
-            // printf("%d",ch);
+
         }
-        if (ch == 49) {
+        if (ch == N1) { // si ch == 1
             system("cls");
-            affichageGrille();
+            commancer_partie();
         }
 
 
@@ -620,38 +606,47 @@ void menuGrilles() {
         printf("                                                                                            ESCAPE:   POUR RETOURNER EN ARRIERE");
         ch = _getch();
 
-    } while (ch != 27);
+    } while (ch != ESCAPE);
 }
+
+/// AFFICHE L'AIDE
 void afficher_aide() {
 
 #pragma execution_caracter_set("UTF-8")
     SetConsoleOutputCP(CP_UTF8); // For accented characters
     int ch;
-    logo();
+    titre_Bat_Nav();
 
     printf("\n"
-           "                                          _____ _____  ______ \n"
-           "                                   /\\   |_   _|  _ \\| ____|\n"
+           "                                         _____ _____  ______ \n"
+           "                                   /\\   |_   _|  _  \\| ____|\n"
            "                                  /  \\    | | | |  | | |__   \n"
-           "                                 / /\\\\   | | | |  | |  __|  \n"
+           "                                 / /\\ \\   | | | |  | |  __|  \n"
            "                                / ____ \\ _| |_| |__| | |____ \n"
-           "                               /_/   \\_\\_____|_____/|______|\n"
+           "                               /_/    \\_\\_____|_____/|______|\n"
            "                                                            \n"
            "                                                             ");
     printf("\n\n\n\n\n");
-    printf("La bataille navale oppose deux joueurs qui s'affrontent. Chacun a une flotte compos?e de 5 bateaux, qui sont, en g?n?ral, les suivants : 1 porte-avion (5 cases), 1 croiseur (4 cases), 1 contre-torpilleur (3 cases), 1 sous-marin (3 cases), 1 torpilleur (2 cases). \n"
-           "\n"
-           "Au d?but du jeu, chaque joueur place ses bateaux sur sa grille. Celle-ci est toujours num?rot?e de A ? J verticalement et de 1 ? 10 horizontalement. Un ? un, les joueurs vont \"tirer\" sur une case de l'adversaire : par exemple, B.3 ou encore H.8. Le but est donc de couler les bateaux adverses. Au fur et ? mesure, il faut mettre les pions sur sa propre grille afin de se souvenir de ses tirs pass?s.[r?f. n?cessaire]\n"
-           "\n"
-           "Un fonctionnement plus sophistiqu? mettant en ?uvre de la strat?gie est de tirer une salve (trois coups par exemple) et de donner le r?sultat global de la salve.");
+    printf("La bataille navale oppose deux joueurs qui s'affrontent. Chacun a une flotte composée de 5 bateaux, qui sont,"
+           " en général, les suivants : 1 bateau (5 cases), 1 bateau"
+           " (4 cases), 1 bateau (3 cases), 1 bateau (3 cases) et un autre bateau (2 cases). \n\n"
+           "Au d?but du jeu, chaque joueur place ses bateaux sur sa grille. Celle-ci est toujours numérotée de A à J ver"
+           "ticalement et de 1 à 10 horizontalement. Le joueurs tire sur une case de l'adversaire : par exemple, B3 ou e"
+           "ncore H8. Le but est donc de couler les bateaux adverses. Au fur et à mesure, il faut mettre les pions sur sa"
+           " propre grille afin de se souvenir de ses tirs passés.\n"
+    );
     printf("\n\n\n\n");
     printf("                                                                                                                                       ESCAPE:   POUR RETOURNER EN ARRIERE");
     do {
         ch = _getch();
 
-    } while (ch != 27);
+    } while (ch != ESCAPE); // tant que nous ne touchons pas sur escape ne rien faire
 }
-int principal() {
+
+/// AFFICHAGE MENU PRINCIPALE
+int menu_pricipal() {
+#pragma execution_caracter_set("UTF-8")
+    SetConsoleOutputCP(CP_UTF8); // For accented characters
     int touche;
 
     do {
@@ -661,55 +656,66 @@ int principal() {
 
         bateau();
         textMenu();
-        touche = _getch();
+        touche = _getch(); // touche recupere le numero ascii d'une touche selectionée
 
         switch (touche) {
-            case 59 :
+            case F1 : // touche F1
                 system("cls");
                 afficher_aide();
                 break;
-            case 13:
+            case ENTER: // touche Enter
                 system("cls");
                 menuGrilles();
                 break;
-            case 27:
+            case ESCAPE: // ESCAPE
                 break;
-            case 0:
+            case 0: // VALEUR NULL (debugs)
                 break;
             default:
-                principal();
+                menu_pricipal(); // rappel de la fonction
         }
 
-    } while (touche != 27);
+    } while (touche != 27); //  tant que touche != ESCAPE redemander le switch
 
     return 0;
 }
+
 int main() {
 
-
-#pragma execution_caracter_set("UTF-8")
+#pragma execution_caracter_set("UTF-8") // For accented characters
     SetConsoleOutputCP(CP_UTF8); // For accented characters
 
     keybd_event(VK_F11, 0, 0, 0); //Appuie sur ALT
-    keybd_event(VK_F11, 0, KEYEVENTF_KEYUP, 0); // Relache ENTREE
+    keybd_event(VK_F11, 0, KEYEVENTF_KEYUP, 0); // Appuie ENTER
 
-    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), BLEU_BLANC);
+    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), BLEU_BLANC); // Text : Bleu et Fond : Blanc
 
-    char nom[15];
+
     bateau();
-  loggins(nom);
+    char nom_utilisateur[15]; // recois le nom du fichier
+    char nom_utilisateur_recup[15]; // recupere le nom du fichier avec extention
+
+    printf("taper votre nom d'utilisateur :\n");
+    scanf("%s", nom_utilisateur);
+    sprintf(nom_utilisateur_recup, "..\\loggins\\%s.txt",
+            nom_utilisateur); // donne nom du fichier à nom_utilisateur_recup
 
 
     FILE *fichierloggin;
-    fichierloggin = fopen(nom, "a+");
+    fichierloggin = fopen(nom_utilisateur_recup, "a+"); // cree
+    while (!feof(fichierloggin)) // tant que nous lisons pas jusqu'à la fin du fichier afficher le contenue du fichier
+    {
+        putchar(fgetc(fichierloggin)); // affiche un charactere du fichier
+    }
     fclose(fichierloggin);
 
-  //  system("cls");
+    system("pause");
+    system("cls");
 
     bateau();
     textMenu();
 
-    principal();
+    menu_pricipal();
 
 
     return 0;
