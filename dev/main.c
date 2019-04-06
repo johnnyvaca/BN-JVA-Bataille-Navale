@@ -146,7 +146,7 @@ void bottom() {
     }
     printf("%c%c%c%c%c", DHSB, DHSB, DHSB, DHSB, DBRC);
 }
-void affichageGrille() {
+int affichageGrille() {
 
 
     int alea;
@@ -299,7 +299,15 @@ printf("\n\n\n\n\n\n\n");printf("\n\n\n\n\n\n\n");printf("\n\n\n\n\n\n\n");
 
 
                 scanf("%c%d", &y, &x);
-                y2 = (int) y - 48 - 49;
+                if((y >= 65)&&(y <= 74))
+                {
+                    y2 = (int) y - 48 - 49 + 32;
+                }
+                else
+                {
+                    y2 = (int) y - 48 - 49;
+                }
+
 
 
                 x--;
@@ -335,6 +343,7 @@ printf("\n\n\n\n\n\n\n");printf("\n\n\n\n\n\n\n");printf("\n\n\n\n\n\n\n");
                         }
                         if (i == 0) {
                             SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), BLEU_BLANC);
+
                             printf("    ");
                         }
                         printf("%c", DVSB);
@@ -370,11 +379,12 @@ printf("\n\n\n\n\n\n\n");printf("\n\n\n\n\n\n\n");printf("\n\n\n\n\n\n\n");
                         for (int i = 0; i < TAB_SIZE; ++i) {
                             SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), BLEU_BLANC);
                             if (i == 0) {
+                                printf("                               ");
                                 printf("      %c", DVLB);
                             } else {
                                 if(j == 0)
                                 {
-                                  //  printf("                                ");
+                              //
                                 }
                                 printf("%c", DC);
                             }
@@ -392,11 +402,19 @@ printf("\n\n\n\n\n\n\n");printf("\n\n\n\n\n\n\n");printf("\n\n\n\n\n\n\n");
 
 
                 printf("\n");
-                printf("compteur tout : %d\n", compteur_tout);
+              //  printf("compteur tout : %d\n", compteur_tout);
+               // printf("     grille:%d        y2 = %d       ||    x = %d        compteur tout : %d\n", grille[y2][x],y2, x, compteur_tout);
                 printf("\n\n\n\n\nSelectionner votre case :  ");
                 //_getch();
                 scanf("%c%d", &y, &x);
-                y2 = (int) y - 48 - 49;
+                if((y >= 65)&&(y <= 74))
+                {
+                    y2 = (int) y - 48 - 49 + 32;
+                }
+                else
+                {
+                    y2 = (int) y - 48 - 49;
+                }
                 x--;
                 printf("grille : %d%d\n\n", y2, x);
 
@@ -532,19 +550,44 @@ printf("\n\n\n\n\n\n\n");printf("\n\n\n\n\n\n\n");printf("\n\n\n\n\n\n\n");
     system("cls");
     printf("BRAVO  !!!");
     int score;
-    score = PERDU+1-compteur_tout-GAGNE;
-    printf("\n\nscores : %d\n\n", score);
-char scores[16];
+    score = PERDU+1-(PERDU+1-compteur_tout)-GAGNE;
+    printf("\n\n votre scores est : %d\n\n", score);
+
+int charLecture;
     char nom[15];
     bateau();
-    loggins(nom);
-    FILE *fichierloggin;
-    fichierloggin = fopen(nom, "a+");
-    fprintf(fichierloggin,"votre score est : %d",score);
-    fclose(fichierloggin);
-system("cls");
+    printf("\n\n\n\nReecriver votre nom d'utilisateur pour enregistrer votre score\n\n\n");
 
+    FILE *fichierloggin;
+    fichierloggin = fopen(nom, "a");
+    while (fichierloggin == NULL)
+    {
+        loggins(nom);
+        fichierloggin = fopen(nom, "a");
+    }
+    fprintf(fichierloggin,"score: %d\n",score);
+    fclose(fichierloggin);
+
+
+    fichierloggin = fopen(nom, "r");
+ while((charLecture = fgetc(fichierloggin))!= EOF)
+ {
+     if(charLecture == '\n')
+     {
+         printf("\n");
+     }
+     else
+     {
+         putchar(charLecture);
+     }
+ }
+    fclose(fichierloggin);
+
+system("pause");
+system("cls");
+    return score;
 }
+
 void menuGrilles() {
 
     int ch = -1;
@@ -563,6 +606,7 @@ void menuGrilles() {
         if (ch != 49 && ch != -1) {
             printf("                                                           ");
             printf("CETTE MER N'EXISTE PAS !!!");
+            printf("getch = %d",ch);
             // printf("%d",ch);
         }
         if (ch == 49) {
@@ -618,6 +662,7 @@ int principal() {
         bateau();
         textMenu();
         touche = _getch();
+
         switch (touche) {
             case 59 :
                 system("cls");
@@ -656,15 +701,16 @@ int main() {
 
 
     FILE *fichierloggin;
-    fichierloggin = fopen(nom, "w");
+    fichierloggin = fopen(nom, "a+");
     fclose(fichierloggin);
 
-    system("cls");
+  //  system("cls");
 
     bateau();
     textMenu();
 
     principal();
+
 
     return 0;
 }
