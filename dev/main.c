@@ -398,9 +398,9 @@ void commancer_partie() {
                 //_getch();
                 scanf("%c%d", &x1, &y);
                 if ((x1 >= 65) && (x1 <= 74)) {
-                    x = (int) x1 - 48 - 49 + 32;
+                    x = (int) x1 - 65;
                 } else {
-                    x = (int) x1 - 48 - 49;
+                    x = (int) x1 - 97;
                 }
                 y--;
                 printf("grille : %d%d\n\n", x, y);
@@ -550,23 +550,24 @@ void commancer_partie() {
     printf("taper votre nom d'utilisateur :\n");
 
     scanf("%s", nom_utilisateur);
-    sprintf(nom_utilisateur_recup, "..\\loggins\\%s.txt", nom_utilisateur); // recupere le nom du fichier+extention
+    sprintf(nom_utilisateur_recup, "..\\logins\\%s.txt", nom_utilisateur); // recupere le nom du fichier+extention
 
 
-    FILE *fichierloggin; // ouvrir pour editer un fichier
-    fichierloggin = fopen(nom_utilisateur_recup, "a"); // methode pour ecrire a la fin du fichier
+    FILE *fichierlogin; // ouvrir pour editer un fichier
+    fichierlogin = fopen(nom_utilisateur_recup, "a"); // methode pour ecrire a la fin du fichier
 
 
 
-    fprintf(fichierloggin, "score: %d\n", score); // ecrire le score dans le fichier
-    fclose(fichierloggin);
+    fprintf(fichierlogin, "score: %d\n", score); // ecrire le score dans le fichier
+    fclose(fichierlogin);
 
 
-    fichierloggin = fopen(nom_utilisateur_recup, "r");
-    while (!feof(fichierloggin)) { // lire tout le fichier
-        putchar(fgetc(fichierloggin));
+    fichierlogin = fopen(nom_utilisateur_recup, "r");
+
+    while (!feof(fichierlogin)) { // lire tout le fichier
+        putchar(fgetc(fichierlogin));
     }
-    fclose(fichierloggin);
+    fclose(fichierlogin);
 
     system("pause");
     system("cls");
@@ -697,17 +698,17 @@ int main() {
 
     printf("taper votre nom d'utilisateur :\n");
     scanf("%s", nom_utilisateur);
-    sprintf(nom_utilisateur_recup, "..\\loggins\\%s.txt",
+    sprintf(nom_utilisateur_recup, "..\\logins\\%s.txt",
             nom_utilisateur); // donne nom du fichier à nom_utilisateur_recup
 
 
-    FILE *fichierloggin;
-    fichierloggin = fopen(nom_utilisateur_recup, "a+"); // cree
-    while (!feof(fichierloggin)) // tant que nous lisons pas jusqu'à la fin du fichier afficher le contenue du fichier
+    FILE *fichierlogin;
+    fichierlogin = fopen(nom_utilisateur_recup, "a+"); // cree
+    while (!feof(fichierlogin)) // tant que nous lisons pas jusqu'à la fin du fichier afficher le contenue du fichier
     {
-        putchar(fgetc(fichierloggin)); // affiche un charactere du fichier
+        putchar(fgetc(fichierlogin)); // affiche un charactere du fichier
     }
-    fclose(fichierloggin);
+    fclose(fichierlogin);
 
     system("pause");
     system("cls");
