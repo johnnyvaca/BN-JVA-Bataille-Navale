@@ -49,7 +49,4 @@ Pour générer l'exécutable, vous devez:
 
 Pour exécuter le programme, vous devez:
 
-1. Copy executable way
-1. open the cmd
-1. paste
-1. execute
+1.Executer directement l'executable depuis le répertoire du projet
