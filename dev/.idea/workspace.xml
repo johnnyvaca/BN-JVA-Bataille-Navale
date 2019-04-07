@@ -15,37 +15,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c89f063f-2853-42c6-acd4-4c80f2687255" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/dev.dir/main.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/dev.dir/main.c.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/dev.dir/objects.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/dev.dir/objects.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/`" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/`" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/dev.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/dev.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/grille1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/grille10.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/grille2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/grille3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/grille4.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/grille5.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/grille6.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/grille7.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/grille8.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/grille9.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/johnny.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/grilles/grille1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/grilles/grille1.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/grilles/grille10.txt" beforeDir="false" afterPath="$PROJECT_DIR$/grilles/grille10.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/grilles/grille2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/grilles/grille2.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/grilles/grille3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/grilles/grille3.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/grilles/grille4.txt" beforeDir="false" afterPath="$PROJECT_DIR$/grilles/grille4.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/grilles/grille5.txt" beforeDir="false" afterPath="$PROJECT_DIR$/grilles/grille5.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/grilles/grille6.txt" beforeDir="false" afterPath="$PROJECT_DIR$/grilles/grille6.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/grilles/grille7.txt" beforeDir="false" afterPath="$PROJECT_DIR$/grilles/grille7.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/grilles/grille8.txt" beforeDir="false" afterPath="$PROJECT_DIR$/grilles/grille8.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/grilles/grille9.txt" beforeDir="false" afterPath="$PROJECT_DIR$/grilles/grille9.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../doc/Documentation.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../doc/Documentation.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../doc/Maquettes/00 - login.vsdx" beforeDir="false" afterPath="$PROJECT_DIR$/../doc/Maquettes/00 - login.vsdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../doc/Maquettes/04 - Grille Fixe - Départ.vsdx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../doc/Maquettes/05- Grille Fixe - En cours.vsdx" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -60,8 +30,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="79">
-              <caret line="543" selection-start-line="543" selection-end-line="543" />
+            <state relative-caret-position="269">
+              <caret line="59" column="16" lean-forward="true" selection-start-line="59" selection-start-column="16" selection-end-line="59" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -156,11 +126,12 @@
       <workItem from="1554533604707" duration="8862000" />
       <workItem from="1554566139667" duration="16463000" />
       <workItem from="1554590971011" duration="9000" />
+      <workItem from="1554619243952" duration="460000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28125000" />
+    <option name="totallyTimeSpent" value="28585000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
@@ -193,8 +164,8 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/main.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="79">
-          <caret line="543" selection-start-line="543" selection-end-line="543" />
+        <state relative-caret-position="269">
+          <caret line="59" column="16" lean-forward="true" selection-start-line="59" selection-start-column="16" selection-end-line="59" selection-end-column="16" />
         </state>
       </provider>
     </entry>

@@ -53,8 +53,8 @@ void constantes() {
 #define GAGNE BATEAU_2+BATEAU_3_1+BATEAU_3_2+BATEAU_4+BATEAU_5+2
 #define PERDU TAB_SIZE*TAB_SIZE-1
 #define NBR_BATEAUX 6
-#define ESCAPE 59
-#define F1 27
+#define ESCAPE 27
+#define F1 59
 #define N1 49
 #define CARRE_COULEUR 219
 #define ENTER 13
