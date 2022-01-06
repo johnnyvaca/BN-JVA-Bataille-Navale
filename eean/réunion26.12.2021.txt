@@ -9,25 +9,35 @@ ariel: transmisiones nacionales de cada ciudad? averiguar si es necesario conect
 Mauricio: historico de las ex transmisiones
 ismael: dejar facebook para mas tarde
 
+
+
+NACIONAL
 en el apartado del comité es necessario
 ariel: presentaction del comité unicamente nacional
-ariel: tener una unidad para tener la misma estructra para cada iglesia
-ariel: usar una pagina nacional, 
+ariel: tener una unidad para tener la misma estructra para cada iglesia(ciudad)
 ariel: comité nacional, porque es lo que mas pega: el pastor tiene que decidir
 
 ariel: crear un consejo  solo una vez al mes en la red
 
-
+Fotos
 Ismael: guardar lo antiguo para poner nuevo espacio
+
+Alias
 Ismael: usar alias para un solo dominio
+Ariel: fotos/videos por años y eventos dividir por (eventos)carpetas por mas recientes
 
-
+PERSONAL
 Ariel: buscar personal: Diseño, contenido, desarrollador,administrador,creador de las maquetas,traduccion(3) (11 personas)
-Ismael: administracion
+Ismael: crear una parte de administracion
+
+Mails
 Ariel: crear un mail par recibir mensajes a traves de los formularios
 Ariel: calendario: hacer click en los eventos
-Ariel: fotos/videos por años y eventos dividir por (eventos)carpetas por mas recientes
+
+Pago del host
 Ismael: pagar el host al final
+
+Maquetas
 Ismael: realizar maquetas
 
 etapas:
@@ -35,7 +45,9 @@ etapas:
 	- inicio: foto de la iglesia, calendario,algo animado, bienvenida.
 	- quienes somos: -coger de la IEANJESUS oficial -articulos -historia suiza
 	- administraction: obras y sus pastores, comites nacionales
-	- multimedia: fotos, videos
+	- eventos: multimedia: fotos, videos
+		Ariel: fotos/videos por años y eventos dividir por (eventos)carpetas por mas recientes
+
 	- redes sociales (pagine facebook nacional)
 2. transmision facebook
 
